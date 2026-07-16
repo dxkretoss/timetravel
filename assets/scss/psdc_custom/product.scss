@@ -1,10 +1,12 @@
 .productView{
   padding-top: 0px;
   margin: 0 -15px;
+
   @media only screen and (max-width: 1023px) {
     margin: 0;
   }
-  .alertBox{
+
+  .alertBox {
     margin-left: 15px;
     margin-right: 15px;
     @media only screen and (max-width: 1023px) {
@@ -14,9 +16,11 @@
   }
 }
 
-.productView-details, .productView-images{
+.productView-details,
+.productView-images {
   padding-left: 15px;
   padding-right: 15px;
+
   @media only screen and (max-width: 1023px) {
     padding: 0px;
   }

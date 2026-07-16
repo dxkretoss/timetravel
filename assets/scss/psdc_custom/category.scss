@@ -44,7 +44,7 @@
       }
       .product{
         @media only screen and (max-width: 1279px) {
-          width: 33.33%;
+          width: 100%;
           padding-left: 10px;
           padding-right: 10px;
         }
@@ -60,7 +60,7 @@
   @include display-flex(flex);
   @include align-item(center);
   @include justify-content(space-between);
-  background: stencilColor("container-fill-dark");
+  // background: stencilColor("container-fill-dark");
   margin-bottom: 23px;
   @media only screen and (max-width: 1023px) {
     @include flex-wrap(wrap);
@@ -85,13 +85,36 @@
       }
   }
 
+  .bedge{
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    color:#B8975A;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .border-bottom{
+    max-width: 100px;
+    background-color: #B8975A;
+    height: 1.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .page-heading{
     font-size: 30px;
     line-height: 33px;
-    text-align: left;
+    text-align: center;
     padding: 0px;
     border: 0px;
     margin-bottom: 0px;
+    font-family:  "Cormorant Garamond", serif;
+    color:#2D2D2D;
+    font-weight: 700;
     @media only screen and (max-width: 1023px) {
       font-size: 26px;
       line-height: 29px;
@@ -104,9 +127,14 @@
     }
   }
   p{
-    color: $theme-primary-color;
+    color: #4A5568;
+    font-size: 16px;
     line-height: 20px;
     margin-bottom: 0px;
+    letter-spacing: 0.6px;
+    max-width: 682px;
+    margin: 0 auto;
+    text-align: center;
     + p{
       margin-top: 15px;
     }
@@ -506,14 +534,23 @@
 // sidebarBlock style End
 
 // sub-category-block style start
+
+.sub-category-wrap{
+  border: 1px solid #C8C0B4;
+}
 .sub-category-block{
   @include display-flex(flex);
   @include flex-wrap(wrap);
-  margin: 0 -10px;
-  margin-bottom: 34px;
-  @media only screen and (max-width: 1023px) {
-    margin-bottom: 25px;
-  }
+  padding: 30px;
+  gap: 20px;
+  background-color: #FFFFFFCC;
+  // margin: 0 -10px;
+  // margin-bottom: 34px;
+  margin-bottom: 0;
+  align-items: flex-start;
+  // @media only screen and (max-width: 1023px) {
+  //   margin-bottom: 25px;
+  // }
   &:before{
     display: none;
   }
@@ -521,8 +558,10 @@
     display: none;
   }
   .sub-category-item{
-    width: 16.5%;
-    padding: 0 10px;
+    // width: 16.5%;
+    padding: 0px;
+    max-width: 150px;
+    margin-bottom: 0;
     @media only screen and (max-width: 1279px) {
       width: 25%;
     }
@@ -534,7 +573,9 @@
     }
   }
   .sub-category-img{
-    height: 192px;
+    height: 120px;
+    width: 120px;
+    border-radius: 999px;
     @include display-flex(flex);
     @include align-item(center);
     @include justify-content(center);
@@ -547,11 +588,13 @@
     @include justify-content(center);
     @include flex-wrap(wrap);
     height: 100%;
+    flex-direction: column;
+    align-items: center;
     .sub-category-img-block{
-      width: 100%;
-      img{
-        width: 100%;
-      }
+      // width: 100%;
+      // img{
+      //   width: 100%;
+      // }
     }
   }
   .sub-category-name{
@@ -580,6 +623,9 @@
   h3{
     font-weight: 500;
     line-height: 32px;
+    font-family:  "Cormorant Garamond", serif;
+    color:#2D2D2D;
+    font-weight: 700;
     @media only screen and (max-width: 767px) {
       font-size: 22px;
       line-height: 30px;
@@ -681,6 +727,7 @@
   @include display-flex(flex);
   @include align-item(center);
   @include justify-content(space-between);
+  margin-top: 30px;
   margin-bottom: 30px;
   @media only screen and (max-width: 567px) {
     flex-flow: column;
@@ -700,7 +747,8 @@
     }
   }
   .filter-right{
-    width: 40%;
+    // width: 40%;
+    width: 100%;
     @include display-flex(flex);
     @include align-item(center);
     @include justify-content(flex-end);
@@ -786,7 +834,10 @@
   }
   .product{
     margin: 0px;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #FFFFFF66;
+    border:1px solid #C8C0B433;
     transition: all .4s;
     .card{
       margin: 0px;
