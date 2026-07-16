@@ -1,0 +1,147 @@
+---
+category:
+shop_by_price: true
+products:
+limit: {{ theme_settings.categorypage_products_per_page }}
+---
+
+{{inject "categoryProductsPerPage"
+theme_settings.categorypage_products_per_page}} {{#partial "head"}} {{#if
+pagination.category.previous}}
+<link rel="prev" href="{{pagination.category.previous}}" />
+{{/if}} {{#if pagination.category.next}}
+<link rel="next" href="{{pagination.category.next}}" />
+{{/if}} {{/partial}} {{#partial "page"}} {{!-- {{> components/common/breadcrumbs
+breadcrumbs=breadcrumbs}} --}}
+
+<div class="category-banner-section">
+  <div class="category-left-section {{#if banners.top}}visible-top-banner{{/if}}">
+    {{#unless theme_settings.hide_category_page_heading}} {{#if category.name}}
+    {{!-- Dynamic badge extracted from category description --}}
+    <span class="bedge" id="category-badge" style="display: none"></span>
+
+    <h1 class="page-heading">{{category.name}}</h1>
+    <div class="border-bottom"></div>
+
+    {{else}}
+
+    <h1 class="page-heading">Categories</h1>
+
+    {{/if}} {{{region name="category_below_header"}}} {{/unless}} {{!-- Category
+    description --}} {{#if category.description}}
+    <div id="category-description" class="page-heading-description">
+      {{{category.description}}}
+    </div>
+    {{/if}}
+  </div>
+
+  {{#if banners.top}}
+
+  <div class="banners category-right-section" data-banner-location="top">
+    {{#each (limit banners.top_metadata 1)}}
+
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}"
+      data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+      <div data-event-type="promotion-click">{{{this.content}}}</div>
+    </div>
+
+    {{/each}}
+  </div>
+
+  {{/if}}
+</div>
+
+<div class="page">
+  {{!-- Hide sidebar as per Figma design {{#if category.faceted_search_enabled}}
+
+  <aside class="page-sidebar">
+    {{> components/category/sidebar-custom-category}}
+
+    <div id="faceted-search-container">{{> components/category/sidebar}}</div>
+  </aside>
+
+  {{else if category.subcategories}}
+
+  <aside class="page-sidebar">
+    {{> components/category/sidebar-custom-category}}
+
+    <div id="faceted-search-container">{{> components/category/sidebar}}</div>
+  </aside>
+
+  {{else if category.shop_by_price}} {{#if
+  theme_settings.shop_by_price_visibility}}
+
+  <aside class="page-sidebar">
+    {{> components/category/sidebar-custom-category}}
+
+    <div id="faceted-search-container">{{> components/category/sidebar}}</div>
+  </aside>
+
+  {{/if}} {{/if}} --}}
+
+  <main class="page-content">
+    {{> components/category/sub-category-block}}
+
+    <div id="product-listing-container">
+      {{#if category.products}} {{> components/category/product-listing}}
+      {{else}}
+
+      <p>{{lang 'categories.no_products'}}</p>
+
+      {{/if}}
+    </div>
+
+    {{#if banners.bottom}}
+
+    <div class="banners m-t-30" data-banner-location="bottom">
+      <div class="banner">{{{limit banners.bottom 1}}}</div>
+    </div>
+
+    {{/if}} {{{region name="category_below_content"}}}
+  </main>
+</div>
+
+{{!-- Extract {{Badge}} from the category description --}}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var descriptionElement = document.getElementById("category-description");
+    var badgeElement = document.getElementById("category-badge");
+
+    if (!descriptionElement || !badgeElement) {
+      return;
+    }
+
+    var descriptionHTML = descriptionElement.innerHTML;
+
+    var openBraces = String.fromCharCode(123, 123);
+    var closeBraces = String.fromCharCode(125, 125);
+
+    var startIndex = descriptionHTML.indexOf(openBraces);
+    var endIndex = descriptionHTML.indexOf(
+      closeBraces,
+      startIndex + openBraces.length,
+    );
+
+    if (startIndex !== -1 && endIndex !== -1) {
+      var badgeText = descriptionHTML
+        .substring(startIndex + openBraces.length, endIndex)
+        .trim();
+
+      badgeElement.textContent = badgeText;
+      badgeElement.style.display = "";
+
+      var badgeValue = descriptionHTML.substring(
+        startIndex,
+        endIndex + closeBraces.length,
+      );
+
+      descriptionElement.innerHTML = descriptionHTML
+        .replace(badgeValue, "")
+        .trim();
+    } else {
+      badgeElement.style.display = "none";
+    }
+  });
+</script>
+
+{{/partial}} {{> layout/base}}
