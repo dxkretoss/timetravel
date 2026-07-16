@@ -5,8 +5,7 @@
   @media only screen and (max-width: 1023px) {
     margin: 0;
   }
-
-  .alertBox {
+  .alertBox{
     margin-left: 15px;
     margin-right: 15px;
     @media only screen and (max-width: 1023px) {
@@ -16,8 +15,7 @@
   }
 }
 
-.productView-details,
-.productView-images {
+.productView-details, .productView-images{
   padding-left: 15px;
   padding-right: 15px;
 
@@ -302,6 +300,7 @@
   margin-top: 0px;
   margin-bottom: 22px;
   line-height: normal;
+  
   @media only screen and (max-width: 767px) {
     font-size: 26px;
   }
@@ -842,7 +841,8 @@
 }
 
 .productView-description{
-  width: 100%;
+  // width: 100%;
+  width: 50%;
   margin-top: 25px;
   @media only screen and (max-width: 1023px) {
     padding: 0px;
@@ -855,40 +855,42 @@
 }
 
 .productView-description-inn{
-  border: $theme-border-color;
-  border-bottom: 0px;
+  // border: $theme-border-color;
+  // border-bottom: $theme-border-color;
   .toggle{
     border: 0px;
     margin: 0px;
   }
   .toggle-title{
     margin: 0px;
+    text-transform: uppercase;
     border-bottom: $theme-border-color;
     a{
       color: stencilColor("color-textHeading");
       font-size: 16px;
-      padding: 15px 40px;
-      font-weight: 400;
+      padding: 15px 0;
+      font-weight: 500;
       line-height: 20px;
       position: relative;
       @include display-flex(flex);
       @include align-item(center);
       @include justify-content(flex-start);
-      padding-left: 70px;
+      // padding-left: 30px;
       @media only screen and (max-width: 1023px) {
         padding: 13px 25px;
-        padding-left: 45px;
+        // padding-left: 45px;
       }
       @media only screen and (max-width: 767px) {
         padding: 13px 20px;
-        padding-left: 40px;
+        // padding-left: 40px;
       }
       @media only screen and (max-width: 567px) {
         padding: 13px 18px;
-        padding-left: 40px;
+        // padding-left: 40px;
       }
       &.is-open{
-        background: $card-backgrond-color;
+        // border-bottom: $theme-border-color;
+        // background: $card-backgrond-color;
         svg.toggle-down-arrow{
           transform: rotate(180deg);
         }
@@ -898,7 +900,7 @@
         height: 20px;
         margin-right: 10px;
         position: absolute;
-        left: 40px;
+        left: 0;
         top: 15px;
         fill: stencilColor("color-textHeading");
         @media only screen and (max-width: 1023px) {
@@ -929,8 +931,9 @@
     }
   }
   .toggle-content{
-    padding: 35px 40px;
+    padding: 35px 0;
     transition: all .5s ease-in-out;
+    
     @media only screen and (max-width: 1023px) {
       padding: 20px 25px;
     }
@@ -943,6 +946,8 @@
       line-height: 24px;
       color: $theme-primary-color;
       font-weight: 400;
+      color: #4A5568;
+      font-family: "DM Sans", sans-serif;
       + p{
         margin-top: 20px;
       }
