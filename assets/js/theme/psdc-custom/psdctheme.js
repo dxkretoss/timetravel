@@ -407,10 +407,23 @@ export default function () {
 
   //ajaxComplete start
   $(document).ajaxStop(function () {
-
     product_view();
+    hideEmptyParagraphs();
   });
   //ajaxComplete END
+
+  // Hide empty paragraphs
+  function hideEmptyParagraphs() {
+    document.querySelectorAll("p").forEach((p) => {
+      // Convert &nbsp; to normal spaces, then remove whitespace
+      if (p.textContent.replace(/\u00A0/g, " ").trim() === "") {
+          p.style.display = "none";
+      }
+    });
+  }
+
+  // Call it on page load
+  hideEmptyParagraphs();
 
 }
 /*eslint-enable*/

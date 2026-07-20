@@ -983,5 +983,8 @@ address span {
 
 .productView-options .form-field>.form-radio+.form-label {
     font-family: "DM Sans", sans-serif;
+}
 
+p:empty {
+    display: none;
 }
