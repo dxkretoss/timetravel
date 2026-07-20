@@ -845,3 +845,33 @@ address span {
 .productGrid .product {
     width: 100% !important;
 }
+
+.button.button--primary {
+    background-color: #B8975A;
+    border-color: #B8975A;
+    letter-spacing: 2.4px;
+}
+
+.login-row {
+    border: 1px solid #B8975A80;
+    background-color: #B8975A14;
+}
+
+.panel-body {
+    margin: 0;
+}
+
+.new-customer {
+    padding-right: 0;
+
+}
+
+.login-form {
+    padding: 20px;
+}
+
+.createaccount-row {
+    border: 1px solid #B8975A80;
+    padding: 20px;
+    background-color: #B8975A14;
+}
