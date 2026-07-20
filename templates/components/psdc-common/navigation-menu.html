@@ -76,10 +76,23 @@
         <li class="quick-links-dropdown-item">
           <a class="quick-links-dropdown-link" href="{{url}}">
             {{name}}
+            {{#if children}}
+            <svg class="chevron-down quick-links-chevron"><use xlink:href="#icon-chevron-down"></use></svg>
+            {{/if}}
           </a>
+          {{#if children}}
+          <ul class="quick-links-dropdown-sub">
+            {{#each children}}
+            <li class="quick-links-dropdown-subitem">
+              <a class="quick-links-dropdown-sublink" href="{{url}}">
+                {{name}}
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
         </li>
         {{/each}}
-
       </ul>
 
     </li>

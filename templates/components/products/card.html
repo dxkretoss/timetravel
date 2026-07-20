@@ -78,36 +78,6 @@
                 {{/if}}
                 --}}
                 <div class="card-mid-block">
-                    <div class="card-button-block">
-                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-                        {{#if show_cart_action}}
-                        {{#if has_options}}
-                        <a href="{{url}}" data-event-type="product-click"
-                            class="button button--small card-figcaption-button" data-product-id="{{id}}"><svg>
-                                <use xlink:href="#icon-choose-options"></use>
-                            </svg><span>{{lang 'products.choose_options'}}</span></a>
-                        {{/if}}
-                        {{#if pre_order}}
-                        <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click"
-                            class="button button--small card-figcaption-button"><svg>
-                                <use xlink:href="#icon-pre-order"></use>
-                            </svg><span>{{lang 'products.pre_order'}}</span></a>
-                        {{/if}}
-                        {{#if add_to_cart_url }}
-                        <a href="{{add_to_cart_url}}" data-event-type="product-click"
-                            class="button button--small card-figcaption-button"><svg>
-                                <use xlink:href="#icon-add-to-cart"></use>
-                            </svg><span>{{lang 'products.add_to_cart'}}</span></a>
-                        {{/if}}
-                        {{#if out_of_stock_message}}
-                        <a href="{{url}}" data-event-type="product-click"
-                            class="button button--small card-figcaption-button" data-product-id="{{id}}"><svg>
-                                <use xlink:href="#icon-out-of-stock"></use>
-                            </svg><span>{{out_of_stock_message}}</span></a>
-                        {{/if}}
-                        {{/if}}
-                        {{/or}}
-                    </div>
                     <h4 class="card-title">
                         <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click"
                             {{/if}}>{{name}}</a>
@@ -117,12 +87,45 @@
                 <div class="bottom-line"></div>
 
 
-                <div class="card-text price-block" data-test-info-type="price">
-                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-                    {{> components/psdc-common/price price=price}}
-                    {{else}}
-                    {{> components/common/login-for-pricing}}
-                    {{/or}}
+                <div class="price-button-wrap">
+                    <div class="card-text price-block" data-test-info-type="price">
+                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                        {{> components/psdc-common/price price=price}}
+                        {{else}}
+                        {{> components/common/login-for-pricing}}
+                        {{/or}}
+                    </div>
+                    
+                    <div class="card-button-block">
+                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                        {{#if show_cart_action}}
+                        {{#if has_options}}
+                        <a href="{{url}}" data-event-type="product-click"
+                            class="button button--small card-figcaption-button" data-product-id="{{id}}">
+                            <span>SHOP NOW ➔</span>
+                        </a>
+                        {{/if}}
+                        {{#if pre_order}}
+                        <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click"
+                            class="button button--small card-figcaption-button">
+                            <span>PRE-ORDER NOW ➔</span>
+                        </a>
+                        {{/if}}
+                        {{#if add_to_cart_url }}
+                        <a href="{{add_to_cart_url}}" data-event-type="product-click"
+                            class="button button--small card-figcaption-button">
+                            <span>SHOP NOW ➔</span>
+                        </a>
+                        {{/if}}
+                        {{#if out_of_stock_message}}
+                        <a href="{{url}}" data-event-type="product-click"
+                            class="button button--small card-figcaption-button" data-product-id="{{id}}">
+                            <span>{{out_of_stock_message}}</span>
+                        </a>
+                        {{/if}}
+                        {{/if}}
+                        {{/or}}
+                    </div>
                 </div>
 
 

@@ -15,6 +15,7 @@
 .card-figure {
     margin-top: $card-figure-marginTop;
     position: relative;
+
     &:hover {
 
         // scss-lint:disable NestingDepth
@@ -60,7 +61,7 @@
     font-size: $card-title-fontSize;
     margin: $card-title-margin;
 
-    > a {
+    >a {
         color: $card-title-color;
         text-decoration: $card-title-textDecoration;
 
@@ -91,7 +92,7 @@
         border: $card-figcaption-button-border;
     }
 
-    + .card-figcaption-button {
+    +.card-figcaption-button {
         margin: $card-figcaption-button-margin;
     }
 }
@@ -137,7 +138,7 @@
             }
         }
 
-        .card-title > a {
+        .card-title>a {
             color: stencilColor("card--alternate-color--hover");
         }
     }
