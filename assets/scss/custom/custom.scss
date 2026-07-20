@@ -988,3 +988,15 @@ address span {
 p:empty {
     display: none;
 }
+
+.account.account--fixed {
+    border: 1px solid #B8975A80;
+    padding: 20px;
+    background-color: #B8975A14;
+}
+
+.form-fieldset {
+    border: 1px solid #B8975A80;
+    padding: 20px;
+    background-color: #B8975A14;
+}

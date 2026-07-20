@@ -807,8 +807,8 @@
         color: #B8975A;
 
         svg {
-          fill: stencilColor("navPages-color-hover");
-          stroke: stencilColor("navPages-color-hover");
+          fill: stencilColor("navPages-color");
+          stroke: stencilColor("navPages-color");
         }
       }
     }
@@ -817,11 +817,11 @@
 
 .navUser-section>li:hover>a {
   opacity: 0.6;
-  color: stencilColor("navUser-color-hover");
+  color: stencilColor("navUser-color");
 
   svg {
-    fill: stencilColor("navUser-color-hover");
-    stroke: stencilColor("navUser-color-hover");
+    fill: stencilColor("navUser-color");
+    stroke: stencilColor("navUser-color");
   }
 }
 
@@ -868,7 +868,8 @@
             }
           }
 
-          &:hover, &.sfHover {
+          &:hover,
+          &.sfHover {
             >a {
               background: $theme-light-color;
 
