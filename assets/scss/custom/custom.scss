@@ -629,6 +629,20 @@ address span {
     grid-template-columns: repeat(3, 1fr);
 }
 
+/* Tablet */
+@media (max-width: 991px) {
+    .footer-mid-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .footer-mid-section {
+        grid-template-columns: 1fr;
+    }
+}
+
 .footer-mid-section .footer-info-col--social,
 .footer-mid-section .footer-info-col,
 .footer-info-col {
@@ -935,4 +949,39 @@ address span {
 
 .card-mid-block {
     justify-content: flex-start;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.card-title>a {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.price {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+}
+
+.socialLinks .icon svg {
+    fill: #B8975A;
+}
+
+.socialLinks .icon {
+
+    border: 1px solid #B8975A;
+    background-color: #B8975A33;
+}
+
+.share-block .form-label--alternate {
+    color: #1C2B3A;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.productView-options .form-field>.form-radio+.form-label {
+    font-family: "DM Sans", sans-serif;
+
 }

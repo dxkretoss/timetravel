@@ -10,7 +10,7 @@
   </div>
   {{/if}} {{#if category.subcategories}}
   <div class="sub-category-wrap">
-    <ul class="sub-category-block" {{#gt category.subcategories.length 6}}data-slick='{
+    <ul class="sub-category-block" data-slick='{
         "dots": false,
         "infinite": false,
         "mobileFirst": true,
@@ -39,7 +39,7 @@
                 }
             }
         ]
-    }'{{/gt}}>
+    }'>
       {{#each category.subcategories}}
       <li class="sub-category-item">
         <div class="category-image-inner">

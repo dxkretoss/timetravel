@@ -181,6 +181,10 @@
             {{/each}}
         </ul>
         {{/if}}
+
+        <div class="share-block">
+            <label class="form-label--alternate" for="">Share On</label> {{> components/common/share postURL=(encodeURI product.url)}}
+        </div>
     </section>
 
     <script>

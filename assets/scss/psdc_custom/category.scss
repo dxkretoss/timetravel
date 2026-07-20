@@ -672,6 +672,12 @@
   &.slick-slider {
     gap: 0;
 
+    .slick-track {
+      display: flex !important;
+      justify-content: flex-start !important;
+      margin-left: 0 !important;
+    }
+
     .slick-arrow {
       position: absolute;
       top: 50%;
