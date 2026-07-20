@@ -703,3 +703,145 @@ address span {
 .price-button-wrap .card-figcaption-button:hover .icon {
     fill: #ffffff;
 }
+
+.actionBar-section .form-field {
+    background: transparent;
+    border: none;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.actionBar-section .form-label {
+    color: #2D2D2D;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.actionBar-section .form-select {
+    background-color: transparent;
+    border: 1px solid #4A5568;
+    padding: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-input,
+.form-select {
+    background-color: transparent;
+    border: 1px solid #C8C0B4;
+}
+
+.productView-options .form-action .button {
+    background-color: #B8975A;
+    border: none;
+    letter-spacing: 2.4px;
+    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+
+}
+
+.form-radio+.form-label::before {
+    background-color: transparent;
+    border-color: #2D2D2D;
+}
+
+/* ==========================================
+   PRODUCT VIEW IMAGES LAYOUT CUSTOMIZATION
+========================================== */
+
+.productView-images {
+    flex-direction: column !important;
+}
+
+.productView-images .productView-image-main {
+    width: 100% !important;
+    order: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 20px;
+}
+
+.productView-images .productView-thumbnails {
+    width: 100% !important;
+    order: 1 !important;
+    display: block !important;
+}
+
+.productView-images .productView-thumbnails .productView-thumbnail {
+    width: auto !important;
+    margin-bottom: 0 !important;
+}
+
+.productView-images .productView-thumbnails .slick-slide {
+    margin-bottom: 0 !important;
+    padding: 0 5px;
+}
+
+.productView-images .productView-thumbnails .slick-list {
+    margin: 0 40px !important;
+}
+
+.productView-images .productView-thumbnails .slick-arrow {
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin-top: 0 !important;
+    bottom: auto !important;
+    z-index: 10;
+}
+
+.productView-images .productView-thumbnails .slick-prev {
+    left: 0 !important;
+}
+
+.productView-images .productView-thumbnails .slick-next {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.productView-images .productView-thumbnails .slick-arrow svg {
+    transform: none !important;
+}
+
+/* ==========================================
+   MAIN IMAGE NAV BUTTONS
+========================================== */
+
+.main-image-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #f7f5f0;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.main-image-nav:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-image-prev {
+    left: 20px;
+}
+
+.main-image-next {
+    right: 20px;
+}
+
+.main-image-nav .icon {
+    width: 14px;
+    height: 14px;
+    fill: #333333;
+}
+
+.productGrid .product {
+    width: 100% !important;
+}

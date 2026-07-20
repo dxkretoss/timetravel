@@ -30,7 +30,7 @@
         min-width: inherit;
     }
 
-    + .productView-thumbnails {
+    +.productView-thumbnails {
         margin-top: spacing("half");
     }
 
@@ -42,7 +42,7 @@
 .productView-img-container {
     position: relative;
     margin: auto;
-    max-width: get-width(stencilString('product_size'));
+    // max-width: get-width(stencilString('product_size'));
     width: 100%;
 
     img {
@@ -107,10 +107,11 @@
     width: 100%;
     box-sizing: content-box;
     justify-content: center;
-    @media screen and (max-width: 1023px){
+
+    @media screen and (max-width: 1023px) {
         padding: 2px;
     }
-    
+
     &:hover,
     &.is-active {
         border-color: color("greys", "darker");
@@ -201,7 +202,7 @@
     margin-left: spacing("half");
     vertical-align: middle;
 
-    + .productView-reviewLink {
+    +.productView-reviewLink {
         display: block;
         margin-left: auto;
 
@@ -211,7 +212,7 @@
         }
     }
 
-    > a {
+    >a {
         color: stencilColor("color-textSecondary");
 
         // scss-lint:disable NestingDepth
@@ -312,7 +313,7 @@
         margin-bottom: 2rem;
 
         // scss-lint:disable SelectorDepth, NestingDepth
-        > .form-checkbox + .form-label {
+        >.form-checkbox+.form-label {
             display: inline-block;
             margin-left: spacing("single");
             width: auto;
@@ -323,12 +324,12 @@
             }
         }
 
-        > .form-radio + .form-label {
+        >.form-radio+.form-label {
             text-align: justify;
             display: inline-block;
         }
 
-        > .form-label:nth-of-type(2) {
+        >.form-label:nth-of-type(2) {
             margin-left: 0;
         }
     }
@@ -377,7 +378,7 @@
 .productOptions-list-item {
     padding: $productOptions-list-item-padding;
 
-    + .productOptions-list-item {
+    +.productOptions-list-item {
         border-top: $productOptions-list-item-borderTop;
     }
 
