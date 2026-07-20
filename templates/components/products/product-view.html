@@ -1,3 +1,8 @@
+<div class="back-to-collection-btn">
+    <a href="javascript:history.back()">
+        <span class="arrow">&larr;</span> BACK TO COLLECTION
+    </a>
+</div>
 <div class="productView" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}"
     data-name="{{product.title}}"
     data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}"
@@ -16,6 +21,7 @@
 
     <section class="productView-images" data-image-gallery style="position: relative;">
 
+
         {{!--
         Note that these image sizes are coupled to image sizes used in /assets/js/theme/common/product-details.js
         for variant/rule image replacement
@@ -27,13 +33,17 @@
             <figure class="productView-image" data-image-gallery-main {{#if product.main_image}}
                 data-zoom-image="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size }}"
                 {{/if}} style="position: relative;">
-                
+
                 {{#if product.images.length '>' 1}}
                 <button class="main-image-nav main-image-prev" aria-label="Previous image">
-                    <svg class="icon"><use xlink:href="#icon-chevron-left"></use></svg>
+                    <svg class="icon">
+                        <use xlink:href="#icon-chevron-left"></use>
+                    </svg>
                 </button>
                 <button class="main-image-nav main-image-next" aria-label="Next image">
-                    <svg class="icon"><use xlink:href="#icon-chevron-right"></use></svg>
+                    <svg class="icon">
+                        <use xlink:href="#icon-chevron-right"></use>
+                    </svg>
                 </button>
                 {{/if}}
 
@@ -174,34 +184,34 @@
     </section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const prevBtn = document.querySelector('.main-image-prev');
             const nextBtn = document.querySelector('.main-image-next');
-            if(!prevBtn || !nextBtn) return;
-            
+            if (!prevBtn || !nextBtn) return;
+
             function changeImage(direction) {
                 const thumbnails = document.querySelectorAll('.productView-thumbnail-link');
-                if(thumbnails.length === 0) return;
+                if (thumbnails.length === 0) return;
                 let currentIndex = -1;
                 thumbnails.forEach((thumb, index) => {
-                    if(thumb.classList.contains('is-active')) {
+                    if (thumb.classList.contains('is-active')) {
                         currentIndex = index;
                     }
                 });
-                if(currentIndex === -1) currentIndex = 0;
-                
+                if (currentIndex === -1) currentIndex = 0;
+
                 let newIndex = currentIndex + direction;
                 if (newIndex < 0) newIndex = thumbnails.length - 1;
                 if (newIndex >= thumbnails.length) newIndex = 0;
-                
+
                 thumbnails[newIndex].click();
             }
-            
-            prevBtn.addEventListener('click', function(e) {
+
+            prevBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 changeImage(-1);
             });
-            nextBtn.addEventListener('click', function(e) {
+            nextBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 changeImage(1);
             });
