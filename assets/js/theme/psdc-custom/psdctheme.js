@@ -139,13 +139,21 @@ export default function () {
     });
 
     // Superfish Script Start
-    let speed = 0;
+    let delayTime = 1200; // Increased default delay to 1.2 seconds to give more time
     jQuery('.sf-menu').each(function () {
       if ($(this).attr('data-speed') != undefined && $(this).attr('data-speed') != '') {
-        speed = parseFloat($(this).attr('data-speed'));
+        let speedAttr = parseFloat($(this).attr('data-speed'));
+        // If they provided it in seconds (like 0.8), convert to ms. Otherwise use as is.
+        if (speedAttr < 10) {
+          delayTime = speedAttr * 1500; // Multiply by 1500 to give them slightly more time than 0.8s
+        } else {
+          delayTime = speedAttr;
+        }
       }
       jQuery(this).superfish({
-        delay: speed
+        delay: delayTime, // delay on mouseout
+        speed: 'fast',    // animation speed
+        speedOut: 'fast'
       });
     });
     // Superfish Script End

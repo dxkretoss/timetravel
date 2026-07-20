@@ -1624,10 +1624,24 @@ li.socialLinks-alt.facebook_like {
 }
 
 .sf-menu ul ul {
-  left: 100%;
-  right: auto;
-  top: 0;
-  transform: none;
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+  width: 100% !important;
+  border: none;
+  border-top: none !important;
+  background: transparent !important;
+}
+
+.sf-menu ul ul a {
+  padding-left: 30px !important;
+}
+
+.sf-menu ul ul ul a {
+  padding-left: 45px !important;
 }
 
 /*** DEMO SKIN ***/

@@ -835,7 +835,7 @@
 
         // position: relative;
         li {
-          padding: 0 5px;
+          padding: 0;
 
           a {
             font-size: 14px;
@@ -860,13 +860,21 @@
 
               &.chevron-down {
                 right: 8px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: transform 0.2s ease;
               }
             }
           }
 
-          &:hover {
+          &:hover, &.sfHover {
             >a {
               background: $theme-light-color;
+
+              svg.chevron-down {
+                transform: translateY(-50%) rotate(90deg);
+              }
 
               svg {
                 fill: $theme-primary-color;
