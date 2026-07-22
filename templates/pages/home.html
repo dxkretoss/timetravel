@@ -8,6 +8,7 @@ products:
         show_options: true
     top_sellers:
         limit: {{theme_settings.homepage_top_products_count}}
+        show_options: true
 carousel: {{theme_settings.homepage_show_carousel}}
 blog:
     recent_posts:
@@ -33,25 +34,52 @@ blog:
       </h1>
       <p class="tt-hero-desc">
         {{#if
-        theme_settings.tt_home_hero_desc}}{{{theme_settings.tt_home_hero_desc}}}{{else}}Time Traveler products are beautifully hand-finished planners, journals, and desktop instruments designed to capture your ambitions, appointments, and personal heritage with absolute clarity.{{/if}}
+        theme_settings.tt_home_hero_desc}}{{{theme_settings.tt_home_hero_desc}}}{{else}}Time
+        Traveler products are beautifully hand-finished planners, journals, and
+        desktop instruments designed to capture your ambitions, appointments,
+        and personal heritage with absolute clarity.{{/if}}
       </p>
       <div class="tt-hero-actions">
-        <a href="{{#if theme_settings.tt_home_hero_btn_explore_link}}{{theme_settings.tt_home_hero_btn_explore_link}}{{else}}#shop-section{{/if}}" class="tt-hero-btn tt-hero-btn-primary">
-          {{#if theme_settings.tt_home_hero_btn_explore}}{{theme_settings.tt_home_hero_btn_explore}}{{else}}EXPLORE DIARIES{{/if}}
+        <a
+          href="{{#if theme_settings.tt_home_hero_btn_explore_link}}{{theme_settings.tt_home_hero_btn_explore_link}}{{else}}#shop-section{{/if}}"
+          class="tt-hero-btn tt-hero-btn-primary"
+        >
+          {{#if
+          theme_settings.tt_home_hero_btn_explore}}{{theme_settings.tt_home_hero_btn_explore}}{{else}}EXPLORE
+          DIARIES{{/if}}
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
-        <a href="{{#if theme_settings.tt_home_hero_btn2_link}}{{theme_settings.tt_home_hero_btn2_link}}{{else}}/corporate-custom-gifts/{{/if}}" class="tt-hero-btn tt-hero-btn-secondary">
-          {{#if theme_settings.tt_home_hero_btn2}}{{theme_settings.tt_home_hero_btn2}}{{else}}CUSTOM CORPORATE PROGRAMS{{/if}}
+        <a
+          href="{{#if theme_settings.tt_home_hero_btn2_link}}{{theme_settings.tt_home_hero_btn2_link}}{{else}}/corporate-custom-gifts/{{/if}}"
+          class="tt-hero-btn tt-hero-btn-secondary"
+        >
+          {{#if
+          theme_settings.tt_home_hero_btn2}}{{theme_settings.tt_home_hero_btn2}}{{else}}CUSTOM
+          CORPORATE PROGRAMS{{/if}}
         </a>
       </div>
     </div>
     <div class="tt-hero-image-wrapper">
       <div class="tt-hero-image-frame">
+        {{#if theme_settings.tt_home_hero_image_url}}
+        <img
+          src="{{theme_settings.tt_home_hero_image_url}}"
+          alt="Hero Product"
+        />
+        {{else}}
         <img src="{{cdn 'img/herobook.svg'}}" alt="2027 Diary" />
+        {{/if}}
       </div>
       <div class="tt-hero-badge">
-        <span class="badge-top">THE 2027</span>
-        <span class="badge-bottom">Collection</span>
+        <span class="badge-top"
+          >{{#if
+          theme_settings.tt_home_hero_badge_top}}{{theme_settings.tt_home_hero_badge_top}}{{else}}THE
+          2027{{/if}}</span
+        >
+        <span class="badge-bottom"
+          >{{#if
+          theme_settings.tt_home_hero_badge_bottom}}{{theme_settings.tt_home_hero_badge_bottom}}{{else}}Collection{{/if}}</span
+        >
       </div>
     </div>
   </div>
@@ -91,7 +119,10 @@ blog:
           Handcrafted archival stationery and luxury custom journals. {{/if}}
         </p>
         <a href="{{url}}" class="tt-collection-card-link"
-          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+          >{{#if
+          theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW
+          COLLECTION{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
         ></a>
       </div>
     </div>
@@ -103,10 +134,14 @@ blog:
       <div class="tt-collection-card-content">
         <h3 class="tt-collection-card-title">Executive Desk Diaries</h3>
         <p class="tt-collection-card-desc">
-          Generous layouts tailored with 1-hour schedules on exquisite laid paper.
+          Generous layouts tailored with 1-hour schedules on exquisite laid
+          paper.
         </p>
         <a href="#" class="tt-collection-card-link"
-          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+          >{{#if
+          theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW
+          COLLECTION{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
         ></a>
       </div>
     </div>
@@ -119,26 +154,31 @@ blog:
       <div class="tt-collection-card-content">
         <h3 class="tt-collection-card-title">Daily One Day Per Page Diaries</h3>
         <p class="tt-collection-card-desc">
-          Daily One Day Per Page Diary 416 Pages half-hour schedules from 8AM - 7PM.
+          Daily One Day Per Page Diary 416 Pages half-hour schedules from 8AM -
+          7PM.
         </p>
         <a href="#" class="tt-collection-card-link"
-          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+          >{{#if
+          theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW
+          COLLECTION{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
         ></a>
       </div>
     </div>
     <div class="tt-collection-card">
-      <img
-        src="{{cdn 'img/collection_3.png'}}"
-        alt="Weekly Diaries"
-      />
+      <img src="{{cdn 'img/collection_3.png'}}" alt="Weekly Diaries" />
       <div class="tt-collection-card-overlay"></div>
       <div class="tt-collection-card-content">
         <h3 class="tt-collection-card-title">Weekly Diaries</h3>
         <p class="tt-collection-card-desc">
-          A clear week layout to organize appointments, priorities, and goals easily.
+          A clear week layout to organize appointments, priorities, and goals
+          easily.
         </p>
         <a href="#" class="tt-collection-card-link"
-          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+          >{{#if
+          theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW
+          COLLECTION{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
         ></a>
       </div>
     </div>
@@ -148,10 +188,14 @@ blog:
       <div class="tt-collection-card-content">
         <h3 class="tt-collection-card-title">Pocket Diaries</h3>
         <p class="tt-collection-card-desc">
-          Compact, lightweight planners to keep your schedule close wherever you go.
+          Compact, lightweight planners to keep your schedule close wherever you
+          go.
         </p>
         <a href="#" class="tt-collection-card-link"
-          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+          >{{#if
+          theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW
+          COLLECTION{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
         ></a>
       </div>
     </div>
@@ -160,11 +204,12 @@ blog:
       <div class="tt-collection-card-overlay"></div>
       <div class="tt-collection-card-content">
         <h3 class="tt-collection-card-title">Lined Writing Journals</h3>
-        <p class="tt-collection-card-desc">
-          Premium Vegan leather Journal
-        </p>
+        <p class="tt-collection-card-desc">Premium Vegan leather Journal</p>
         <a href="#" class="tt-collection-card-link"
-          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+          >{{#if
+          theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW
+          COLLECTION{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
         ></a>
       </div>
     </div>
@@ -177,10 +222,14 @@ blog:
       <div class="tt-collection-card-content">
         <h3 class="tt-collection-card-title">Book Bands & Pen Holders</h3>
         <p class="tt-collection-card-desc">
-          Elegant accessories keep your notebook closed and your favorite pen within reach.
+          Elegant accessories keep your notebook closed and your favorite pen
+          within reach.
         </p>
         <a href="#" class="tt-collection-card-link"
-          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+          >{{#if
+          theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW
+          COLLECTION{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
         ></a>
       </div>
     </div>
@@ -210,10 +259,15 @@ blog:
         <i class="fa-solid fa-wand-magic-sparkles"></i>
       </div>
       <h3 class="tt-features-box-title">
-        {{#if theme_settings.tt_feature_1_title}}{{theme_settings.tt_feature_1_title}}{{else}}Hand Finished in USA{{/if}}
+        {{#if
+        theme_settings.tt_feature_1_title}}{{theme_settings.tt_feature_1_title}}{{else}}Hand
+        Finished in USA{{/if}}
       </h3>
       <p class="tt-features-box-desc">
-        {{#if theme_settings.tt_feature_1_desc}}{{theme_settings.tt_feature_1_desc}}{{else}}Each notebook cover, diary corner, and ribbon marker are handassembled and polished in our USA studio.{{/if}}
+        {{#if
+        theme_settings.tt_feature_1_desc}}{{theme_settings.tt_feature_1_desc}}{{else}}Each
+        notebook cover, diary corner, and ribbon marker are handassembled and
+        polished in our USA studio.{{/if}}
       </p>
     </div>
     <!-- Box 2 (Highlight) -->
@@ -222,10 +276,14 @@ blog:
         <i class="fa-solid fa-shield"></i>
       </div>
       <h3 class="tt-features-box-title">
-        {{#if theme_settings.tt_feature_2_title}}{{theme_settings.tt_feature_2_title}}{{else}}Premium Quality Materials{{/if}}
+        {{#if
+        theme_settings.tt_feature_2_title}}{{theme_settings.tt_feature_2_title}}{{else}}Premium
+        Quality Materials{{/if}}
       </h3>
       <p class="tt-features-box-desc">
-        {{#if theme_settings.tt_feature_2_desc}}{{theme_settings.tt_feature_2_desc}}{{else}}Made from premium materials that age beautifully over years of use.{{/if}}
+        {{#if
+        theme_settings.tt_feature_2_desc}}{{theme_settings.tt_feature_2_desc}}{{else}}Made
+        from premium materials that age beautifully over years of use.{{/if}}
       </p>
     </div>
     <!-- Box 3 -->
@@ -234,10 +292,14 @@ blog:
         <i class="fa-solid fa-pen-nib"></i>
       </div>
       <h3 class="tt-features-box-title">
-        {{#if theme_settings.tt_feature_3_title}}{{theme_settings.tt_feature_3_title}}{{else}}Personalized Individuality{{/if}}
+        {{#if
+        theme_settings.tt_feature_3_title}}{{theme_settings.tt_feature_3_title}}{{else}}Personalized
+        Individuality{{/if}}
       </h3>
       <p class="tt-features-box-desc">
-        {{#if theme_settings.tt_feature_3_desc}}{{theme_settings.tt_feature_3_desc}}{{else}}Personalization is key. Our engravers use heat foils to deboss initials or names.{{/if}}
+        {{#if
+        theme_settings.tt_feature_3_desc}}{{theme_settings.tt_feature_3_desc}}{{else}}Personalization
+        is key. Our engravers use heat foils to deboss initials or names.{{/if}}
       </p>
     </div>
     <!-- Box 4 -->
@@ -246,10 +308,15 @@ blog:
         <i class="fa-solid fa-leaf"></i>
       </div>
       <h3 class="tt-features-box-title">
-        {{#if theme_settings.tt_feature_4_title}}{{theme_settings.tt_feature_4_title}}{{else}}Built For The Journey{{/if}}
+        {{#if
+        theme_settings.tt_feature_4_title}}{{theme_settings.tt_feature_4_title}}{{else}}Built
+        For The Journey{{/if}}
       </h3>
       <p class="tt-features-box-desc">
-        {{#if theme_settings.tt_feature_4_desc}}{{theme_settings.tt_feature_4_desc}}{{else}}Crafted with premium Smyth-sewn blocks, ink-resistant paper, and dual ribbon markers.{{/if}}
+        {{#if
+        theme_settings.tt_feature_4_desc}}{{theme_settings.tt_feature_4_desc}}{{else}}Crafted
+        with premium Smyth-sewn blocks, ink-resistant paper, and dual ribbon
+        markers.{{/if}}
       </p>
     </div>
   </div>
@@ -279,7 +346,7 @@ blog:
     >
   </div>
   <div class="tt-shop-grid">
-    {{#each (limit products.new 4)}}
+    {{#each (limit products.top_sellers 4)}}
     <div class="tt-shop-card" data-product-id="{{id}}">
       <div
         class="tt-shop-image-wrapper"
@@ -297,7 +364,7 @@ blog:
           >{{name}}</a
         >
       </h3>
-      <div class="tt-shop-swatches"></div>
+      <div class="tt-shop-swatches" data-product-id="{{id}}"></div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">
           {{#if price.with_tax}} {{price.with_tax.formatted}} {{else if
@@ -313,97 +380,233 @@ blog:
     {{else}}
     <!-- Fallback products when store featured products are empty -->
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-sovereign-2027-daily-planner/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-journal-firenze-vegan-leather-with-leaf/'
+        "
+        style="cursor: pointer"
+      >
         <img
           src="{{cdn 'img/prod_1.png'}}"
           alt="The Sovereign 2027 Daily Planner"
         />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/the-sovereign-2027-daily-planner/" style="color: inherit; text-decoration: none;">The Sovereign 2027 Daily Planner</a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          style="color: inherit; text-decoration: none"
+          >The Sovereign 2027 Daily Planner</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
-        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #273729"></a>
-        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #8c4a2f"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #273729"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #4a2121"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$54.00</span>
-        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
     </div>
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-architect-weekly-journal/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-journal-firenze-vegan-leather-with-faith/'
+        "
+        style="cursor: pointer"
+      >
         <img
           src="{{cdn 'img/prod_2.png'}}"
           alt="The Architect Weekly Journal"
         />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/the-architect-weekly-journal/" style="color: inherit; text-decoration: none;">The Architect Weekly Journal</a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          style="color: inherit; text-decoration: none"
+          >The Architect Weekly Journal</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
-        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #273729"></a>
-        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #8c4a2f"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #273729"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #4a2121"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$48.00</span>
-        <a href="/the-architect-weekly-journal/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
     </div>
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-heritage-leather-notebook/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-journal-firenze-vegan-leather-with-elephant/'
+        "
+        style="cursor: pointer"
+      >
         <img
           src="{{cdn 'img/prod_3.png'}}"
           alt="The Heritage Leather Notebook"
         />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/the-heritage-leather-notebook/" style="color: inherit; text-decoration: none;">The Heritage Leather Notebook</a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          style="color: inherit; text-decoration: none"
+          >The Heritage Leather Notebook</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
-        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #273729"></a>
-        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #8c4a2f"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #273729"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #4a2121"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$62.00</span>
-        <a href="/the-heritage-leather-notebook/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
     </div>
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-executive-desk-companion/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/'
+        "
+        style="cursor: pointer"
+      >
         <img
           src="{{cdn 'img/prod_4.png'}}"
           alt="The Executive Desk Companion"
         />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/the-executive-desk-companion/" style="color: inherit; text-decoration: none;">The Executive Desk Companion</a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          style="color: inherit; text-decoration: none"
+          >The Executive Desk Companion</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
-        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #273729"></a>
-        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #8c4a2f"
+        ></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #273729"
+        ></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #4a2121"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$42.00</span>
-        <a href="/the-executive-desk-companion/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
@@ -523,7 +726,7 @@ blog:
           >{{name}}</a
         >
       </h3>
-      <div class="tt-shop-swatches"></div>
+      <div class="tt-shop-swatches" data-product-id="{{id}}"></div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">
           {{#if price.with_tax}} {{price.with_tax.formatted}} {{else if
@@ -539,81 +742,201 @@ blog:
     {{else}}
     <!-- Fallback trending products when products.new is empty -->
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-journal-firenze-vegan-leather-with-leaf/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-journal-firenze-vegan-leather-with-leaf/'
+        "
+        style="cursor: pointer"
+      >
         <img src="{{cdn 'img/prod_5.png'}}" alt="The Monarch Gilded Journal" />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" style="color: inherit; text-decoration: none;">The Monarch Gilded Journal</a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          style="color: inherit; text-decoration: none"
+          >The Monarch Gilded Journal</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #9a2b22"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-swatch"
+          style="background-color: #b8975a"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$58.00</span>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-leaf/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
     </div>
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-journal-firenze-vegan-leather-with-faith/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-journal-firenze-vegan-leather-with-faith/'
+        "
+        style="cursor: pointer"
+      >
         <img src="{{cdn 'img/prod_6.png'}}" alt="The Minimalist Grid Planner" />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" style="color: inherit; text-decoration: none;">The Minimalist Grid Planner</a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          style="color: inherit; text-decoration: none"
+          >The Minimalist Grid Planner</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #9a2b22"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-swatch"
+          style="background-color: #b8975a"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$38.00</span>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-faith/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
     </div>
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-journal-firenze-vegan-leather-with-elephant/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-journal-firenze-vegan-leather-with-elephant/'
+        "
+        style="cursor: pointer"
+      >
         <img src="{{cdn 'img/prod_7.png'}}" alt="The Ambassador Folio Set" />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" style="color: inherit; text-decoration: none;">The Ambassador Folio Set</a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          style="color: inherit; text-decoration: none"
+          >The Ambassador Folio Set</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #9a2b22"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-swatch"
+          style="background-color: #b8975a"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$78.00</span>
-        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-journal-firenze-vegan-leather-with-elephant/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
     </div>
     <div class="tt-shop-card">
-      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/'" style="cursor: pointer;">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="
+          window.location.href =
+            '/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/'
+        "
+        style="cursor: pointer"
+      >
         <img src="{{cdn 'img/prod_8.png'}}" alt="The Travel Log Edition" />
       </div>
       <h3 class="tt-shop-card-title">
-        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" style="color: inherit; text-decoration: none;">The Travel Log Edition</a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          style="color: inherit; text-decoration: none"
+          >The Travel Log Edition</a
+        >
       </h3>
       <div class="tt-shop-swatches">
-        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
-        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #9a2b22"
+        ></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #2e3d42"
+        ></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #1e2b3a"
+        ></a>
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-swatch"
+          style="background-color: #b8975a"
+        ></a>
       </div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">$46.00</span>
-        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-link">SHOP NOW
+        <a
+          href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/"
+          class="tt-shop-link"
+          >SHOP NOW
           <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
         </a>
       </div>
@@ -716,110 +1039,6 @@ blog:
         d.classList.toggle("active", idx === activeIndex);
       });
     });
-
-    
-    // Fetch live color swatches dynamically via BigCommerce Storefront GraphQL API
-    (function() {
-      const cardsWithId = document.querySelectorAll('.tt-shop-card[data-product-id]');
-      const productIds = Array.from(cardsWithId)
-        .map(card => parseInt(card.getAttribute('data-product-id'), 10))
-        .filter(id => !isNaN(id));
-
-      if (productIds.length === 0) return;
-
-      const token = "{{settings.storefront_api.token}}";
-      if (!token) {
-        console.warn("Storefront API token is not available for dynamic swatches.");
-        return;
-      }
-
-      const query = `
-        query getProductSwatches($ids: [Int!]) {
-          site {
-            products(entityIds: $ids) {
-              edges {
-                node {
-                  entityId
-                  productOptions(first: 5) {
-                    edges {
-                      node {
-                        displayName
-                        ... on MultipleChoiceOption {
-                          values {
-                            edges {
-                              node {
-                                label
-                                isSelected
-                                ... on SwatchOptionValue {
-                                  hexColors
-                                  imageUrl(width: 24)
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      `;
-
-      fetch('/graphql', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token
-        },
-        body: JSON.stringify({
-          query: query,
-          variables: { ids: productIds }
-        })
-      })
-      .then(res => res.json())
-      .then(data => {
-        const products = data?.data?.site?.products?.edges || [];
-        products.forEach(edge => {
-          const productNode = edge.node;
-          const productId = productNode.entityId;
-          const colorOption = productNode.productOptions.edges.find(optEdge => {
-            const name = optEdge.node.displayName.toLowerCase();
-            return name === 'color' || name === 'colour';
-          });
-
-          if (colorOption) {
-            const swatchValues = colorOption.node.values.edges.map(valEdge => valEdge.node);
-            const card = document.querySelector(`.tt-shop-card[data-product-id="${productId}"]`);
-            if (card) {
-              const swatchContainer = card.querySelector('.tt-shop-swatches');
-              if (swatchContainer && swatchValues.length > 0) {
-                swatchContainer.innerHTML = ''; // Clear hardcoded/fallback dummy swatches
-                swatchValues.forEach(val => {
-                  const swatchLink = document.createElement('a');
-                  swatchLink.className = 'tt-shop-swatch';
-                  swatchLink.title = val.label;
-                  swatchLink.href = card.querySelector('.tt-shop-card-title a').getAttribute('href');
-                  
-                  if (val.imageUrl) {
-                    swatchLink.style.backgroundImage = `url('${val.imageUrl}')`;
-                    swatchLink.style.backgroundSize = 'cover';
-                  } else if (val.hexColors && val.hexColors.length > 0) {
-                    swatchLink.style.backgroundColor = val.hexColors[0];
-                  }
-                  swatchLink.style.border = '1px solid rgba(0,0,0,0.15)';
-                  swatchContainer.appendChild(swatchLink);
-                });
-              }
-            }
-          }
-        });
-      })
-      .catch(err => console.error("Error loading dynamic product swatches:", err));
-    })();
-
   });
 </script>
 {{/partial}} {{> layout/base}}

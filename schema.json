@@ -704,6 +704,25 @@
       },
       {
         "type": "heading",
+        "content": "Hero Image & Badge"
+      },
+      {
+        "type": "input",
+        "label": "Hero Product Image URL (leave blank for default)",
+        "id": "tt_home_hero_image_url"
+      },
+      {
+        "type": "input",
+        "label": "Hero Badge Top Text",
+        "id": "tt_home_hero_badge_top"
+      },
+      {
+        "type": "input",
+        "label": "Hero Badge Bottom Text",
+        "id": "tt_home_hero_badge_bottom"
+      },
+      {
+        "type": "heading",
         "content": "Collection Section"
       },
       {
