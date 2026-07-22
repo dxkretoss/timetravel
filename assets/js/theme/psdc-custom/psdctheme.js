@@ -158,6 +158,27 @@ export default function () {
     });
     // Superfish Script End
 
+    // Highlight active navigation items based on current URL
+    const currentUrl = window.location.pathname;
+    jQuery('.navPages-list .navPages-action').each(function() {
+      const href = jQuery(this).attr('href');
+      if (href && href !== '#' && href !== 'javascript:void(0);') {
+        if (currentUrl === href || (href !== '/' && currentUrl.startsWith(href))) {
+          jQuery(this).addClass('active');
+        }
+      }
+    });
+
+    // Handle categories pages (since URL can contain /categories or /products/)
+    if (currentUrl.includes('/categories') || currentUrl.includes('/products/')) {
+      jQuery('.categories-menu > .navPages-action').addClass('active');
+    }
+
+    // Highlight parent menu items for active sub-links
+    jQuery('.navPages-list .active').each(function() {
+      jQuery(this).closest('.navPages-item').find('> .navPages-action').addClass('active');
+    });
+
     /* ============== sticky menu =============== */
     let headerHeight = $('header').height();
     let scrollElement = false;

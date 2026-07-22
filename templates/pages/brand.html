@@ -31,9 +31,11 @@ breadcrumbs=breadcrumbs}} --}}
 {{{region name="brand_below_header"}}}
 
 <div class="page">
+  {{!--
   <aside class="page-sidebar brand-sidebar" id="faceted-search-container">
     {{> components/brand/sidebar}}
   </aside>
+  --}}
   <main class="page-content" id="product-listing-container">
     {{#if brand.products}} {{> components/brand/product-listing}} {{else}}
     <p class="m-t-20">{{lang 'brands.no_products'}}</p>
