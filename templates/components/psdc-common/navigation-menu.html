@@ -77,9 +77,9 @@
           <a class="quick-links-dropdown-link" href="{{url}}">
             {{name}}
             {{#if children}}
-            <svg class="chevron-down quick-links-chevron">
+            <span class="toggle-submenu"><svg class="chevron-down quick-links-chevron">
               <use xlink:href="#icon-chevron-down"></use>
-            </svg>
+            </svg></span>
             {{/if}}
           </a>
           {{#if children}}
@@ -149,8 +149,8 @@
   // intercepts clicks on .navPages-action and prevents default/stops propagation.
   (function() {
     document.addEventListener('click', function(e) {
-      // Check if click is inside our categories dropdown links
-      var actionLink = e.target.closest('.categories-dropdown .navPages-action');
+      // Check if click is inside our dropdown links
+      var actionLink = e.target.closest('.categories-dropdown .navPages-action, .quick-links-dropdown .quick-links-dropdown-link');
       if (!actionLink) return;
 
       // Check if they specifically clicked the toggle button
@@ -194,8 +194,8 @@
 
     // Close when clicking outside
     document.addEventListener('click', function (e) {
-      if (!e.target.closest('.categories-dropdown')) {
-        var openItems = document.querySelectorAll('.categories-dropdown li.is-open');
+      if (!e.target.closest('.categories-dropdown') && !e.target.closest('.quick-links-dropdown')) {
+        var openItems = document.querySelectorAll('.categories-dropdown li.is-open, .quick-links-dropdown li.is-open');
         for (var i = 0; i < openItems.length; i++) {
           openItems[i].classList.remove('is-open');
         }

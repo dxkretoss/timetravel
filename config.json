@@ -1,6 +1,6 @@
 {
   "name": "Time Traveler",
-  "version": "1.5.6",
+  "version": "1.6.1",
   "custom_views": {
     "brand": [],
     "category": [],
@@ -426,6 +426,9 @@
     "tt_home_hero_btn2": "CUSTOM CORPORATE PROGRAMS",
     "tt_home_hero_btn2_link": "/corporate-custom-gifts/",
     "tt_home_collection_card_btn": "VIEW COLLECTION",
+    "tt_home_hero_image_url": "",
+    "tt_home_hero_badge_top": "THE 2027",
+    "tt_home_hero_badge_bottom": "Collection",
     "tt_shop_1_btn": "VIEW SHOP",
     "tt_shop_2_btn": "VIEW SHOP",
     "tt_cta_btn_link": "/shop/",

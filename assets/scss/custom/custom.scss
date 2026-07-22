@@ -211,7 +211,8 @@ address span {
     position: relative;
 
     .categories-dropdown {
-        display: block !important; /* prevent Superfish slideUp from hiding it */
+        display: block !important;
+        /* prevent Superfish slideUp from hiding it */
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -247,7 +248,7 @@ address span {
 
     // Override Superfish hover for inner items completely
     .categories-dropdown {
-        li > ul {
+        li>ul {
             display: none !important;
             height: auto !important;
             visibility: visible !important;
@@ -255,7 +256,7 @@ address span {
             overflow: visible !important;
         }
 
-        li.is-open > ul {
+        li.is-open>ul {
             display: block !important;
         }
 
@@ -370,6 +371,7 @@ address span {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     width: 100%;
     padding: 8px 22px;
 
@@ -387,14 +389,32 @@ address span {
     &:hover {
         color: #B8975A;
     }
-}
 
-.quick-links-chevron {
-    width: 12px;
-    height: 12px;
-    fill: currentColor;
-    margin-left: 10px;
-    opacity: 0.7;
+    .toggle-submenu {
+        position: absolute !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 10 !important; // Sit above the link
+        -webkit-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+        
+        svg.quick-links-chevron {
+            width: 14px !important; // Increased chevron size
+            height: 14px !important;
+            margin-left: 0 !important;
+            opacity: 0.7;
+            -webkit-transform: none !important;
+            -ms-transform: none !important;
+            transform: none !important;
+        }
+    }
 }
 
 /* Sub-dropdown */
@@ -402,7 +422,29 @@ address span {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: none !important; // override any superfish defaults
 }
+
+// Override Superfish hover for inner items completely
+.quick-links-dropdown {
+    li:hover > ul.quick-links-dropdown-sub,
+    li.sfHover > ul.quick-links-dropdown-sub {
+        display: none !important;
+    }
+    
+    li.is-open > ul.quick-links-dropdown-sub {
+        display: block !important;
+    }
+}
+
+.quick-links-dropdown-item.is-open {
+    .toggle-submenu svg.quick-links-chevron {
+        -webkit-transform: rotate(180deg) !important;
+        -ms-transform: rotate(180deg) !important;
+        transform: rotate(180deg) !important;
+    }
+}
+
 
 .quick-links-dropdown-sublink {
     display: block;
@@ -1542,6 +1584,13 @@ p:empty {
 }
 
 .category-banner-section p {
-    font-weight: 500 !important;
+    font-weight: 400 !important;
+    font-family: 'DM', sans-serif !important;
+    color: #4A5568;
+    max-width: 682px;
+}
+
+.category-banner-section p span strong {
+    font-weight: 400 !important;
     font-family: 'DM', sans-serif !important;
 }
