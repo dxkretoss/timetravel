@@ -142,3 +142,64 @@
       {{/if}}
   </ul>
 </nav>
+
+<script>
+  // Add click handler for the submenu arrows directly in the template.
+  // We use the event CAPTURE phase (true) because Stencil's built-in JS
+  // intercepts clicks on .navPages-action and prevents default/stops propagation.
+  (function() {
+    document.addEventListener('click', function(e) {
+      // Check if click is inside our categories dropdown links
+      var actionLink = e.target.closest('.categories-dropdown .navPages-action');
+      if (!actionLink) return;
+
+      // Check if they specifically clicked the toggle button
+      var toggleBtn = e.target.closest('.toggle-submenu');
+      
+      if (toggleBtn) {
+        // They clicked the chevron! Open the submenu.
+        e.preventDefault();
+        e.stopPropagation(); // Stop Stencil from seeing this click
+        
+        var parentLi = toggleBtn.closest('li');
+        var subMenu = parentLi.querySelector('ul');
+        
+        if (subMenu) {
+          var isOpen = parentLi.classList.contains('is-open');
+
+          // Close siblings
+          var siblings = parentLi.parentElement.children;
+          for (var i = 0; i < siblings.length; i++) {
+            siblings[i].classList.remove('is-open');
+          }
+
+          // Toggle current
+          if (!isOpen) {
+            parentLi.classList.add('is-open');
+          } else {
+            parentLi.classList.remove('is-open');
+          }
+        }
+      } else {
+        // They clicked the text!
+        // Stencil blocks normal navigation here, so we manually navigate.
+        var href = actionLink.getAttribute('href');
+        if (href && href !== '#' && href !== '') {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = href;
+        }
+      }
+    }, true); // TRUE = capture phase (fires before Stencil)
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.categories-dropdown')) {
+        var openItems = document.querySelectorAll('.categories-dropdown li.is-open');
+        for (var i = 0; i < openItems.length; i++) {
+          openItems[i].classList.remove('is-open');
+        }
+      }
+    });
+  })();
+</script>

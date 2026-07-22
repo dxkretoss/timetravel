@@ -5,11 +5,17 @@
       <section class="footer-info">
         {{#if settings.address}}
         <article class="footer-info-col footer-info-col--small footer-store-info" data-section-type="storeInfo">
-          {{#if theme_settings.footer-logo}}
           <div class="footer-logo">
-            <a href="/"><img src="/product_images/uploaded_images/{{theme_settings.footer-logo}}" alt=""></a>
+            <a href="/">
+              {{#if theme_settings.footer-logo}}
+              <img src="/product_images/uploaded_images/{{theme_settings.footer-logo}}" alt="Footer Logo">
+              {{else}}
+              <img
+                src="https://cdn11.bigcommerce.com/s-479sw6st/images/stencil/original/image-manager/group-1000005709-1-.png?t=1784719559"
+                alt="Footer Logo">
+              {{/if}}
+            </a>
           </div>
-          {{/if}}
           {{#if settings.address}}
           <p><svg>
               <use xlink:href="#icon-location"></use>
