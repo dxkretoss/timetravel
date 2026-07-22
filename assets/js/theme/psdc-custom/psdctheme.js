@@ -179,6 +179,27 @@ export default function () {
       jQuery(this).closest('.navPages-item').find('> .navPages-action').addClass('active');
     });
 
+    // Sidebar category dropdown click toggle on desktop
+    jQuery(document).on('click', '.filter-left .sidebarBlock-heading', function(e) {
+      if (window.innerWidth >= 1024) {
+        e.preventDefault();
+        e.stopPropagation();
+        const $sidebarBlock = jQuery(this).parent();
+        const $heading = jQuery(this);
+        const $list = $sidebarBlock.find('.navList-treeview');
+
+        $list.toggleClass('is-open');
+        $heading.toggleClass('is-open');
+      }
+    });
+
+    // Close categories dropdown when clicking outside
+    jQuery(document).on('click', function(e) {
+      if (!jQuery(e.target).closest('.filter-left .sidebarBlock').length) {
+        jQuery('.filter-left .sidebarBlock-heading, .filter-left .navList-treeview').removeClass('is-open');
+      }
+    });
+
     /* ============== sticky menu =============== */
     let headerHeight = $('header').height();
     let scrollElement = false;

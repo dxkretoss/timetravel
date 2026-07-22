@@ -241,10 +241,10 @@ address span {
 /* ==========================================
    NAVIGATION ACTIVE / HOVER STATES UNDERLINE
    ========================================== */
-.navPages-list > li {
+.navPages-list>li {
     position: relative;
 
-    > .navPages-action {
+    >.navPages-action {
         position: relative !important;
 
         &::after {
@@ -276,7 +276,7 @@ address span {
 
     &:hover,
     &.sfHover {
-        > .navPages-action {
+        >.navPages-action {
             color: #B8975A !important;
             opacity: 1 !important;
 
@@ -1096,4 +1096,388 @@ p:empty {
 
 .filter-left.m-t20 {
     margin-top: 20px;
+}
+
+
+/* ==========================================
+   HORIZONTAL FILTERS LAYOUT (DESKTOP)
+   ========================================== */
+@media only screen and (min-width: 1024px) {
+    .actionBar-main {
+        border-top: 1px solid #C8C0B466 !important;
+        border-bottom: 1px solid #C8C0B466 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 20px;
+    }
+
+    .actionBar-main .filter-left#faceted-search-container {
+        width: auto !important;
+        flex-grow: 1;
+        padding: 12px 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px;
+        flex-wrap: wrap;
+
+        &::before {
+            content: "Filter";
+            font-family: "Cormorant Garamond", serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #1C2B3A;
+            margin-right: 5px;
+        }
+    }
+
+    .actionBar-main .filter-right {
+        width: auto !important;
+        border: 0 !important;
+        padding: 12px 0 !important;
+        margin: 0 !important;
+    }
+
+    // Style the Categories Dropdown inside filter-left
+    .filter-left#faceted-search-container {
+        .sidebarBlock {
+            position: relative;
+            margin: 0 !important;
+            border: 0 !important;
+            padding: 0 !important;
+
+            .sidebarBlock-heading {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                gap: 10px;
+                padding: 8px !important;
+                border: 1px solid #C8C0B4 !important;
+                background-color: transparent !important;
+                cursor: pointer;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                position: relative;
+                min-width: 120px;
+                line-height: normal;
+                font-family: "Cormorant Garamond", serif;
+                font-size: 18px;
+                font-weight: 500;
+                color: #1C2B3A;
+                text-transform: capitalize;
+                margin: 0;
+
+                &:hover,
+                &.is-open {
+                    border-color: #B8975A !important;
+                    background-color: #F7F4EF !important;
+                }
+
+                .accordion-navigation-actions {
+                    position: static !important;
+                    margin: 0 !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    top: auto !important;
+                    right: auto !important;
+                    transform: none !important;
+
+                    .down,
+                    .up {
+                        width: 10px !important;
+                        height: 10px !important;
+                        margin: 0 !important;
+                        fill: #1C2B3A !important;
+                        display: inline-block !important;
+                    }
+
+                    .up {
+                        display: none !important;
+                    }
+                }
+
+                &.is-open {
+                    .accordion-navigation-actions {
+                        .down {
+                            display: none !important;
+                        }
+
+                        .up {
+                            display: inline-block !important;
+                        }
+                    }
+                }
+            }
+
+            .navList-treeview {
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                z-index: 9999 !important;
+                min-width: 220px;
+                max-height: 300px;
+                overflow-y: auto;
+                margin-top: 5px !important;
+                padding: 15px !important;
+                background-color: #FFF !important;
+                border: 1px solid #C8C0B4 !important;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important;
+                list-style: none;
+                margin-left: 0 !important;
+                display: none;
+
+                &.is-open {
+                    display: block !important;
+                }
+
+                .navList-item {
+                    margin: 6px 0;
+                    padding: 0 !important;
+                    border: 0 !important;
+                    width: 100% !important;
+
+                    a {
+                        font-family: "DM Sans", sans-serif;
+                        font-size: 14px;
+                        color: #1C2B3A;
+                        text-decoration: none;
+                        display: block;
+
+                        &:hover {
+                            color: #B8975A;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Hide mobile/collapsible toggles for desktop horizontal layout
+    .facetedSearch-toggle {
+        display: none !important;
+    }
+
+    .facetedSearch.sidebarBlock {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+    }
+
+    .facetedSearch-navList {
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    .accordion--navList {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        align-items: center !important;
+        gap: 15px;
+        border: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &::before {
+            display: none !important;
+        }
+
+        // Each individual facet dropdown box
+        .accordion-block {
+            position: relative;
+            margin: 0 !important;
+            border: 0 !important;
+        }
+
+        // Dropdown toggle button styling
+        .accordion-navigation {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 10px;
+            padding: 8px 16px !important;
+            border: 1px solid #C8C0B4 !important;
+            background-color: transparent !important;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+            min-width: 120px;
+
+            &:hover,
+            &.is-open {
+                border-color: #B8975A !important;
+                background-color: #F7F4EF !important;
+            }
+
+            .accordion-title {
+                font-family: "DM Sans", sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: #1C2B3A;
+                text-transform: capitalize;
+                margin: 0;
+            }
+
+            .accordion-navigation-actions {
+                position: static !important;
+                margin: 0 !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                top: auto !important;
+                right: auto !important;
+                transform: none !important;
+
+                .accordion-indicator {
+                    width: 10px !important;
+                    height: 10px !important;
+                    margin: 0 !important;
+                    fill: #1C2B3A !important;
+                    display: inline-block !important;
+                }
+
+                .facetedSearch-clearLink {
+                    font-size: 11px;
+                    color: #B8975A;
+                    text-decoration: underline;
+                    margin-right: 8px;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: #1C2B3A;
+                    }
+                }
+            }
+        }
+
+        // Dropdown content panel
+        .accordion-content {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            z-index: 9999 !important;
+            min-width: 220px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 5px !important;
+            padding: 15px !important;
+            background-color: #FFF !important;
+            border: 1px solid #C8C0B4 !important;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important;
+            display: none;
+
+            &.is-open {
+                display: block !important;
+            }
+
+            // Adjust form field price range inside dropdown
+            .form-minMaxRow {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .form-field {
+                    margin: 0;
+                    width: 100%;
+                }
+
+                .form-input {
+                    width: 100% !important;
+                    padding: 8px 12px;
+                    border: 1px solid #C8C0B4;
+                    font-size: 14px;
+                }
+
+                .button {
+                    width: 100% !important;
+                    padding: 8px 12px;
+                    margin: 0;
+                    font-size: 14px;
+                }
+            }
+
+            .form-inlineMessage {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+
+            .form-fieldset {
+                border: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+        }
+    }
+
+    // Selected facet active bubbles row style
+    .facetedSearch-refineFilters.sidebarBlock {
+        width: 100% !important;
+        margin: 15px 0 0 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .sidebarBlock-heading {
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            color: #666 !important;
+            margin: 0 !important;
+            text-transform: uppercase;
+        }
+
+        .inlineList--labels {
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            li {
+                margin: 0 !important;
+            }
+
+            .facetLabel {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 4px 10px;
+                background-color: #F7F4EF;
+                border: 1px solid #C8C0B4;
+                border-radius: 4px;
+                font-size: 13px;
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    border-color: #B8975A;
+                    color: #B8975A;
+                }
+
+                svg {
+                    width: 10px;
+                    height: 10px;
+                    fill: currentColor;
+                }
+            }
+        }
+
+        // Clear all link
+        >a[data-faceted-search-facet] {
+            font-size: 13px;
+            color: #B8975A;
+            text-decoration: underline;
+            font-weight: 500;
+
+            &:hover {
+                color: #1C2B3A;
+            }
+        }
+    }
 }

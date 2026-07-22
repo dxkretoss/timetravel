@@ -1,16 +1,8 @@
 <div class="actionBar-main">
-  <!-- <div class="filter-left">
-      {{#lt pagination.category.end category.total_products }}
-      <div class="pagination-count">{{pagination.category.end}} of {{category.total_products}} Items</div>
-      {{else}}
-      {{#if pagination.category.start}}
-      <div class="pagination-count">{{category.total_products}} of {{category.total_products}} Items</div>
-      {{else}}
-      <div class="pagination-count">{{category.total_products}} of {{category.total_products}} Items</div>
-      {{/if}}
-      {{/lt}}
-      {{> components/common/paginator pagination.category}}
-    </div> -->
+  <div class="filter-left" id="faceted-search-container">
+    {{> components/category/sidebar-custom-category}}
+    {{> components/category/sidebar}}
+  </div>
 
   <div class="filter-right">
     <!-- <div class="product-view-button">

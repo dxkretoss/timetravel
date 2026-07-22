@@ -1,8 +1,8 @@
 ---
 category:
-shop_by_price: true
-products:
-limit: {{ theme_settings.categorypage_products_per_page }}
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
 ---
 
 {{inject "categoryProductsPerPage"
@@ -52,7 +52,8 @@ breadcrumbs=breadcrumbs}} --}}
 </div>
 
 <div class="page">
-  {{!-- Hide sidebar as per Figma design {{#if category.faceted_search_enabled}}
+  {{!-- Hide sidebar as per Figma design
+  {{#if category.faceted_search_enabled}}
 
   <aside class="page-sidebar">
     {{> components/category/sidebar-custom-category}}
@@ -77,7 +78,8 @@ breadcrumbs=breadcrumbs}} --}}
     <div id="faceted-search-container">{{> components/category/sidebar}}</div>
   </aside>
 
-  {{/if}} {{/if}} --}}
+  {{/if}} {{/if}}
+  --}}
 
   <main class="page-content">
     {{> components/category/sub-category-block}}
