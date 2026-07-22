@@ -297,6 +297,7 @@ blog:
           >{{name}}</a
         >
       </h3>
+      <div class="tt-shop-swatches"></div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">
           {{#if price.with_tax}} {{price.with_tax.formatted}} {{else if
@@ -522,26 +523,7 @@ blog:
           >{{name}}</a
         >
       </h3>
-      <div class="tt-shop-swatches">
-        {{#if options}}
-          {{#each options}}
-            {{#or (if display_name '===' 'Color') (if display_name '===' 'Colour')}}
-              {{#each values}}
-                {{#if image}}
-                  <a href="{{../../url}}?attribute[{{../id}}]={{id}}" class="tt-shop-swatch" style="background-image: url('{{getImage image 'core-swatch'}}'); border: 1px solid rgba(0,0,0,0.15);" title="{{label}}"></a>
-                {{else}}
-                  <a href="{{../../url}}?attribute[{{../id}}]={{id}}" class="tt-shop-swatch" style="background-color: {{data.[0]}}; border: 1px solid rgba(0,0,0,0.15);" title="{{label}}"></a>
-                {{/if}}
-              {{/each}}
-            {{/or}}
-          {{/each}}
-        {{else}}
-          <a href="/shop/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
-          <a href="/shop/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
-          <a href="/shop/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
-          <a href="/shop/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
-        {{/if}}
-      </div>
+      <div class="tt-shop-swatches"></div>
       <div class="tt-shop-card-footer">
         <span class="tt-shop-price">
           {{#if price.with_tax}} {{price.with_tax.formatted}} {{else if
