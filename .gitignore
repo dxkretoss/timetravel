@@ -1,0 +1,8 @@
+node_modules/
+.cache/
+*.zip
+.git/
+assets/dist/report.html
+secrets.stencil.json
+.DS_Store
+Thumbs.db

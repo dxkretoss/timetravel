@@ -2,8 +2,10 @@
 products:
     new:
         limit: {{theme_settings.homepage_new_products_count}}
+        show_options: true
     featured:
         limit: {{theme_settings.homepage_featured_products_count}}
+        show_options: true
     top_sellers:
         limit: {{theme_settings.homepage_top_products_count}}
 carousel: {{theme_settings.homepage_show_carousel}}
@@ -11,84 +13,831 @@ blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
 ---
-{{#partial "hero"}}
-    {{{region name="home_below_menu"}}}
-    {{#if carousel}}
-        {{> components/psdc-common/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
-    {{/if}}
-    {{{region name="home_below_carousel"}}}
-{{/partial}}
 
-{{#partial "page"}}
+{{#partial "hero"}} {{{region name="home_below_header"}}}
 
-    {{#each shipping_messages}}
-        {{> components/common/alert-info message}}
-    {{/each}}
-
-<div class="main full">
-
-  <!-- Home Top Banner -->
-  {{#if banners.top}}
-  <div class="banners" data-banner-location="top">
-      {{#each (limit banners.top_metadata 1)}}
-      <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
-          <div data-event-type="promotion-click">
-              {{{this.content}}}
-          </div>
+<!-- Hero Section HTML -->
+<section class="tt-hero">
+  <div class="tt-hero-glow"></div>
+  <div class="tt-hero-container">
+    <div class="tt-hero-content">
+      <span class="tt-hero-subtitle">
+        <span style="font-size: 10px; color: #b8975a">♦</span> {{#if
+        theme_settings.tt_home_hero_subtitle}}{{theme_settings.tt_home_hero_subtitle}}{{else}}LUXURY
+        STATIONERY & ACCESSORIES{{/if}}
+      </span>
+      <h1 class="tt-hero-title">
+        {{#if
+        theme_settings.tt_home_hero_title}}{{{theme_settings.tt_home_hero_title}}}{{else}}Refined
+        Tools for a<br /><em>Life Well Organized</em>{{/if}}
+      </h1>
+      <p class="tt-hero-desc">
+        {{#if
+        theme_settings.tt_home_hero_desc}}{{{theme_settings.tt_home_hero_desc}}}{{else}}Time Traveler products are beautifully hand-finished planners, journals, and desktop instruments designed to capture your ambitions, appointments, and personal heritage with absolute clarity.{{/if}}
+      </p>
+      <div class="tt-hero-actions">
+        <a href="{{#if theme_settings.tt_home_hero_btn_explore_link}}{{theme_settings.tt_home_hero_btn_explore_link}}{{else}}#shop-section{{/if}}" class="tt-hero-btn tt-hero-btn-primary">
+          {{#if theme_settings.tt_home_hero_btn_explore}}{{theme_settings.tt_home_hero_btn_explore}}{{else}}EXPLORE DIARIES{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+        <a href="{{#if theme_settings.tt_home_hero_btn2_link}}{{theme_settings.tt_home_hero_btn2_link}}{{else}}/corporate-custom-gifts/{{/if}}" class="tt-hero-btn tt-hero-btn-secondary">
+          {{#if theme_settings.tt_home_hero_btn2}}{{theme_settings.tt_home_hero_btn2}}{{else}}CUSTOM CORPORATE PROGRAMS{{/if}}
+        </a>
       </div>
-      {{/each}}
-  </div>
-  {{/if}}
-
-  <!-- Home promotional banner Section -->
-  {{> components/psdc-common/home-promotional-banner}}
-
-  <!-- Product Section -->
-    <!-- Featured Product Section -->
-    {{#if products.featured}}
-      <div class="product-section m-b-40">
-          {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-      </div>
-    {{/if}}
-    {{{region name="home_below_featured_products"}}}
-    <!-- Top Product Section -->
-    {{#if products.top_sellers}}
-      <div class="product-section m-b-40">
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-      </div>
-    {{/if}}
-    {{{region name="home_below_top_products"}}}
-    <!-- New Product Section -->
-    {{#if products.new}}
-      <div class="product-section m-b-40">
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-      </div>
-    {{/if}}
-    {{{region name="home_below_new_products"}}}
-    <!-- Blog Post Section -->
-    {{#if settings.blog_enabled}}
-        {{> components/psdc-common/home-blog-section }}
-    {{/if}}
-
-    {{#if theme_settings.show_product_reviews_tabs}}
-    {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
-  {{/if}}
-
-  <!-- Home Bottom Banner -->
-    <div class="banners home-bottom-banner m-b-40" data-banner-location="bottom">
-      {{#each (limit banners.bottom_metadata 1)}}
-          <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
-              <div data-event-type="promotion-click">
-                  {{{this.content}}}
-              </div>
-          </div>
-      {{/each}}
     </div>
-    <!-- Instagram Section -->
-    {{#if theme_settings.show_instaram}}
-        {{> components/psdc-common/instagram }}
-    {{/if}}
+    <div class="tt-hero-image-wrapper">
+      <div class="tt-hero-image-frame">
+        <img src="{{cdn 'img/herobook.svg'}}" alt="2027 Diary" />
+      </div>
+      <div class="tt-hero-badge">
+        <span class="badge-top">THE 2027</span>
+        <span class="badge-bottom">Collection</span>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Collection Section HTML -->
+<section class="tt-collection">
+  <div class="tt-collection-header">
+    <span class="tt-collection-subtitle"
+      >{{#if
+      theme_settings.tt_home_collection_subtitle}}{{theme_settings.tt_home_collection_subtitle}}{{else}}FINE
+      CURATIONS{{/if}}</span
+    >
+    <h2 class="tt-collection-title">
+      {{#if
+      theme_settings.tt_home_collection_title}}{{theme_settings.tt_home_collection_title}}{{else}}Explore
+      Our Collection{{/if}}
+    </h2>
+    <div class="tt-collection-divider"></div>
+  </div>
+  <div class="tt-collection-grid">
+    {{#each (limit categories 6)}}
+    <div class="tt-collection-card">
+      {{#if image}}
+      <img src="{{getImage image 'category_card_size'}}" alt="{{name}}" />
+      {{else}}
+      <img src="{{cdn 'img/collection_1.png'}}" alt="{{name}}" />
+      {{/if}}
+      <div class="tt-collection-card-overlay"></div>
+      <div class="tt-collection-card-content">
+        <h3 class="tt-collection-card-title">{{name}}</h3>
+        <p class="tt-collection-card-desc">
+          {{#if description}} {{#if (isobject description)}} {{#if
+          theme_settings.tt_home_collection_desc}}{{{theme_settings.tt_home_collection_desc}}}{{else}}Handcrafted
+          archival stationery and luxury custom journals.{{/if}} {{else}}
+          {{{ellipsis (strip_tags description) 120}}} {{/if}} {{else}}
+          Handcrafted archival stationery and luxury custom journals. {{/if}}
+        </p>
+        <a href="{{url}}" class="tt-collection-card-link"
+          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+        ></a>
+      </div>
+    </div>
+    {{else}}
+    <!-- Fallback collections when store categories are empty -->
+    <div class="tt-collection-card">
+      <img src="{{cdn 'img/collection_1.png'}}" alt="Executive Desk Diaries" />
+      <div class="tt-collection-card-overlay"></div>
+      <div class="tt-collection-card-content">
+        <h3 class="tt-collection-card-title">Executive Desk Diaries</h3>
+        <p class="tt-collection-card-desc">
+          Generous layouts tailored with 1-hour schedules on exquisite laid paper.
+        </p>
+        <a href="#" class="tt-collection-card-link"
+          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+        ></a>
+      </div>
+    </div>
+    <div class="tt-collection-card">
+      <img
+        src="{{cdn 'img/collection_2.png'}}"
+        alt="Daily One Day Per Page Diaries"
+      />
+      <div class="tt-collection-card-overlay"></div>
+      <div class="tt-collection-card-content">
+        <h3 class="tt-collection-card-title">Daily One Day Per Page Diaries</h3>
+        <p class="tt-collection-card-desc">
+          Daily One Day Per Page Diary 416 Pages half-hour schedules from 8AM - 7PM.
+        </p>
+        <a href="#" class="tt-collection-card-link"
+          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+        ></a>
+      </div>
+    </div>
+    <div class="tt-collection-card">
+      <img
+        src="{{cdn 'img/collection_3.png'}}"
+        alt="Weekly Diaries"
+      />
+      <div class="tt-collection-card-overlay"></div>
+      <div class="tt-collection-card-content">
+        <h3 class="tt-collection-card-title">Weekly Diaries</h3>
+        <p class="tt-collection-card-desc">
+          A clear week layout to organize appointments, priorities, and goals easily.
+        </p>
+        <a href="#" class="tt-collection-card-link"
+          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+        ></a>
+      </div>
+    </div>
+    <div class="tt-collection-card">
+      <img src="{{cdn 'img/collection_4.png'}}" alt="Pocket Diaries" />
+      <div class="tt-collection-card-overlay"></div>
+      <div class="tt-collection-card-content">
+        <h3 class="tt-collection-card-title">Pocket Diaries</h3>
+        <p class="tt-collection-card-desc">
+          Compact, lightweight planners to keep your schedule close wherever you go.
+        </p>
+        <a href="#" class="tt-collection-card-link"
+          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+        ></a>
+      </div>
+    </div>
+    <div class="tt-collection-card">
+      <img src="{{cdn 'img/collection_5.png'}}" alt="Lined Writing Journals" />
+      <div class="tt-collection-card-overlay"></div>
+      <div class="tt-collection-card-content">
+        <h3 class="tt-collection-card-title">Lined Writing Journals</h3>
+        <p class="tt-collection-card-desc">
+          Premium Vegan leather Journal
+        </p>
+        <a href="#" class="tt-collection-card-link"
+          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+        ></a>
+      </div>
+    </div>
+    <div class="tt-collection-card">
+      <img
+        src="{{cdn 'img/collection_6.png'}}"
+        alt="Book Bands & Pen Holders"
+      />
+      <div class="tt-collection-card-overlay"></div>
+      <div class="tt-collection-card-content">
+        <h3 class="tt-collection-card-title">Book Bands & Pen Holders</h3>
+        <p class="tt-collection-card-desc">
+          Elegant accessories keep your notebook closed and your favorite pen within reach.
+        </p>
+        <a href="#" class="tt-collection-card-link"
+          >{{#if theme_settings.tt_home_collection_card_btn}}{{theme_settings.tt_home_collection_card_btn}}{{else}}VIEW COLLECTION{{/if}} <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i
+        ></a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
+
+<!-- Features Section HTML -->
+<section class="tt-features">
+  <div class="tt-features-header">
+    <span class="tt-features-subtitle"
+      >{{#if
+      theme_settings.tt_home_features_subtitle}}{{theme_settings.tt_home_features_subtitle}}{{else}}THE
+      TIME TRAVELER MANDATE{{/if}}</span
+    >
+    <h2 class="tt-features-title">
+      {{#if
+      theme_settings.tt_home_features_title}}{{theme_settings.tt_home_features_title}}{{else}}Why
+      Choose Time Traveler{{/if}}
+    </h2>
+    <div class="tt-features-divider"></div>
+  </div>
+  <div class="tt-features-grid">
+    <!-- Box 1 -->
+    <div class="tt-features-box">
+      <div class="tt-features-icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+      <h3 class="tt-features-box-title">
+        {{#if theme_settings.tt_feature_1_title}}{{theme_settings.tt_feature_1_title}}{{else}}Hand Finished in USA{{/if}}
+      </h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_feature_1_desc}}{{theme_settings.tt_feature_1_desc}}{{else}}Each notebook cover, diary corner, and ribbon marker are handassembled and polished in our USA studio.{{/if}}
+      </p>
+    </div>
+    <!-- Box 2 (Highlight) -->
+    <div class="tt-features-box highlight">
+      <div class="tt-features-icon">
+        <i class="fa-solid fa-shield"></i>
+      </div>
+      <h3 class="tt-features-box-title">
+        {{#if theme_settings.tt_feature_2_title}}{{theme_settings.tt_feature_2_title}}{{else}}Premium Quality Materials{{/if}}
+      </h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_feature_2_desc}}{{theme_settings.tt_feature_2_desc}}{{else}}Made from premium materials that age beautifully over years of use.{{/if}}
+      </p>
+    </div>
+    <!-- Box 3 -->
+    <div class="tt-features-box">
+      <div class="tt-features-icon">
+        <i class="fa-solid fa-pen-nib"></i>
+      </div>
+      <h3 class="tt-features-box-title">
+        {{#if theme_settings.tt_feature_3_title}}{{theme_settings.tt_feature_3_title}}{{else}}Personalized Individuality{{/if}}
+      </h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_feature_3_desc}}{{theme_settings.tt_feature_3_desc}}{{else}}Personalization is key. Our engravers use heat foils to deboss initials or names.{{/if}}
+      </p>
+    </div>
+    <!-- Box 4 -->
+    <div class="tt-features-box">
+      <div class="tt-features-icon">
+        <i class="fa-solid fa-leaf"></i>
+      </div>
+      <h3 class="tt-features-box-title">
+        {{#if theme_settings.tt_feature_4_title}}{{theme_settings.tt_feature_4_title}}{{else}}Built For The Journey{{/if}}
+      </h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_feature_4_desc}}{{theme_settings.tt_feature_4_desc}}{{else}}Crafted with premium Smyth-sewn blocks, ink-resistant paper, and dual ribbon markers.{{/if}}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Shop Section HTML -->
+<section class="tt-shop" id="shop-section">
+  <div class="tt-shop-header">
+    <div class="tt-shop-header-left">
+      <span class="tt-shop-subtitle"
+        >{{#if
+        theme_settings.tt_shop_1_subtitle}}{{theme_settings.tt_shop_1_subtitle}}{{else}}REDESIGNED
+        BEST SELLERS{{/if}}</span
+      >
+      <h2 class="tt-shop-title">
+        {{#if
+        theme_settings.tt_shop_1_title}}{{theme_settings.tt_shop_1_title}}{{else}}The
+        2027 Diaries Collection{{/if}}
+      </h2>
+    </div>
+    <a
+      href="{{#if theme_settings.tt_shop_1_btn_link}}{{theme_settings.tt_shop_1_btn_link}}{{else}}#{{/if}}"
+      class="tt-shop-view-all"
+      >{{#if
+      theme_settings.tt_shop_1_btn_text}}{{theme_settings.tt_shop_1_btn_text}}{{else}}VIEW
+      SHOP{{/if}}</a
+    >
+  </div>
+  <div class="tt-shop-grid">
+    {{#each (limit products.new 4)}}
+    <div class="tt-shop-card" data-product-id="{{id}}">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="window.location.href='{{url}}'"
+        style="cursor: pointer"
+      >
+        {{#if image}}
+        <img src="{{getImage image 'product_size'}}" alt="{{name}}" />
+        {{else}}
+        <img src="{{cdn 'img/prod_1.png'}}" alt="{{name}}" />
+        {{/if}}
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="{{url}}" style="color: inherit; text-decoration: none"
+          >{{name}}</a
+        >
+      </h3>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">
+          {{#if price.with_tax}} {{price.with_tax.formatted}} {{else if
+          price.without_tax}} {{price.without_tax.formatted}} {{else}} $48.00
+          {{/if}}
+        </span>
+        <a href="{{url}}" class="tt-shop-link"
+          >SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    {{else}}
+    <!-- Fallback products when store featured products are empty -->
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-sovereign-2027-daily-planner/'" style="cursor: pointer;">
+        <img
+          src="{{cdn 'img/prod_1.png'}}"
+          alt="The Sovereign 2027 Daily Planner"
+        />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/the-sovereign-2027-daily-planner/" style="color: inherit; text-decoration: none;">The Sovereign 2027 Daily Planner</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
+        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #273729"></a>
+        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$54.00</span>
+        <a href="/the-sovereign-2027-daily-planner/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-architect-weekly-journal/'" style="cursor: pointer;">
+        <img
+          src="{{cdn 'img/prod_2.png'}}"
+          alt="The Architect Weekly Journal"
+        />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/the-architect-weekly-journal/" style="color: inherit; text-decoration: none;">The Architect Weekly Journal</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
+        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #273729"></a>
+        <a href="/the-architect-weekly-journal/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$48.00</span>
+        <a href="/the-architect-weekly-journal/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-heritage-leather-notebook/'" style="cursor: pointer;">
+        <img
+          src="{{cdn 'img/prod_3.png'}}"
+          alt="The Heritage Leather Notebook"
+        />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/the-heritage-leather-notebook/" style="color: inherit; text-decoration: none;">The Heritage Leather Notebook</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
+        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #273729"></a>
+        <a href="/the-heritage-leather-notebook/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$62.00</span>
+        <a href="/the-heritage-leather-notebook/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/the-executive-desk-companion/'" style="cursor: pointer;">
+        <img
+          src="{{cdn 'img/prod_4.png'}}"
+          alt="The Executive Desk Companion"
+        />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/the-executive-desk-companion/" style="color: inherit; text-decoration: none;">The Executive Desk Companion</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #8c4a2f"></a>
+        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #273729"></a>
+        <a href="/the-executive-desk-companion/" class="tt-shop-swatch" style="background-color: #4a2121"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$42.00</span>
+        <a href="/the-executive-desk-companion/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
+
+<!-- Custom Products Section HTML -->
+<section class="tt-custom">
+  <div class="tt-custom-container">
+    <div class="tt-custom-content">
+      <span class="tt-custom-subtitle">
+        <i class="fa-solid fa-gift"></i> {{#if
+        theme_settings.tt_corp_showcase_subtitle}}{{theme_settings.tt_corp_showcase_subtitle}}{{else}}CORPORATE
+        CUSTOM PRODUCTS{{/if}}
+      </span>
+      <h2 class="tt-custom-title">
+        {{#if
+        theme_settings.tt_corp_showcase_title}}{{theme_settings.tt_corp_showcase_title}}{{else}}Custom
+        Corporate Products,{{/if}}
+      </h2>
+      <h2 class="tt-custom-title-italic">
+        {{#if
+        theme_settings.tt_corp_showcase_title_italic}}{{theme_settings.tt_corp_showcase_title_italic}}{{else}}Beautifully
+        Branded{{/if}}
+      </h2>
+
+      <p class="tt-custom-desc">
+        {{#if
+        theme_settings.tt_corp_showcase_desc}}{{{theme_settings.tt_corp_showcase_desc}}}{{else}}Create
+        an unforgettable physical touchpoint for your clients, advisors, or
+        executive officers. Time Traveler provides custom blind embossing,
+        gold-foil lettering, company logo integration, and custom card
+        insertions for bulk commissions.{{/if}}
+      </p>
+
+      <div class="tt-custom-bullets">
+        <div class="tt-custom-bullet">
+          {{#if
+          theme_settings.tt_corp_bullet_1}}{{theme_settings.tt_corp_bullet_1}}{{else}}LOGO
+          EMBOSSING{{/if}}
+        </div>
+        <div class="tt-custom-bullet">
+          {{#if
+          theme_settings.tt_corp_bullet_2}}{{theme_settings.tt_corp_bullet_2}}{{else}}EXECUTIVE
+          GIFT KITS{{/if}}
+        </div>
+        <div class="tt-custom-bullet">
+          {{#if
+          theme_settings.tt_corp_bullet_3}}{{theme_settings.tt_corp_bullet_3}}{{else}}CUSTOM
+          SPINE DETAILS{{/if}}
+        </div>
+        <div class="tt-custom-bullet">
+          {{#if
+          theme_settings.tt_corp_bullet_4}}{{theme_settings.tt_corp_bullet_4}}{{else}}BULK
+          PRICING TIER{{/if}}
+        </div>
+      </div>
+
+      <a
+        href="{{#if theme_settings.tt_corp_showcase_btn_link}}{{theme_settings.tt_corp_showcase_btn_link}}{{else}}/corporate-custom-gifts/{{/if}}"
+        class="tt-custom-btn"
+        >{{#if
+        theme_settings.tt_corp_showcase_btn}}{{theme_settings.tt_corp_showcase_btn}}{{else}}CONFIGURE
+        B2B REQUEST{{/if}}</a
+      >
+    </div>
+    <div class="tt-custom-image-wrapper">
+      <img
+        src="{{cdn 'img/custom_prod.png'}}"
+        alt="Custom Corporate Products"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Popular Products Section HTML -->
+<section class="tt-shop tt-popular">
+  <div class="tt-shop-header">
+    <div class="tt-shop-header-left">
+      <span class="tt-shop-subtitle"
+        >{{#if
+        theme_settings.tt_shop_2_subtitle}}{{theme_settings.tt_shop_2_subtitle}}{{else}}POPULAR
+        TRENDING PRODUCTS{{/if}}</span
+      >
+      <h2 class="tt-shop-title">
+        {{#if
+        theme_settings.tt_shop_2_title}}{{theme_settings.tt_shop_2_title}}{{else}}Featured
+        Journals{{/if}}
+      </h2>
+    </div>
+    <a
+      href="{{#if theme_settings.tt_shop_2_btn_link}}{{theme_settings.tt_shop_2_btn_link}}{{else}}#{{/if}}"
+      class="tt-shop-view-all"
+      >{{#if
+      theme_settings.tt_shop_2_btn_text}}{{theme_settings.tt_shop_2_btn_text}}{{else}}VIEW
+      SHOP{{/if}}</a
+    >
+  </div>
+  <div class="tt-shop-grid">
+    {{#each (limit products.featured 4)}}
+    <div class="tt-shop-card" data-product-id="{{id}}">
+      <div
+        class="tt-shop-image-wrapper"
+        onclick="window.location.href='{{url}}'"
+        style="cursor: pointer"
+      >
+        {{#if image}}
+        <img src="{{getImage image 'product_size'}}" alt="{{name}}" />
+        {{else}}
+        <img src="{{cdn 'img/prod_5.png'}}" alt="{{name}}" />
+        {{/if}}
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="{{url}}" style="color: inherit; text-decoration: none"
+          >{{name}}</a
+        >
+      </h3>
+      <div class="tt-shop-swatches">
+        {{#if options}}
+          {{#each options}}
+            {{#or (if display_name '===' 'Color') (if display_name '===' 'Colour')}}
+              {{#each values}}
+                {{#if image}}
+                  <a href="{{../../url}}?attribute[{{../id}}]={{id}}" class="tt-shop-swatch" style="background-image: url('{{getImage image 'core-swatch'}}'); border: 1px solid rgba(0,0,0,0.15);" title="{{label}}"></a>
+                {{else}}
+                  <a href="{{../../url}}?attribute[{{../id}}]={{id}}" class="tt-shop-swatch" style="background-color: {{data.[0]}}; border: 1px solid rgba(0,0,0,0.15);" title="{{label}}"></a>
+                {{/if}}
+              {{/each}}
+            {{/or}}
+          {{/each}}
+        {{else}}
+          <a href="/shop/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
+          <a href="/shop/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+          <a href="/shop/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+          <a href="/shop/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+        {{/if}}
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">
+          {{#if price.with_tax}} {{price.with_tax.formatted}} {{else if
+          price.without_tax}} {{price.without_tax.formatted}} {{else}} $45.00
+          {{/if}}
+        </span>
+        <a href="{{url}}" class="tt-shop-link"
+          >SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    {{else}}
+    <!-- Fallback trending products when products.new is empty -->
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-journal-firenze-vegan-leather-with-leaf/'" style="cursor: pointer;">
+        <img src="{{cdn 'img/prod_5.png'}}" alt="The Monarch Gilded Journal" />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" style="color: inherit; text-decoration: none;">The Monarch Gilded Journal</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$58.00</span>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-leaf/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-journal-firenze-vegan-leather-with-faith/'" style="cursor: pointer;">
+        <img src="{{cdn 'img/prod_6.png'}}" alt="The Minimalist Grid Planner" />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" style="color: inherit; text-decoration: none;">The Minimalist Grid Planner</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$38.00</span>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-faith/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-journal-firenze-vegan-leather-with-elephant/'" style="cursor: pointer;">
+        <img src="{{cdn 'img/prod_7.png'}}" alt="The Ambassador Folio Set" />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" style="color: inherit; text-decoration: none;">The Ambassador Folio Set</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$78.00</span>
+        <a href="/lined-writing-journal-firenze-vegan-leather-with-elephant/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    <div class="tt-shop-card">
+      <div class="tt-shop-image-wrapper" onclick="window.location.href='/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/'" style="cursor: pointer;">
+        <img src="{{cdn 'img/prod_8.png'}}" alt="The Travel Log Edition" />
+      </div>
+      <h3 class="tt-shop-card-title">
+        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" style="color: inherit; text-decoration: none;">The Travel Log Edition</a>
+      </h3>
+      <div class="tt-shop-swatches">
+        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #9a2b22"></a>
+        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #2e3d42"></a>
+        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #1e2b3a"></a>
+        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-swatch" style="background-color: #b8975a"></a>
+      </div>
+      <div class="tt-shop-card-footer">
+        <span class="tt-shop-price">$46.00</span>
+        <a href="/lined-writing-travel-journal-firenze-vegan-leather-with-compass-rose/" class="tt-shop-link">SHOP NOW
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 5px"></i>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <!-- Dots -->
+  <div class="tt-popular-dots">
+    <div class="tt-popular-dot"></div>
+    <div class="tt-popular-dot active"></div>
+    <div class="tt-popular-dot"></div>
+    <div class="tt-popular-dot"></div>
+  </div>
+</section>
+
+{{{region name="home_middle_promo"}}}
+
+<!-- CTA Section -->
+<div class="tt-cta-wrapper">
+  <section class="tt-cta">
+    <span class="tt-cta-subtitle"
+      >{{#if
+      theme_settings.tt_cta_subtitle}}{{theme_settings.tt_cta_subtitle}}{{else}}DESTINY
+      AWAITS{{/if}}</span
+    >
+    <h2 class="tt-cta-title">
+      {{#if
+      theme_settings.tt_cta_title}}{{{theme_settings.tt_cta_title}}}{{else}}Begin
+      the Year <span>with Intention</span>{{/if}}
+    </h2>
+    <p class="tt-cta-desc">
+      {{#if
+      theme_settings.tt_cta_desc}}{{{theme_settings.tt_cta_desc}}}{{else}}Craft
+      your narrative, organize schedules, and preserve important landmarks with
+      handcrafted tools personalized uniquely for you by our master
+      inscribers.{{/if}}
+    </p>
+    <a href="#shop-section" class="tt-cta-btn"
+      >{{#if
+      theme_settings.tt_cta_btn}}{{theme_settings.tt_cta_btn}}{{else}}CHOOSE
+      YOUR DIARY{{/if}}
+      <i class="fa-solid fa-arrow-right-long" style="margin-left: 10px"></i
+    ></a>
+  </section>
 </div>
-{{/partial}}
-{{> layout/base}}
+
+{{{region name="home_bottom_content"}}}
+
+<script nonce="{{nonce}}">
+  document.addEventListener("DOMContentLoaded", function () {
+    const popularSection = document.querySelector(".tt-popular");
+    if (!popularSection) return;
+
+    const grid = popularSection.querySelector(".tt-shop-grid");
+    const dotsContainer = popularSection.querySelector(".tt-popular-dots");
+    const dots = popularSection.querySelectorAll(".tt-popular-dot");
+    const cards = popularSection.querySelectorAll(".tt-shop-card");
+
+    if (!grid || !dotsContainer || !dots.length || !cards.length) return;
+
+    function updateDotsVisibility() {
+      const isOverflowing = grid.scrollWidth > grid.clientWidth + 10;
+      dotsContainer.style.display = isOverflowing ? "flex" : "none";
+    }
+
+    updateDotsVisibility();
+    window.addEventListener("resize", updateDotsVisibility);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", function () {
+        dots.forEach((d) => d.classList.remove("active"));
+        this.classList.add("active");
+
+        if (cards[index]) {
+          cards[index].scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
+        }
+      });
+    });
+
+    // Sync active dot on horizontal scroll
+    grid.addEventListener("scroll", function () {
+      const scrollLeft = grid.scrollLeft;
+      let activeIndex = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const cardLeft = card.offsetLeft - grid.offsetLeft;
+        const distance = Math.abs(cardLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      dots.forEach((d, idx) => {
+        d.classList.toggle("active", idx === activeIndex);
+      });
+    });
+
+    
+    // Fetch live color swatches dynamically via BigCommerce Storefront GraphQL API
+    (function() {
+      const cardsWithId = document.querySelectorAll('.tt-shop-card[data-product-id]');
+      const productIds = Array.from(cardsWithId)
+        .map(card => parseInt(card.getAttribute('data-product-id'), 10))
+        .filter(id => !isNaN(id));
+
+      if (productIds.length === 0) return;
+
+      const token = "{{settings.storefront_api.token}}";
+      if (!token) {
+        console.warn("Storefront API token is not available for dynamic swatches.");
+        return;
+      }
+
+      const query = `
+        query getProductSwatches($ids: [Int!]) {
+          site {
+            products(entityIds: $ids) {
+              edges {
+                node {
+                  entityId
+                  productOptions(first: 5) {
+                    edges {
+                      node {
+                        displayName
+                        ... on MultipleChoiceOption {
+                          values {
+                            edges {
+                              node {
+                                label
+                                isSelected
+                                ... on SwatchOptionValue {
+                                  hexColors
+                                  imageUrl(width: 24)
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `;
+
+      fetch('/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({
+          query: query,
+          variables: { ids: productIds }
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        const products = data?.data?.site?.products?.edges || [];
+        products.forEach(edge => {
+          const productNode = edge.node;
+          const productId = productNode.entityId;
+          const colorOption = productNode.productOptions.edges.find(optEdge => {
+            const name = optEdge.node.displayName.toLowerCase();
+            return name === 'color' || name === 'colour';
+          });
+
+          if (colorOption) {
+            const swatchValues = colorOption.node.values.edges.map(valEdge => valEdge.node);
+            const card = document.querySelector(`.tt-shop-card[data-product-id="${productId}"]`);
+            if (card) {
+              const swatchContainer = card.querySelector('.tt-shop-swatches');
+              if (swatchContainer && swatchValues.length > 0) {
+                swatchContainer.innerHTML = ''; // Clear hardcoded/fallback dummy swatches
+                swatchValues.forEach(val => {
+                  const swatchLink = document.createElement('a');
+                  swatchLink.className = 'tt-shop-swatch';
+                  swatchLink.title = val.label;
+                  swatchLink.href = card.querySelector('.tt-shop-card-title a').getAttribute('href');
+                  
+                  if (val.imageUrl) {
+                    swatchLink.style.backgroundImage = `url('${val.imageUrl}')`;
+                    swatchLink.style.backgroundSize = 'cover';
+                  } else if (val.hexColors && val.hexColors.length > 0) {
+                    swatchLink.style.backgroundColor = val.hexColors[0];
+                  }
+                  swatchLink.style.border = '1px solid rgba(0,0,0,0.15)';
+                  swatchContainer.appendChild(swatchLink);
+                });
+              }
+            }
+          }
+        });
+      })
+      .catch(err => console.error("Error loading dynamic product swatches:", err));
+    })();
+
+  });
+</script>
+{{/partial}} {{> layout/base}}

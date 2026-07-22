@@ -1,0 +1,67 @@
+{{#partial "page"}}
+
+<section class="welcome-section">
+  <div class="welcome-container">
+
+    {{{region name="welcome_page_intro"}}}
+
+    <span class="welcome-subtitle">
+      {{#if theme_settings.tt_welcome_subtitle}}{{theme_settings.tt_welcome_subtitle}}{{else}}Time traveler{{/if}}
+    </span>
+    <h1 class="welcome-title">
+      {{#if page.title}}{{page.title}}{{else}}{{#if theme_settings.tt_welcome_title}}{{theme_settings.tt_welcome_title}}{{else}}Welcome to Time Traveler{{/if}}{{/if}}
+    </h1>
+
+    {{{region name="welcome_inside_box"}}}
+
+    <div class="welcome-box">
+      {{#if page.content}}
+        {{{page.content}}}
+      {{else}}
+        <!-- Fallback Welcome Content -->
+        <p>
+          At Time Traveler, we create refined planners, journals, and desk accessories designed for those who appreciate timeless craftsmanship, thoughtful organization, and understated luxury.
+        </p>
+
+        <div class="welcome-divider"></div>
+
+        <p>
+          Hand Finished: Every Time Traveler diary is carefully hand finished by experienced craftspeople to ensure exceptional quality, durability, and attention to detail.
+        </p>
+
+        <div class="welcome-divider"></div>
+
+        <p>
+          Our diaries and journals are crafted using premium materials quality from Italy and may be personalized with individual names, initials, or company logos through precision hot-foil embossing in gold, silver, white, or black finishes.
+        </p>
+
+        <div class="welcome-divider"></div>
+
+        <h2 class="welcome-box-inner-title">
+          Personalized to Reflect Your Individuality
+        </h2>
+        <p style="margin-bottom: 20px;">
+          Personalization is the ultimate expression of individuality. Our precision computer-controlled personalization system uses heat and premium foil to elegantly imprint initials, full names, meaningful quotes, special dates, or personal messages onto your Time Traveler diary.
+        </p>
+        <p style="margin-bottom: 20px;">
+          Choose from a variety of foil colors and customize your diary with up to <span class="gold-bold">four lines</span> of text, creating a one-of-a-kind keepsake or an unforgettable gift. Whether it's a professional title, favorite saying, heartfelt salutation, or inspirational quote, each personalization is applied with exceptional accuracy for a timeless, elegant finish.
+        </p>
+        <p>
+          <span class="gold-bold">**Make it uniquely yours.**</span> Every personalized Time Traveler diary is crafted to reflect your style, your story, and your journey.
+        </p>
+
+        <div class="welcome-divider"></div>
+
+        <p>
+          Whether carried daily, displayed on a desk, or gifted to clients and colleagues, every Time Traveler piece is designed to reflect professionalism, elegance, and enduring style.
+        </p>
+      {{/if}}
+    </div>
+
+    {{{region name="welcome_page_content"}}}
+
+  </div>
+</section>
+
+{{/partial}}
+{{> layout/base}}

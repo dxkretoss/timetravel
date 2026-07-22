@@ -2,7 +2,10 @@
   "customLayouts": {
     "brand": {},
     "category": {},
-    "page": {},
+    "page": {
+      "welcome.html": "/welcome-to-time-traveler/",
+      "corporate-products.html": "/corporate-custom-gifts/"
+    },
     "product": {}
   },
   "normalStoreUrl": "https://timetravelercorp.com",

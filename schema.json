@@ -665,1118 +665,386 @@
     "settings": [
       {
         "type": "heading",
-        "content": "Carousel"
-      },
-      {
-        "type": "checkbox",
-        "label": "Show carousel",
-        "force_reload": true,
-        "id": "homepage_show_carousel"
-      },
-      {
-        "type": "checkbox",
-        "label": "Show carousel arrows",
-        "force_reload": true,
-        "id": "homepage_show_carousel_arrows"
-      },
-      {
-        "type": "checkbox",
-        "label": "Allow image to stretch on large screens",
-        "force_reload": true,
-        "id": "homepage_stretch_carousel_images"
-      },
-      {
-        "type": "color",
-        "label": "Header text",
-        "id": "carousel-title-color"
-      },
-      {
-        "type": "color",
-        "label": "Description text",
-        "id": "carousel-description-color"
-      },
-      {
-        "type": "color",
-        "label": "Indicator",
-        "id": "carousel-dot-color"
-      },
-      {
-        "type": "color",
-        "label": "Indicator active",
-        "id": "carousel-dot-color-active"
-      },
-      {
-        "type": "color",
-        "label": "Arrow",
-        "id": "carousel-arrow-color"
-      },
-      {
-        "type": "color",
-        "label": "Arrow background",
-        "id": "carousel-arrow-bgColor"
-      },
-      {
-        "type": "color",
-        "label": "Arrow border",
-        "id": "carousel-arrow-borderColor"
-      },
-      {
-        "type": "heading",
-        "content": "Home Promotional Banner"
-      },
-      {
-        "type": "checkbox",
-        "label": "Show Home Promotional Banner",
-        "force_reload": true,
-        "id": "home-promotional-banner"
-      },
-      {
-        "type": "text",
-        "label": "First Banner Image",
-        "force_reload": true,
-        "id": "bannerimagefirst"
-      },
-      {
-        "type": "text",
-        "label": "First Banner link",
-        "force_reload": true,
-        "id": "bannerlinkfirst"
-      },
-      {
-        "type": "text",
-        "label": "Second Banner Image",
-        "force_reload": true,
-        "id": "bannerimagesecond"
-      },
-      {
-        "type": "text",
-        "label": "Second Banner link",
-        "force_reload": true,
-        "id": "bannerlinksecond"
-      },
-      {
-        "type": "text",
-        "label": "Third Banner Image",
-        "force_reload": true,
-        "id": "bannerimagethird"
-      },
-      {
-        "type": "text",
-        "label": "Third Banner link",
-        "force_reload": true,
-        "id": "bannerlinkthird"
-      },
-      {
-        "type": "text",
-        "label": "Fourth Banner Image",
-        "force_reload": true,
-        "id": "bannerimagefour"
-      },
-      {
-        "type": "text",
-        "label": "Fourth Banner link",
-        "force_reload": true,
-        "id": "bannerlinkfour"
-      },
-      {
-        "type": "heading",
-        "content": "Product Sub heading"
+        "content": "Homepage Hero Section"
       },
       {
         "type": "input",
-        "label": "Featured Product",
-        "force_reload": true,
-        "id": "FeaturedSubTitle"
+        "label": "Hero Subtitle",
+        "id": "tt_home_hero_subtitle"
       },
       {
         "type": "input",
-        "label": "Most Popular Products",
-        "force_reload": true,
-        "id": "TopSubTitle"
+        "label": "Hero Title",
+        "id": "tt_home_hero_title"
       },
       {
         "type": "input",
-        "label": "New Product",
-        "force_reload": true,
-        "id": "NewSubTitle"
+        "label": "Hero Description",
+        "id": "tt_home_hero_desc"
       },
       {
         "type": "input",
-        "label": "Related Product",
-        "force_reload": true,
-        "id": "RelatedSubTitle"
+        "label": "Primary Button Text",
+        "id": "tt_home_hero_btn_explore"
       },
       {
         "type": "input",
-        "label": "Customer Also View",
-        "force_reload": true,
-        "id": "CustomerViewSubTitle"
+        "label": "Primary Button Link URL",
+        "id": "tt_home_hero_btn_explore_link"
       },
       {
         "type": "input",
-        "label": "Blog Post",
-        "force_reload": true,
-        "id": "BlogSubTitle"
+        "label": "Secondary Button Text",
+        "id": "tt_home_hero_btn2"
+      },
+      {
+        "type": "input",
+        "label": "Secondary Button Link URL",
+        "id": "tt_home_hero_btn2_link"
       },
       {
         "type": "heading",
-        "content": "Products"
+        "content": "Collection Section"
       },
       {
-        "type": "select",
-        "label": "Number of featured products",
-        "id": "homepage_featured_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "input",
+        "label": "Collection Subtitle",
+        "id": "tt_home_collection_subtitle"
       },
       {
-        "type": "select",
-        "label": "Number of most popular products",
-        "id": "homepage_top_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "input",
+        "label": "Collection Title",
+        "id": "tt_home_collection_title"
       },
       {
-        "type": "select",
-        "label": "Number of new products",
-        "id": "homepage_new_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "input",
+        "label": "Card Button Text",
+        "id": "tt_home_collection_card_btn"
       },
       {
         "type": "heading",
-        "content": "USP Section"
+        "content": "Why Choose Time Traveler Section"
       },
       {
-        "type": "select",
-        "label": "Show Number of USP Block",
-        "id": "show_usp",
-        "options": [
-          {
-            "value": 0,
-            "label": "Hide"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          }
-        ],
-        "force_reload": true
+        "type": "input",
+        "label": "Features Subtitle",
+        "id": "tt_home_features_subtitle"
       },
       {
-        "type": "heading",
-        "content": "USP Block First"
+        "type": "input",
+        "label": "Features Title",
+        "id": "tt_home_features_title"
       },
       {
-        "type": "paragraph",
-        "content": "* You can either select a ready-made icon or utilize textbox below to use custom icon."
+        "type": "input",
+        "label": "Feature 1 Title",
+        "id": "tt_feature_1_title"
       },
       {
-        "type": "select",
-        "label": "Select Ready-made Icon",
-        "id": "selected-icon1",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "SelectOne",
-            "label": "Select One"
-          },
-          {
-            "value": "EasyReturn01",
-            "label": "Easy Return 01"
-          },
-          {
-            "value": "EasyReturn02",
-            "label": "Easy Return 02"
-          },
-          {
-            "value": "EasyReturn03",
-            "label": "Easy Return 03"
-          },
-          {
-            "value": "EasyReturn04",
-            "label": "Easy Return 04"
-          },
-          {
-            "value": "Exchange01",
-            "label": "Exchange 01"
-          },
-          {
-            "value": "Exchange02",
-            "label": "Exchange 02"
-          },
-          {
-            "value": "Exchange03",
-            "label": "Exchange 03"
-          },
-          {
-            "value": "Exchange04",
-            "label": "Exchange 04"
-          },
-          {
-            "value": "Guranteed01",
-            "label": "Guranteed 01"
-          },
-          {
-            "value": "Guranteed02",
-            "label": "Guranteed 02"
-          },
-          {
-            "value": "Guranteed03",
-            "label": "Guranteed 03"
-          },
-          {
-            "value": "Guranteed04",
-            "label": "Guranteed 04"
-          },
-          {
-            "value": "LoyaltyProgram01",
-            "label": "Loyalty Program 01"
-          },
-          {
-            "value": "LoyaltyProgram02",
-            "label": "Loyalty Program 02"
-          },
-          {
-            "value": "LoyaltyProgram03",
-            "label": "Loyalty Program 03"
-          },
-          {
-            "value": "LoyaltyProgram04",
-            "label": "Loyalty Program 04"
-          },
-          {
-            "value": "Payment01",
-            "label": "Payment 01"
-          },
-          {
-            "value": "Payment02",
-            "label": "Payment 02"
-          },
-          {
-            "value": "Payment03",
-            "label": "Payment 03"
-          },
-          {
-            "value": "Payment04",
-            "label": "Payment 04"
-          },
-          {
-            "value": "Safe&Secure01",
-            "label": "Safe & Secure 01"
-          },
-          {
-            "value": "Safe&Secure02",
-            "label": "Safe & Secure 02"
-          },
-          {
-            "value": "Safe&Secure03",
-            "label": "Safe & Secure 03"
-          },
-          {
-            "value": "Safe&Secure04",
-            "label": "Safe & Secure 04"
-          },
-          {
-            "value": "Shipping01",
-            "label": "Shipping 01"
-          },
-          {
-            "value": "Shipping02",
-            "label": "Shipping 02"
-          },
-          {
-            "value": "Shipping03",
-            "label": "Shipping 03"
-          },
-          {
-            "value": "Shipping04",
-            "label": "Shipping 04"
-          },
-          {
-            "value": "Support01",
-            "label": "Support 01"
-          },
-          {
-            "value": "Support02",
-            "label": "Support 02"
-          },
-          {
-            "value": "Support03",
-            "label": "Support 03"
-          },
-          {
-            "value": "Support04",
-            "label": "Support 04"
-          },
-          {
-            "value": "Wholesale&Discounts01",
-            "label": "Wholesale & Discounts 01"
-          },
-          {
-            "value": "Wholesale&Discounts02",
-            "label": "Wholesale & Discounts 02"
-          },
-          {
-            "value": "Wholesale&Discounts03",
-            "label": "Wholesale & Discounts 03"
-          },
-          {
-            "value": "Wholesale&Discounts04",
-            "label": "Wholesale & Discounts 04"
-          }
-        ]
+        "type": "input",
+        "label": "Feature 1 Description",
+        "id": "tt_feature_1_desc"
       },
       {
-        "type": "paragraph",
-        "content": "---------------OR---------------"
+        "type": "input",
+        "label": "Feature 2 Title",
+        "id": "tt_feature_2_title"
       },
       {
-        "type": "text",
-        "label": "Custom icon image name (Please refer to theme guideline)",
-        "id": "UspImageFirst",
-        "force_reload": true
+        "type": "input",
+        "label": "Feature 2 Description",
+        "id": "tt_feature_2_desc"
       },
       {
-        "type": "text",
-        "label": "USP Title",
-        "id": "UspTitleFirst",
-        "force_reload": true
+        "type": "input",
+        "label": "Feature 3 Title",
+        "id": "tt_feature_3_title"
       },
       {
-        "type": "text",
-        "label": "USP Subtext",
-        "id": "UspTextFirst",
-        "force_reload": true
+        "type": "input",
+        "label": "Feature 3 Description",
+        "id": "tt_feature_3_desc"
+      },
+      {
+        "type": "input",
+        "label": "Feature 4 Title",
+        "id": "tt_feature_4_title"
+      },
+      {
+        "type": "input",
+        "label": "Feature 4 Description",
+        "id": "tt_feature_4_desc"
       },
       {
         "type": "heading",
-        "content": "USP Block Second"
+        "content": "Best Sellers Shop Section"
       },
       {
-        "type": "paragraph",
-        "content": "* You can either select a ready-made icon or utilize textbox below to use custom icon."
+        "type": "input",
+        "label": "Shop Subtitle",
+        "id": "tt_shop_1_subtitle"
       },
       {
-        "type": "select",
-        "label": "Select Ready-made Icon",
-        "id": "selected-icon2",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "SelectOne",
-            "label": "Select One"
-          },
-          {
-            "value": "EasyReturn01",
-            "label": "Easy Return 01"
-          },
-          {
-            "value": "EasyReturn02",
-            "label": "Easy Return 02"
-          },
-          {
-            "value": "EasyReturn03",
-            "label": "Easy Return 03"
-          },
-          {
-            "value": "EasyReturn04",
-            "label": "Easy Return 04"
-          },
-          {
-            "value": "Exchange01",
-            "label": "Exchange 01"
-          },
-          {
-            "value": "Exchange02",
-            "label": "Exchange 02"
-          },
-          {
-            "value": "Exchange03",
-            "label": "Exchange 03"
-          },
-          {
-            "value": "Exchange04",
-            "label": "Exchange 04"
-          },
-          {
-            "value": "Guranteed01",
-            "label": "Guranteed 01"
-          },
-          {
-            "value": "Guranteed02",
-            "label": "Guranteed 02"
-          },
-          {
-            "value": "Guranteed03",
-            "label": "Guranteed 03"
-          },
-          {
-            "value": "Guranteed04",
-            "label": "Guranteed 04"
-          },
-          {
-            "value": "LoyaltyProgram01",
-            "label": "Loyalty Program 01"
-          },
-          {
-            "value": "LoyaltyProgram02",
-            "label": "Loyalty Program 02"
-          },
-          {
-            "value": "LoyaltyProgram03",
-            "label": "Loyalty Program 03"
-          },
-          {
-            "value": "LoyaltyProgram04",
-            "label": "Loyalty Program 04"
-          },
-          {
-            "value": "Payment01",
-            "label": "Payment 01"
-          },
-          {
-            "value": "Payment02",
-            "label": "Payment 02"
-          },
-          {
-            "value": "Payment03",
-            "label": "Payment 03"
-          },
-          {
-            "value": "Payment04",
-            "label": "Payment 04"
-          },
-          {
-            "value": "Safe&Secure01",
-            "label": "Safe & Secure 01"
-          },
-          {
-            "value": "Safe&Secure02",
-            "label": "Safe & Secure 02"
-          },
-          {
-            "value": "Safe&Secure03",
-            "label": "Safe & Secure 03"
-          },
-          {
-            "value": "Safe&Secure04",
-            "label": "Safe & Secure 04"
-          },
-          {
-            "value": "Shipping01",
-            "label": "Shipping 01"
-          },
-          {
-            "value": "Shipping02",
-            "label": "Shipping 02"
-          },
-          {
-            "value": "Shipping03",
-            "label": "Shipping 03"
-          },
-          {
-            "value": "Shipping04",
-            "label": "Shipping 04"
-          },
-          {
-            "value": "Support01",
-            "label": "Support 01"
-          },
-          {
-            "value": "Support02",
-            "label": "Support 02"
-          },
-          {
-            "value": "Support03",
-            "label": "Support 03"
-          },
-          {
-            "value": "Support04",
-            "label": "Support 04"
-          },
-          {
-            "value": "Wholesale&Discounts01",
-            "label": "Wholesale & Discounts 01"
-          },
-          {
-            "value": "Wholesale&Discounts02",
-            "label": "Wholesale & Discounts 02"
-          },
-          {
-            "value": "Wholesale&Discounts03",
-            "label": "Wholesale & Discounts 03"
-          },
-          {
-            "value": "Wholesale&Discounts04",
-            "label": "Wholesale & Discounts 04"
-          }
-        ]
+        "type": "input",
+        "label": "Shop Title",
+        "id": "tt_shop_1_title"
       },
       {
-        "type": "paragraph",
-        "content": "---------------OR---------------"
+        "type": "input",
+        "label": "Shop View All Button Text",
+        "id": "tt_shop_1_btn"
       },
       {
-        "type": "text",
-        "label": "Custom icon image name (Please refer to theme guideline)",
-        "id": "UspImageSecond",
-        "force_reload": true
-      },
-      {
-        "type": "text",
-        "label": "USP Title",
-        "id": "UspTitleSecond",
-        "force_reload": true
-      },
-      {
-        "type": "text",
-        "label": "USP Subtext",
-        "id": "UspTextSecond",
-        "force_reload": true
+        "type": "input",
+        "label": "Shop View All Link URL",
+        "id": "tt_shop_1_btn_link"
       },
       {
         "type": "heading",
-        "content": "USP Block Third"
+        "content": "Corporate B2B Showcase Section"
       },
       {
-        "type": "paragraph",
-        "content": "* You can either select a ready-made icon or utilize textbox below to use custom icon."
+        "type": "input",
+        "label": "Corporate Showcase Subtitle",
+        "id": "tt_corp_showcase_subtitle"
       },
       {
-        "type": "select",
-        "label": "Select Ready-made Icon",
-        "id": "selected-icon3",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "SelectOne",
-            "label": "Select One"
-          },
-          {
-            "value": "EasyReturn01",
-            "label": "Easy Return 01"
-          },
-          {
-            "value": "EasyReturn02",
-            "label": "Easy Return 02"
-          },
-          {
-            "value": "EasyReturn03",
-            "label": "Easy Return 03"
-          },
-          {
-            "value": "EasyReturn04",
-            "label": "Easy Return 04"
-          },
-          {
-            "value": "Exchange01",
-            "label": "Exchange 01"
-          },
-          {
-            "value": "Exchange02",
-            "label": "Exchange 02"
-          },
-          {
-            "value": "Exchange03",
-            "label": "Exchange 03"
-          },
-          {
-            "value": "Exchange04",
-            "label": "Exchange 04"
-          },
-          {
-            "value": "Guranteed01",
-            "label": "Guranteed 01"
-          },
-          {
-            "value": "Guranteed02",
-            "label": "Guranteed 02"
-          },
-          {
-            "value": "Guranteed03",
-            "label": "Guranteed 03"
-          },
-          {
-            "value": "Guranteed04",
-            "label": "Guranteed 04"
-          },
-          {
-            "value": "LoyaltyProgram01",
-            "label": "Loyalty Program 01"
-          },
-          {
-            "value": "LoyaltyProgram02",
-            "label": "Loyalty Program 02"
-          },
-          {
-            "value": "LoyaltyProgram03",
-            "label": "Loyalty Program 03"
-          },
-          {
-            "value": "LoyaltyProgram04",
-            "label": "Loyalty Program 04"
-          },
-          {
-            "value": "Payment01",
-            "label": "Payment 01"
-          },
-          {
-            "value": "Payment02",
-            "label": "Payment 02"
-          },
-          {
-            "value": "Payment03",
-            "label": "Payment 03"
-          },
-          {
-            "value": "Payment04",
-            "label": "Payment 04"
-          },
-          {
-            "value": "Safe&Secure01",
-            "label": "Safe & Secure 01"
-          },
-          {
-            "value": "Safe&Secure02",
-            "label": "Safe & Secure 02"
-          },
-          {
-            "value": "Safe&Secure03",
-            "label": "Safe & Secure 03"
-          },
-          {
-            "value": "Safe&Secure04",
-            "label": "Safe & Secure 04"
-          },
-          {
-            "value": "Shipping01",
-            "label": "Shipping 01"
-          },
-          {
-            "value": "Shipping02",
-            "label": "Shipping 02"
-          },
-          {
-            "value": "Shipping03",
-            "label": "Shipping 03"
-          },
-          {
-            "value": "Shipping04",
-            "label": "Shipping 04"
-          },
-          {
-            "value": "Support01",
-            "label": "Support 01"
-          },
-          {
-            "value": "Support02",
-            "label": "Support 02"
-          },
-          {
-            "value": "Support03",
-            "label": "Support 03"
-          },
-          {
-            "value": "Support04",
-            "label": "Support 04"
-          },
-          {
-            "value": "Wholesale&Discounts01",
-            "label": "Wholesale & Discounts 01"
-          },
-          {
-            "value": "Wholesale&Discounts02",
-            "label": "Wholesale & Discounts 02"
-          },
-          {
-            "value": "Wholesale&Discounts03",
-            "label": "Wholesale & Discounts 03"
-          },
-          {
-            "value": "Wholesale&Discounts04",
-            "label": "Wholesale & Discounts 04"
-          }
-        ]
+        "type": "input",
+        "label": "Corporate Showcase Title",
+        "id": "tt_corp_showcase_title"
       },
       {
-        "type": "paragraph",
-        "content": "---------------OR---------------"
+        "type": "input",
+        "label": "Corporate Showcase Title Italic",
+        "id": "tt_corp_showcase_title_italic"
       },
       {
-        "type": "text",
-        "label": "Custom icon image name (Please refer to theme guideline)",
-        "id": "UspImageThird",
-        "force_reload": true
+        "type": "input",
+        "label": "Corporate Showcase Description",
+        "id": "tt_corp_showcase_desc"
       },
       {
-        "type": "text",
-        "label": "USP Title",
-        "id": "UspTitleThird",
-        "force_reload": true
+        "type": "input",
+        "label": "Bullet 1",
+        "id": "tt_corp_bullet_1"
       },
       {
-        "type": "text",
-        "label": "USP Subtext",
-        "id": "UspTextThird",
-        "force_reload": true
+        "type": "input",
+        "label": "Bullet 2",
+        "id": "tt_corp_bullet_2"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 3",
+        "id": "tt_corp_bullet_3"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 4",
+        "id": "tt_corp_bullet_4"
+      },
+      {
+        "type": "input",
+        "label": "B2B Request Button Text",
+        "id": "tt_corp_showcase_btn"
+      },
+      {
+        "type": "input",
+        "label": "B2B Request Button Link URL",
+        "id": "tt_corp_showcase_btn_link"
       },
       {
         "type": "heading",
-        "content": "USP Block Fourth"
+        "content": "Featured Journals Shop Section"
       },
       {
-        "type": "paragraph",
-        "content": "* If you are select custom icon options, then you need to add icon name in below field"
+        "type": "input",
+        "label": "Featured Subtitle",
+        "id": "tt_shop_2_subtitle"
       },
       {
-        "type": "select",
-        "label": "Select Ready-made Icon",
-        "id": "selected-icon4",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "SelectOne",
-            "label": "Select One"
-          },
-          {
-            "value": "EasyReturn01",
-            "label": "Easy Return 01"
-          },
-          {
-            "value": "EasyReturn02",
-            "label": "Easy Return 02"
-          },
-          {
-            "value": "EasyReturn03",
-            "label": "Easy Return 03"
-          },
-          {
-            "value": "EasyReturn04",
-            "label": "Easy Return 04"
-          },
-          {
-            "value": "Exchange01",
-            "label": "Exchange 01"
-          },
-          {
-            "value": "Exchange02",
-            "label": "Exchange 02"
-          },
-          {
-            "value": "Exchange03",
-            "label": "Exchange 03"
-          },
-          {
-            "value": "Exchange04",
-            "label": "Exchange 04"
-          },
-          {
-            "value": "Guranteed01",
-            "label": "Guranteed 01"
-          },
-          {
-            "value": "Guranteed02",
-            "label": "Guranteed 02"
-          },
-          {
-            "value": "Guranteed03",
-            "label": "Guranteed 03"
-          },
-          {
-            "value": "Guranteed04",
-            "label": "Guranteed 04"
-          },
-          {
-            "value": "LoyaltyProgram01",
-            "label": "Loyalty Program 01"
-          },
-          {
-            "value": "LoyaltyProgram02",
-            "label": "Loyalty Program 02"
-          },
-          {
-            "value": "LoyaltyProgram03",
-            "label": "Loyalty Program 03"
-          },
-          {
-            "value": "LoyaltyProgram04",
-            "label": "Loyalty Program 04"
-          },
-          {
-            "value": "Payment01",
-            "label": "Payment 01"
-          },
-          {
-            "value": "Payment02",
-            "label": "Payment 02"
-          },
-          {
-            "value": "Payment03",
-            "label": "Payment 03"
-          },
-          {
-            "value": "Payment04",
-            "label": "Payment 04"
-          },
-          {
-            "value": "Safe&Secure01",
-            "label": "Safe & Secure 01"
-          },
-          {
-            "value": "Safe&Secure02",
-            "label": "Safe & Secure 02"
-          },
-          {
-            "value": "Safe&Secure03",
-            "label": "Safe & Secure 03"
-          },
-          {
-            "value": "Safe&Secure04",
-            "label": "Safe & Secure 04"
-          },
-          {
-            "value": "Shipping01",
-            "label": "Shipping 01"
-          },
-          {
-            "value": "Shipping02",
-            "label": "Shipping 02"
-          },
-          {
-            "value": "Shipping03",
-            "label": "Shipping 03"
-          },
-          {
-            "value": "Shipping04",
-            "label": "Shipping 04"
-          },
-          {
-            "value": "Support01",
-            "label": "Support 01"
-          },
-          {
-            "value": "Support02",
-            "label": "Support 02"
-          },
-          {
-            "value": "Support03",
-            "label": "Support 03"
-          },
-          {
-            "value": "Support04",
-            "label": "Support 04"
-          },
-          {
-            "value": "Wholesale&Discounts01",
-            "label": "Wholesale & Discounts 01"
-          },
-          {
-            "value": "Wholesale&Discounts02",
-            "label": "Wholesale & Discounts 02"
-          },
-          {
-            "value": "Wholesale&Discounts03",
-            "label": "Wholesale & Discounts 03"
-          },
-          {
-            "value": "Wholesale&Discounts04",
-            "label": "Wholesale & Discounts 04"
-          }
-        ]
+        "type": "input",
+        "label": "Featured Title",
+        "id": "tt_shop_2_title"
       },
       {
-        "type": "paragraph",
-        "content": "---------------OR---------------"
+        "type": "input",
+        "label": "Featured View All Button Text",
+        "id": "tt_shop_2_btn"
       },
       {
-        "type": "text",
-        "label": "Custom icon image name (Please refer to theme guideline)",
-        "id": "UspImageFour",
-        "force_reload": true
+        "type": "input",
+        "label": "Featured View All Link URL",
+        "id": "tt_shop_2_btn_link"
       },
       {
-        "type": "text",
-        "label": "USP Title",
-        "id": "UspTitleFour",
-        "force_reload": true
+        "type": "heading",
+        "content": "Bottom Call-To-Action Section"
       },
       {
-        "type": "text",
-        "label": "USP Subtext",
-        "id": "UspTextFour",
-        "force_reload": true
+        "type": "input",
+        "label": "CTA Subtitle",
+        "id": "tt_cta_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "CTA Title",
+        "id": "tt_cta_title"
+      },
+      {
+        "type": "input",
+        "label": "CTA Description",
+        "id": "tt_cta_desc"
+      },
+      {
+        "type": "input",
+        "label": "CTA Button Text",
+        "id": "tt_cta_btn"
+      },
+      {
+        "type": "input",
+        "label": "CTA Button Link URL",
+        "id": "tt_cta_btn_link"
+      }
+    ]
+  },
+  {
+    "name": "Welcome Page",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Welcome Page Settings"
+      },
+      {
+        "type": "input",
+        "label": "Welcome Subtitle",
+        "id": "tt_welcome_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Welcome Title",
+        "id": "tt_welcome_title"
+      },
+      {
+        "type": "input",
+        "label": "Welcome Description",
+        "id": "tt_welcome_desc"
+      }
+    ]
+  },
+  {
+    "name": "Corporate Page",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Corporate Hero Section"
+      },
+      {
+        "type": "input",
+        "label": "Corporate Page Subtitle",
+        "id": "tt_corp_page_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Corporate Page Title",
+        "id": "tt_corp_page_title"
+      },
+      {
+        "type": "input",
+        "label": "Corporate Page Description",
+        "id": "tt_corp_page_desc"
+      },
+      {
+        "type": "input",
+        "label": "Hero Button Text",
+        "id": "tt_corp_page_btn"
+      },
+      {
+        "type": "input",
+        "label": "Hero Button Link URL",
+        "id": "tt_corp_page_btn_link"
+      },
+      {
+        "type": "heading",
+        "content": "Corporate Hero Feature Bar"
+      },
+      {
+        "type": "input",
+        "label": "Feature Bar 1 Text",
+        "id": "tt_corp_feat1"
+      },
+      {
+        "type": "input",
+        "label": "Feature Bar 2 Text",
+        "id": "tt_corp_feat2"
+      },
+      {
+        "type": "input",
+        "label": "Feature Bar 3 Text",
+        "id": "tt_corp_feat3"
+      },
+      {
+        "type": "input",
+        "label": "Feature Bar 4 Text",
+        "id": "tt_corp_feat4"
+      },
+      {
+        "type": "heading",
+        "content": "Craftsmanship Details Section"
+      },
+      {
+        "type": "input",
+        "label": "Details Section Subtitle",
+        "id": "tt_corp_details_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Details Section Title",
+        "id": "tt_corp_details_title"
+      },
+      {
+        "type": "input",
+        "label": "Details Section Description",
+        "id": "tt_corp_details_desc"
+      },
+      {
+        "type": "input",
+        "label": "Details Section Quote",
+        "id": "tt_corp_details_quote"
+      },
+      {
+        "type": "heading",
+        "content": "Craftsmanship Feature Cards"
+      },
+      {
+        "type": "input",
+        "label": "Card 1 Title",
+        "id": "tt_corp_box1_title"
+      },
+      {
+        "type": "input",
+        "label": "Card 1 Description",
+        "id": "tt_corp_box1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Card 2 Title",
+        "id": "tt_corp_box2_title"
+      },
+      {
+        "type": "input",
+        "label": "Card 2 Description",
+        "id": "tt_corp_box2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Card 3 Title",
+        "id": "tt_corp_box3_title"
+      },
+      {
+        "type": "input",
+        "label": "Card 3 Description",
+        "id": "tt_corp_box3_desc"
       }
     ]
   },
