@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 /* Corporate Products Page Styles */
+/* Full Width Container Reset & Breakout for End-to-End Backgrounds */
+.body:has(.corp-hero) > .container,
+body:has(.corp-hero) .body > .container,
+.body > .container:has(.corp-hero) {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.corp-hero,
+.corp-details,
+.corp-ideal,
+.tt-features,
+.tt-impression-section,
+.tt-cta-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
 .corp-hero {
   background-color: rgba(247, 244, 239, 1);
   padding: 120px 20px 80px 20px;
@@ -1480,5 +1507,139 @@
         .corp-ideal-title {
           font-size: 36px;
           padding: 0 15px;
+        }
+      }
+
+      /* Dies & Impressions Section */
+      .tt-impression-section {
+        width: 100%;
+        background-color: var(--background, #f7f4ef);
+        display: flex;
+        position: relative;
+        background-image:
+          linear-gradient(to right, #f7f4ef 40%, transparent 70%),
+          url("../img/corporate-impression.png");
+        background-position:
+          left center,
+          right center;
+        background-size:
+          100% 100%,
+          cover;
+        background-repeat: no-repeat;
+        min-height: 500px;
+        border: 1px solid #b8975a80;
+        border-right: none;
+        border-left: none;
+      }
+
+      .tt-impression-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .tt-impression-content {
+        flex: 1;
+        padding: 80px 5% 80px 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 55%;
+      }
+
+      .tt-impression-subtitle {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        color: #b8975a;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+      }
+
+      .tt-impression-subtitle i {
+        margin-right: 12px;
+        font-size: 11px;
+      }
+
+      .tt-impression-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 52px;
+        color: #2d2d2d;
+        margin-bottom: 20px;
+        line-height: 1.1;
+      }
+
+      .tt-impression-desc {
+        font-size: 15px;
+        color: #4a5568;
+        margin-bottom: 30px;
+        line-height: 1.7;
+        max-width: 550px;
+      }
+
+      .tt-impression-divider {
+        width: 50px;
+        height: 1px;
+        background-color: #d8cfc0;
+        margin-bottom: 35px;
+      }
+
+      .tt-impression-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 20px;
+        max-width: 650px;
+        padding-left: 0;
+      }
+
+      .tt-impression-list li {
+        font-size: 13px;
+        color: #4a5568;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.5px;
+      }
+
+      .tt-impression-list li::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background-color: #b8975a;
+        border-radius: 50%;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 1024px) {
+        .tt-impression-section {
+          background-image: none;
+          min-height: auto;
+        }
+        .tt-impression-container {
+          flex-direction: column;
+        }
+        .tt-impression-content {
+          padding: 60px 5%;
+          max-width: 100%;
+        }
+        .tt-impression-title {
+          font-size: 42px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .tt-impression-title {
+          font-size: 36px;
+        }
+        .tt-impression-list {
+          grid-template-columns: 1fr;
         }
       }

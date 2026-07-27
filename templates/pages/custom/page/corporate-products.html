@@ -6,96 +6,271 @@ cart: true
 
 {{#partial "page"}}
 
+<!-- 1. Corporate Hero Section -->
 <section class="corp-hero">
-  {{{region name="corp_hero_banner"}}}
-
   <div class="corp-hero-content">
     <span class="corp-hero-subtitle">
-      {{#if theme_settings.tt_corp_page_subtitle}}{{theme_settings.tt_corp_page_subtitle}}{{else}}CORPORATE PRODUCTS{{/if}}
+      {{#if theme_settings.tt_corp_page_subtitle}}{{theme_settings.tt_corp_page_subtitle}}{{else}}CORPORATE CUSTOM GIFTS{{/if}}
     </span>
     <h1 class="corp-hero-title">
-      {{#if page.title}}{{page.title}}{{else}}{{#if theme_settings.tt_corp_page_title}}{{theme_settings.tt_corp_page_title}}{{else}}Corporate Custom Gifts{{/if}}{{/if}}
+      {{#if theme_settings.tt_corp_page_title}}{{{theme_settings.tt_corp_page_title}}}{{else}}Luxury Planners & Journals Customized<br />for Your Brand{{/if}}
     </h1>
     <p class="corp-hero-desc">
-      {{#if theme_settings.tt_corp_page_desc}}{{{theme_settings.tt_corp_page_desc}}}{{else}}Elevate your brand presence with handcrafted bespoke leather planners, custom blind debossing, and executive gift kits.{{/if}}
+      {{#if theme_settings.tt_corp_page_desc}}{{{theme_settings.tt_corp_page_desc}}}{{else}}Create refined corporate gifts with personalized planners, executive<br />diaries, and journals debossed with your company logo, foil<br />stamped individual names, or custom branding.{{/if}}
     </p>
-    <a href="{{#if theme_settings.tt_corp_page_btn_link}}{{theme_settings.tt_corp_page_btn_link}}{{else}}#corp-details{{/if}}" class="corp-hero-btn">{{#if theme_settings.tt_corp_page_btn}}{{theme_settings.tt_corp_page_btn}}{{else}}DISCOVER CORPORATE OPTIONS{{/if}}</a>
+    <a href="{{#if theme_settings.tt_corp_page_btn_link}}{{theme_settings.tt_corp_page_btn_link}}{{else}}mailto:cs@timetravelercorp.com?subject=Corporate Custom Gift Inquiry{{/if}}" class="corp-hero-btn">
+      {{#if theme_settings.tt_corp_page_btn}}{{theme_settings.tt_corp_page_btn}}{{else}}REQUEST A CORPORATE QUOTE{{/if}}
+      <i class="fa-solid fa-arrow-right-long" style="margin-left: 10px"></i>
+    </a>
   </div>
 
   <div class="corp-hero-features">
     <div class="corp-feature">
+      <div class="corp-feature-icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+      <p class="corp-feature-text">{{#if theme_settings.tt_corp_feat1}}{{theme_settings.tt_corp_feat1}}{{else}}Designed in the United States{{/if}}</p>
+    </div>
+    <div class="corp-feature-divider"></div>
+    <div class="corp-feature">
       <div class="corp-feature-icon"><i class="fa-solid fa-stamp"></i></div>
-      <div class="corp-feature-text">{{#if theme_settings.tt_corp_feat1}}{{theme_settings.tt_corp_feat1}}{{else}}Precision Blind Debossing & Foil Lettering{{/if}}</div>
+      <p class="corp-feature-text">{{#if theme_settings.tt_corp_feat2}}{{theme_settings.tt_corp_feat2}}{{else}}Logo & Name Embossing{{/if}}</p>
+    </div>
+    <div class="corp-feature-divider"></div>
+    <div class="corp-feature">
+      <div class="corp-feature-icon">
+        <i class="fa-solid fa-chalkboard-user"></i>
+      </div>
+      <p class="corp-feature-text">{{#if theme_settings.tt_corp_feat3}}{{theme_settings.tt_corp_feat3}}{{else}}Executive-Level Presentation{{/if}}</p>
     </div>
     <div class="corp-feature-divider"></div>
     <div class="corp-feature">
       <div class="corp-feature-icon"><i class="fa-solid fa-gift"></i></div>
-      <div class="corp-feature-text">{{#if theme_settings.tt_corp_feat2}}{{theme_settings.tt_corp_feat2}}{{else}}Bespoke Executive Gift Sets{{/if}}</div>
-    </div>
-    <div class="corp-feature-divider"></div>
-    <div class="corp-feature">
-      <div class="corp-feature-icon"><i class="fa-solid fa-tag"></i></div>
-      <div class="corp-feature-text">{{#if theme_settings.tt_corp_feat3}}{{theme_settings.tt_corp_feat3}}{{else}}Tiered Volume Pricing Structure{{/if}}</div>
-    </div>
-    <div class="corp-feature-divider"></div>
-    <div class="corp-feature">
-      <div class="corp-feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
-      <div class="corp-feature-text">{{#if theme_settings.tt_corp_feat4}}{{theme_settings.tt_corp_feat4}}{{else}}Direct Fulfillment & Delivery{{/if}}</div>
+      <p class="corp-feature-text">{{#if theme_settings.tt_corp_feat4}}{{theme_settings.tt_corp_feat4}}{{else}}Ideal for Client Gifting{{/if}}</p>
     </div>
   </div>
 </section>
 
 {{{region name="corp_middle_promo"}}}
 
-<!-- WYSIWYG Content from Control Panel & Corporate Details Section -->
-{{#if page.content}}
-  <div class="container" style="padding: 60px 20px;">
-    {{{page.content}}}
-  </div>
-{{/if}}
-
+<!-- 2. Corporate Details Section -->
 <section class="corp-details" id="corp-details">
   <div class="corp-details-container">
+    <!-- Left Side -->
     <div class="corp-details-left">
       <span class="corp-details-subtitle">
-        <i class="fa-solid fa-gem"></i> {{#if theme_settings.tt_corp_details_subtitle}}{{theme_settings.tt_corp_details_subtitle}}{{else}}BESPOKE CRAFTSMANSHIP{{/if}}
+        <i class="fa-solid fa-gift"></i> {{#if theme_settings.tt_corp_details_subtitle}}{{theme_settings.tt_corp_details_subtitle}}{{else}}ELEGANT COMPOSITION{{/if}}
       </span>
-      <h2 class="corp-details-title">{{#if theme_settings.tt_corp_details_title}}{{theme_settings.tt_corp_details_title}}{{else}}Tailored Stationery for Leadership Teams{{/if}}</h2>
+      <h2 class="corp-details-title">
+        {{#if theme_settings.tt_corp_details_title}}{{{theme_settings.tt_corp_details_title}}}{{else}}Memorable Gifts.<br />Beautifully Branded.{{/if}}
+      </h2>
       <p class="corp-details-desc">
-        {{#if theme_settings.tt_corp_details_desc}}{{{theme_settings.tt_corp_details_desc}}}{{else}}Time Traveler provides custom corporate programs for companies seeking memorable corporate gifts, client appreciation packages, and executive event keepsakes.{{/if}}
+        {{#if theme_settings.tt_corp_details_desc}}{{{theme_settings.tt_corp_details_desc}}}{{else}}Time Traveler creates elegant planners, journals, and desk accessories designed to make a lasting impression. Each piece can be customized with your company logo, recipient name, initials, or a combination of both, creating a polished gift that feels personal, useful, and distinctly refined.{{/if}}
       </p>
       <div class="corp-details-highlight">
-        {{#if theme_settings.tt_corp_details_quote}}{{theme_settings.tt_corp_details_quote}}{{else}}"Our master artisans utilize precision heating blocks and brass dies to deboss your brand identity with flawless elegance."{{/if}}
+        {{#if theme_settings.tt_corp_details_quote}}{{{theme_settings.tt_corp_details_quote}}}{{else}}Perfect for client appreciation, executive gifting, employee recognition, holiday programs, onboarding gifts, conferences, and branded corporate events.{{/if}}
       </div>
     </div>
 
+    <!-- Right Side -->
     <div class="corp-details-right">
+      <!-- Feature Box 1 -->
       <div class="corp-feature-box">
-        <div class="corp-feature-box-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="corp-feature-box-icon">
+          <i class="fa-solid fa-print"></i>
+        </div>
         <div class="corp-feature-box-content">
-          <h3>{{#if theme_settings.tt_corp_box1_title}}{{theme_settings.tt_corp_box1_title}}{{else}}Custom Logo Inscription{{/if}}</h3>
-          <p style="font-size: 14px; color: #4a5568; line-height: 1.6;">{{#if theme_settings.tt_corp_box1_desc}}{{theme_settings.tt_corp_box1_desc}}{{else}}Precision hot-foil debossing in gold, silver, alabaster white, or blind heat stamping.{{/if}}</p>
+          <h3>{{#if theme_settings.tt_corp_box1_title}}{{theme_settings.tt_corp_box1_title}}{{else}}Corporate Logo Embossing{{/if}}</h3>
+          <p>
+            {{#if theme_settings.tt_corp_box1_desc}}{{{theme_settings.tt_corp_box1_desc}}}{{else}}Showcase your brand with elegant logo blind debossing beautifully burnished on the cover and personalization available in gold, silver, white, or black.{{/if}}
+          </p>
         </div>
       </div>
 
+      <!-- Feature Box 2 -->
       <div class="corp-feature-box">
-        <div class="corp-feature-box-icon"><i class="fa-solid fa-box-open"></i></div>
+        <div class="corp-feature-box-icon">
+          <i class="fa-solid fa-award"></i>
+        </div>
         <div class="corp-feature-box-content">
-          <h3>{{#if theme_settings.tt_corp_box2_title}}{{theme_settings.tt_corp_box2_title}}{{else}}Custom Packaging & Inserts{{/if}}</h3>
-          <p style="font-size: 14px; color: #4a5568; line-height: 1.6;">{{#if theme_settings.tt_corp_box2_desc}}{{theme_settings.tt_corp_box2_desc}}{{else}}Personalized welcome letters, bookmark ribbons, and bespoke gift boxes tailored to your brand guidelines.{{/if}}</p>
+          <h3>{{#if theme_settings.tt_corp_box2_title}}{{theme_settings.tt_corp_box2_title}}{{else}}Personalized Names & Initials{{/if}}</h3>
+          <p>
+            {{#if theme_settings.tt_corp_box2_desc}}{{{theme_settings.tt_corp_box2_desc}}}{{else}}Add individual names or initials for a more thoughtful and bespoke gifting experience.{{/if}}
+          </p>
         </div>
       </div>
 
+      <!-- Feature Box 3 -->
       <div class="corp-feature-box">
-        <div class="corp-feature-box-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="corp-feature-box-icon">
+          <i class="fa-solid fa-crown"></i>
+        </div>
         <div class="corp-feature-box-content">
-          <h3>{{#if theme_settings.tt_corp_box3_title}}{{theme_settings.tt_corp_box3_title}}{{else}}Dedicated Account Specialist{{/if}}</h3>
-          <p style="font-size: 14px; color: #4a5568; line-height: 1.6;">{{#if theme_settings.tt_corp_box3_desc}}{{theme_settings.tt_corp_box3_desc}}{{else}}End-to-end guidance from sample preparation to final delivery for corporate orders.{{/if}}</p>
+          <h3>{{#if theme_settings.tt_corp_box3_title}}{{theme_settings.tt_corp_box3_title}}{{else}}Premium Business Gifts{{/if}}</h3>
+          <p>
+            {{#if theme_settings.tt_corp_box3_desc}}{{{theme_settings.tt_corp_box3_desc}}}{{else}}Give a practical luxury item your clients and team members will use throughout the year.{{/if}}
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- 3. Ideal For Section -->
+<section class="corp-ideal">
+  <div class="corp-ideal-container">
+    <div class="corp-ideal-header">
+      <h2 class="corp-ideal-title">{{#if theme_settings.tt_corp_ideal_title}}{{theme_settings.tt_corp_ideal_title}}{{else}}Ideal For{{/if}}</h2>
+    </div>
+
+    <div class="corp-ideal-grid">
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_1}}{{theme_settings.tt_corp_ideal_1}}{{else}}Corporate holiday gifts{{/if}}
+      </div>
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_2}}{{theme_settings.tt_corp_ideal_2}}{{else}}New hire welcome gifts{{/if}}
+      </div>
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_3}}{{theme_settings.tt_corp_ideal_3}}{{else}}Client appreciation gifts{{/if}}
+      </div>
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_4}}{{theme_settings.tt_corp_ideal_4}}{{else}}Conference gifts{{/if}}
+      </div>
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_5}}{{theme_settings.tt_corp_ideal_5}}{{else}}Executive desk gifts{{/if}}
+      </div>
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_6}}{{theme_settings.tt_corp_ideal_6}}{{else}}Board member gifts{{/if}}
+      </div>
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_7}}{{theme_settings.tt_corp_ideal_7}}{{else}}Employee recognition{{/if}}
+      </div>
+      <div class="corp-ideal-item">
+        <div class="corp-ideal-dot"></div>
+        {{#if theme_settings.tt_corp_ideal_8}}{{theme_settings.tt_corp_ideal_8}}{{else}}Luxury branded merchandise{{/if}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. How Corporate Orders Work Section -->
+<section class="tt-features">
+  <div class="tt-features-header">
+    <span class="tt-features-subtitle">{{#if theme_settings.tt_corp_process_subtitle}}{{theme_settings.tt_corp_process_subtitle}}{{else}}workflow path{{/if}}</span>
+    <h2 class="tt-features-title">{{#if theme_settings.tt_corp_process_title}}{{theme_settings.tt_corp_process_title}}{{else}}How Corporate Orders Work{{/if}}</h2>
+    <div class="tt-features-divider"></div>
+  </div>
+  <div class="tt-features-grid">
+    <!-- Box 1 -->
+    <div class="tt-features-box">
+      <div class="tt-features-icon">
+        <span class="tt-features-number">1</span>
+      </div>
+      <h3 class="tt-features-box-title">{{#if theme_settings.tt_corp_step1_title}}{{theme_settings.tt_corp_step1_title}}{{else}}Select Your Product{{/if}}</h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_corp_step1_desc}}{{{theme_settings.tt_corp_step1_desc}}}{{else}}Choose from planners, executive desk diaries, journals, or accessories.{{/if}}
+      </p>
+    </div>
+    <!-- Box 2 (Highlight) -->
+    <div class="tt-features-box highlight">
+      <div class="tt-features-icon">
+        <span class="tt-features-number">2</span>
+      </div>
+      <h3 class="tt-features-box-title">{{#if theme_settings.tt_corp_step2_title}}{{theme_settings.tt_corp_step2_title}}{{else}}Send Your Logo{{/if}}</h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_corp_step2_desc}}{{{theme_settings.tt_corp_step2_desc}}}{{else}}Provide your company logo, names, initials, or personalization details.{{/if}}
+      </p>
+    </div>
+    <!-- Box 3 -->
+    <div class="tt-features-box">
+      <div class="tt-features-icon">
+        <span class="tt-features-number">3</span>
+      </div>
+      <h3 class="tt-features-box-title">{{#if theme_settings.tt_corp_step3_title}}{{theme_settings.tt_corp_step3_title}}{{else}}Debossing & Foil{{/if}}</h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_corp_step3_desc}}{{{theme_settings.tt_corp_step3_desc}}}{{else}}Select gold, silver, white, or black foil foil stamping for names, initials and any other personalization to complement your brand.{{/if}}
+      </p>
+    </div>
+    <!-- Box 4 -->
+    <div class="tt-features-box">
+      <div class="tt-features-icon">
+        <span class="tt-features-number">4</span>
+      </div>
+      <h3 class="tt-features-box-title">{{#if theme_settings.tt_corp_step4_title}}{{theme_settings.tt_corp_step4_title}}{{else}}Approve & Order{{/if}}</h3>
+      <p class="tt-features-box-desc">
+        {{#if theme_settings.tt_corp_step4_desc}}{{{theme_settings.tt_corp_step4_desc}}}{{else}}We guide you through the details and prepare your custom corporate order.{{/if}}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Dies & Impressions Section -->
+<section class="tt-impression-section">
+  <div class="tt-impression-container">
+    <div class="tt-impression-content">
+      <span class="tt-impression-subtitle">
+        <i class="fa-solid fa-angles-right"></i> {{#if theme_settings.tt_corp_options_subtitle}}{{theme_settings.tt_corp_options_subtitle}}{{else}}DIES & IMPRESSIONS{{/if}}
+      </span>
+      <h2 class="tt-impression-title">
+        {{#if theme_settings.tt_corp_options_title}}{{theme_settings.tt_corp_options_title}}{{else}}Elegant Customization Options{{/if}}
+      </h2>
+      <p class="tt-impression-desc">
+        {{#if theme_settings.tt_corp_options_desc}}{{{theme_settings.tt_corp_options_desc}}}{{else}}Our computer-controlled hot-foil embossing creates a clean, professional finish suitable for both subtle personalization and corporate branding.{{/if}}
+      </p>
+      <div class="tt-impression-divider"></div>
+      <ul class="tt-impression-list">
+        <li>{{#if theme_settings.tt_corp_opt1}}{{theme_settings.tt_corp_opt1}}{{else}}COMPANY LOGO DEBOSSING{{/if}}</li>
+        <li>{{#if theme_settings.tt_corp_opt2}}{{theme_settings.tt_corp_opt2}}{{else}}INITIALS OR MONOGRAMS{{/if}}</li>
+        <li>{{#if theme_settings.tt_corp_opt3}}{{theme_settings.tt_corp_opt3}}{{else}}SECONDARY LOGO OR SEAL{{/if}}</li>
+        <li>{{#if theme_settings.tt_corp_opt4}}{{theme_settings.tt_corp_opt4}}{{else}}GOLD, SILVER, WHITE, OR BLACK FOIL{{/if}}</li>
+        <li>{{#if theme_settings.tt_corp_opt5}}{{theme_settings.tt_corp_opt5}}{{else}}INDIVIDUAL NAMES{{/if}}</li>
+        <li>{{#if theme_settings.tt_corp_opt6}}{{theme_settings.tt_corp_opt6}}{{else}}CUSTOM CORPORATE GIFTING{{/if}}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA Section -->
+<div class="tt-cta-wrapper">
+  <section class="tt-cta">
+    <span class="tt-cta-subtitle">{{#if theme_settings.tt_corp_cta_subtitle}}{{theme_settings.tt_corp_cta_subtitle}}{{else}}BEGIN YOUR CORPORATE ORDER{{/if}}</span>
+    <h2 class="tt-cta-title">{{#if theme_settings.tt_corp_cta_title}}{{theme_settings.tt_corp_cta_title}}{{else}}Create a Gift Worth Keeping{{/if}}</h2>
+    <p class="tt-cta-desc">
+      {{#if theme_settings.tt_corp_cta_desc}}{{{theme_settings.tt_corp_cta_desc}}}{{else}}Contact us for product recommendations, customization options, logo embossing details, and corporate quantity orders.{{/if}}
+    </p>
+    <a href="{{#if theme_settings.tt_corp_cta_btn_link}}{{theme_settings.tt_corp_cta_btn_link}}{{else}}mailto:cs@timetravelercorp.com?subject=Corporate Custom Gift Inquiry{{/if}}" class="tt-cta-btn">
+      {{#if theme_settings.tt_corp_cta_btn}}{{theme_settings.tt_corp_cta_btn}}{{else}}REQUEST A QUOTE{{/if}}
+      <i class="fa-solid fa-arrow-right-long" style="margin-left: 10px"></i>
+    </a>
+    <div style="margin-top: 20px">
+      <a
+        href="mailto:{{#if theme_settings.tt_corp_cta_email}}{{theme_settings.tt_corp_cta_email}}{{else}}cs@timetravelercorp.com{{/if}}"
+        style="
+          color: #c8c0b4;
+          text-decoration: none;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 14px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        "
+      >
+        <i class="fa-regular fa-envelope"></i>
+        <span style="text-decoration: underline"
+          >{{#if theme_settings.tt_corp_cta_email}}{{theme_settings.tt_corp_cta_email}}{{else}}cs@timetravelercorp.com{{/if}}</span
+        >
+      </a>
+    </div>
+  </section>
+</div>
 
 {{{region name="corp_details_grid"}}}
 

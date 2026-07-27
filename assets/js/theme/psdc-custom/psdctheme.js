@@ -82,13 +82,13 @@ export default function () {
 
   function mobilecurrancy() {
     if ($(window).width() <= 1365) {
-      if(!$('.mobile-currancy').hasClass('header-currancy')){
+      if (!$('.mobile-currancy').hasClass('header-currancy')) {
         $('.mobile-currancy').append($('.header-main .header-currancy'))
       }
       $('.mobile-currancy .header-currancy .navUser-section').removeClass('sf-menu sf-js-enabled sf-arrows');
     } else {
 
-      if(!$('.header-main').hasClass('header-currancy')){
+      if (!$('.header-main').hasClass('header-currancy')) {
         $('.header-main').prepend($('.mobile-currancy .header-currancy'));
         $('.header-main .header-currancy .navUser-section').addClass('sf-menu sf-js-enabled sf-arrows');
       }
@@ -160,7 +160,7 @@ export default function () {
 
     // Highlight active navigation items based on current URL
     const currentUrl = window.location.pathname;
-    jQuery('.navPages-list .navPages-action').each(function() {
+    jQuery('.navPages-list .navPages-action').each(function () {
       const href = jQuery(this).attr('href');
       if (href && href !== '#' && href !== 'javascript:void(0);') {
         if (currentUrl === href || (href !== '/' && currentUrl.startsWith(href))) {
@@ -175,12 +175,12 @@ export default function () {
     }
 
     // Highlight parent menu items for active sub-links
-    jQuery('.navPages-list .active').each(function() {
+    jQuery('.navPages-list .active').each(function () {
       jQuery(this).closest('.navPages-item').find('> .navPages-action').addClass('active');
     });
 
     // Sidebar category dropdown click toggle on desktop
-    jQuery(document).on('click', '.filter-left .sidebarBlock-heading', function(e) {
+    jQuery(document).on('click', '.filter-left .sidebarBlock-heading', function (e) {
       if (window.innerWidth >= 1024) {
         e.preventDefault();
         e.stopPropagation();
@@ -194,7 +194,7 @@ export default function () {
     });
 
     // Close categories dropdown when clicking outside
-    jQuery(document).on('click', function(e) {
+    jQuery(document).on('click', function (e) {
       if (!jQuery(e.target).closest('.filter-left .sidebarBlock').length) {
         jQuery('.filter-left .sidebarBlock-heading, .filter-left .navList-treeview').removeClass('is-open');
       }
@@ -245,8 +245,8 @@ export default function () {
       });
     });
 
-    $('.productView-image-main').click(function() {
-        $('.currentGalleryImage').trigger('click');
+    $('.productView-image-main').click(function () {
+      $('.currentGalleryImage').trigger('click');
     });
 
     /*if(document.querySelectorAll('.fancythumb,.fancythumb img').length){
@@ -459,7 +459,7 @@ export default function () {
     document.querySelectorAll("p").forEach((p) => {
       // Convert &nbsp; to normal spaces, then remove whitespace
       if (p.textContent.replace(/\u00A0/g, " ").trim() === "") {
-          p.style.display = "none";
+        p.style.display = "none";
       }
     });
   }

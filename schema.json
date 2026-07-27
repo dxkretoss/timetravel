@@ -873,6 +873,11 @@
         "id": "tt_corp_showcase_btn_link"
       },
       {
+        "type": "imageManager",
+        "label": "Corporate Showcase Image",
+        "id": "tt_corp_showcase_img"
+      },
+      {
         "type": "heading",
         "content": "Featured Journals Shop Section"
       },
@@ -1064,6 +1069,246 @@
         "type": "input",
         "label": "Card 3 Description",
         "id": "tt_corp_box3_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Intro & Benefit Cards"
+      },
+      {
+        "type": "input",
+        "label": "Intro Subtitle",
+        "id": "tt_corp_intro_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Intro Title",
+        "id": "tt_corp_intro_title"
+      },
+      {
+        "type": "input",
+        "label": "Intro Paragraph 1",
+        "id": "tt_corp_intro_desc1"
+      },
+      {
+        "type": "input",
+        "label": "Intro Paragraph 2",
+        "id": "tt_corp_intro_desc2"
+      },
+      {
+        "type": "input",
+        "label": "Benefit 1 Title",
+        "id": "tt_corp_card1_title"
+      },
+      {
+        "type": "input",
+        "label": "Benefit 1 Description",
+        "id": "tt_corp_card1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Benefit 2 Title",
+        "id": "tt_corp_card2_title"
+      },
+      {
+        "type": "input",
+        "label": "Benefit 2 Description",
+        "id": "tt_corp_card2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Benefit 3 Title",
+        "id": "tt_corp_card3_title"
+      },
+      {
+        "type": "input",
+        "label": "Benefit 3 Description",
+        "id": "tt_corp_card3_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Ideal For Section"
+      },
+      {
+        "type": "input",
+        "label": "Ideal For Subtitle",
+        "id": "tt_corp_ideal_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Ideal For Title",
+        "id": "tt_corp_ideal_title"
+      },
+      {
+        "type": "input",
+        "label": "Item 1",
+        "id": "tt_corp_ideal_1"
+      },
+      {
+        "type": "input",
+        "label": "Item 2",
+        "id": "tt_corp_ideal_2"
+      },
+      {
+        "type": "input",
+        "label": "Item 3",
+        "id": "tt_corp_ideal_3"
+      },
+      {
+        "type": "input",
+        "label": "Item 4",
+        "id": "tt_corp_ideal_4"
+      },
+      {
+        "type": "input",
+        "label": "Item 5",
+        "id": "tt_corp_ideal_5"
+      },
+      {
+        "type": "input",
+        "label": "Item 6",
+        "id": "tt_corp_ideal_6"
+      },
+      {
+        "type": "input",
+        "label": "Item 7",
+        "id": "tt_corp_ideal_7"
+      },
+      {
+        "type": "input",
+        "label": "Item 8",
+        "id": "tt_corp_ideal_8"
+      },
+      {
+        "type": "heading",
+        "content": "How Corporate Orders Work (4 Steps)"
+      },
+      {
+        "type": "input",
+        "label": "Process Subtitle",
+        "id": "tt_corp_process_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Process Title",
+        "id": "tt_corp_process_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 1 Title",
+        "id": "tt_corp_step1_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 1 Description",
+        "id": "tt_corp_step1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Step 2 Title",
+        "id": "tt_corp_step2_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 2 Description",
+        "id": "tt_corp_step2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Step 3 Title",
+        "id": "tt_corp_step3_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 3 Description",
+        "id": "tt_corp_step3_desc"
+      },
+      {
+        "type": "input",
+        "label": "Step 4 Title",
+        "id": "tt_corp_step4_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 4 Description",
+        "id": "tt_corp_step4_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Customization Options Section"
+      },
+      {
+        "type": "input",
+        "label": "Customization Subtitle",
+        "id": "tt_corp_options_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Customization Title",
+        "id": "tt_corp_options_title"
+      },
+      {
+        "type": "input",
+        "label": "Customization Description",
+        "id": "tt_corp_options_desc"
+      },
+      {
+        "type": "input",
+        "label": "Option Bullet 1",
+        "id": "tt_corp_opt1"
+      },
+      {
+        "type": "input",
+        "label": "Option Bullet 2",
+        "id": "tt_corp_opt2"
+      },
+      {
+        "type": "input",
+        "label": "Option Bullet 3",
+        "id": "tt_corp_opt3"
+      },
+      {
+        "type": "input",
+        "label": "Option Bullet 4",
+        "id": "tt_corp_opt4"
+      },
+      {
+        "type": "input",
+        "label": "Option Bullet 5",
+        "id": "tt_corp_opt5"
+      },
+      {
+        "type": "heading",
+        "content": "CTA Banner Section"
+      },
+      {
+        "type": "input",
+        "label": "CTA Subtitle",
+        "id": "tt_corp_cta_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "CTA Title",
+        "id": "tt_corp_cta_title"
+      },
+      {
+        "type": "input",
+        "label": "CTA Description",
+        "id": "tt_corp_cta_desc"
+      },
+      {
+        "type": "input",
+        "label": "CTA Button Text",
+        "id": "tt_corp_cta_btn"
+      },
+      {
+        "type": "input",
+        "label": "CTA Button Link URL",
+        "id": "tt_corp_cta_btn_link"
+      },
+      {
+        "type": "input",
+        "label": "CTA Direct Email",
+        "id": "tt_corp_cta_email"
       }
     ]
   },

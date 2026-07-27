@@ -676,10 +676,17 @@ blog:
       >
     </div>
     <div class="tt-custom-image-wrapper">
+      {{#if theme_settings.tt_corp_showcase_img}}
+      <img
+        src="{{getImageManagerImage theme_settings.tt_corp_showcase_img}}"
+        alt="Custom Corporate Products"
+      />
+      {{else}}
       <img
         src="{{cdn 'img/custom_prod.png'}}"
         alt="Custom Corporate Products"
       />
+      {{/if}}
     </div>
   </div>
 </section>
