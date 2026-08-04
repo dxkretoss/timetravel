@@ -873,7 +873,7 @@
         "id": "tt_corp_showcase_btn_link"
       },
       {
-        "type": "imageManager",
+        "type": "input",
         "label": "Corporate Showcase Image",
         "id": "tt_corp_showcase_img"
       },
