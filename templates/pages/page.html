@@ -29,4 +29,304 @@ breadcrumbs=breadcrumbs}} --}} {{#unless theme_settings.hide_page_heading }}
   {{/if}}
 </main>
 
+<script>
+  (function () {
+    function formatRightSideContact(rawHtml) {
+      if (!rawHtml) return '';
+      var text = rawHtml.replace(/<[^>]*>/g, ' ');
+
+      var isContact = text.toLowerCase().indexOf('contact us') !== -1 ||
+        text.toLowerCase().indexOf('email') !== -1 ||
+        text.toLowerCase().indexOf('phone') !== -1 ||
+        text.toLowerCase().indexOf('business hours') !== -1;
+
+      if (!isContact) {
+        return rawHtml;
+      }
+
+      var phoneMatch = text.match(/Phone:?\s*([\d\-\(\)\s\+]+)/i) || text.match(/(754-232-2203|[\d\-\+]{10,})/);
+      var phone = phoneMatch ? phoneMatch[1].trim() : '754-232-2203';
+
+      var emailMatch = text.match(/Email:?\s*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i) || text.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
+      var email = emailMatch ? emailMatch[1].trim() : 'cs@timetravelercorp.com';
+
+      var address = '4491 Waterside Drive<br>Fort Lauderdale, FL 33309';
+
+      return '<div class="contact-card-header">' +
+        '<div class="contact-header-icon">' +
+        '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>' +
+        '</div>' +
+        '<h3 class="contact-header-title">Contact Us</h3>' +
+        '</div>' +
+        '<div class="contact-card-body">' +
+        '<div class="contact-info-item">' +
+        '<div class="contact-info-icon">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8975A" stroke-width="1.8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>' +
+        '</div>' +
+        '<div class="contact-info-details">' +
+        '<div class="contact-info-label">Location</div>' +
+        '<div class="contact-info-text">' + address + '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="contact-info-item">' +
+        '<div class="contact-info-icon">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8975A" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
+        '</div>' +
+        '<div class="contact-info-details">' +
+        '<div class="contact-info-label">Phone Number</div>' +
+        '<div class="contact-info-text"><a href="tel:' + phone.replace(/\D/g, '') + '">' + phone + '</a></div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="contact-info-item">' +
+        '<div class="contact-info-icon">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8975A" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>' +
+        '</div>' +
+        '<div class="contact-info-details">' +
+        '<div class="contact-info-label">Email</div>' +
+        '<div class="contact-info-text"><a href="mailto:' + email + '">' + email + '</a></div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="contact-info-item">' +
+        '<div class="contact-info-icon">' +
+        '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8975A" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>' +
+        '</div>' +
+        '<div class="contact-info-details">' +
+        '<div class="contact-info-label">Business Hours</div>' +
+        '<div class="contact-info-text hours-list">' +
+        '<div>Monday – Thursday</div>' +
+        '<div class="hours-time">9:00 AM – 5:00 PM EST</div>' +
+        '<div>Friday</div>' +
+        '<div class="hours-time">9:00 AM – 3:00 PM EST</div>' +
+        '<div>Saturday &amp; Sunday</div>' +
+        '<div class="closed-tag">Closed</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    }
+
+    function formatInOneBox(rawHtml) {
+      if (!rawHtml) return '';
+
+      var textOnly = rawHtml.replace(/<[^>]*>/g, '\n');
+      var lines = textOnly.split('\n').map(function(l) { return l.trim(); }).filter(function(l) { return l.length > 0; });
+
+      var phone = '';
+      var phoneMatch = rawHtml.match(/(?:phone:?\s*)?([\d\-\(\)\.\s\+]{7,20})/i);
+      if (phoneMatch && phoneMatch[1] && phoneMatch[1].replace(/\D/g, '').length >= 7) {
+        phone = phoneMatch[1].trim();
+      } else {
+        for (var i = 0; i < lines.length; i++) {
+          if (/phone/i.test(lines[i]) && lines[i + 1]) {
+            phone = lines[i + 1];
+            break;
+          }
+        }
+      }
+      if (!phone) phone = '754-232-2203';
+
+      var emailMatch = rawHtml.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
+      var email = emailMatch ? emailMatch[1].trim() : 'cs@timetravelercorp.com';
+
+      var address = '4491 Waterside Drive<br>Fort Lauderdale, FL 33309';
+
+      return '<div class="in-one-row-container icon-added">' +
+        '<div class="in-one-row-item icon-added">' +
+          '<div class="in-one-row-icon icon-added"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8975A" stroke-width="1.8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>' +
+          '<div class="in-one-row-details icon-added">' +
+            '<div class="in-one-row-label icon-added">Location</div>' +
+            '<div class="in-one-row-text">' + address + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="in-one-row-item icon-added">' +
+          '<div class="in-one-row-icon icon-added"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8975A" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>' +
+          '<div class="in-one-row-details icon-added">' +
+            '<div class="in-one-row-label icon-added">Phone Number</div>' +
+            '<div class="in-one-row-text"><a href="tel:' + phone.replace(/\D/g, '') + '">' + phone + '</a></div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="in-one-row-item icon-added">' +
+          '<div class="in-one-row-icon icon-added"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8975A" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>' +
+          '<div class="in-one-row-details icon-added">' +
+            '<div class="in-one-row-label icon-added">Email</div>' +
+            '<div class="in-one-row-text"><a href="mailto:' + email + '">' + email + '</a></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }
+
+    function cleanTagMarkers(str) {
+      if (!str) return '';
+      return str
+        .replace(/<p>\s*(&lt;|<)\s*\/?\s*left\s*side\s*(&gt;|>)\s*<\/p>/gi, '')
+        .replace(/(&lt;|<)\s*\/?\s*left\s*side\s*(&gt;|>)/gi, '')
+        .replace(/<p>\s*(&lt;|<)\s*\/?\s*right\s*side\s*(&gt;|>)\s*<\/p>/gi, '')
+        .replace(/(&lt;|<)\s*\/?\s*right\s*side\s*(&gt;|>)/gi, '')
+        .trim();
+    }
+
+    function processPageBoxes() {
+      var pageContainer = document.querySelector('.page-content.page-content--centered');
+      if (!pageContainer) return;
+
+      var html = pageContainer.innerHTML;
+      if (!html) return;
+
+      // 0. Handle {{BadgeText}} tags in description
+      var badgeRegex = /(?:<p>)?(?:\{\{|\&lbrace;\&lbrace;|&#123;&#123;)\s*([^{}]+?)\s*(?:\}\}|\&rbrace;\&rbrace;|&#125;&#125;)(?:<\/p>)?/gi;
+      var badgeMatch = badgeRegex.exec(html);
+      if (badgeMatch && badgeMatch[1]) {
+        var badgeText = badgeMatch[1].trim();
+        html = html.replace(badgeRegex, '');
+
+        var pageHeading = document.querySelector('.page-heading');
+        if (pageHeading) {
+          var existingBadge = document.querySelector('.page-top-badge');
+          if (!existingBadge) {
+            var badgeEl = document.createElement('div');
+            badgeEl.className = 'page-top-badge';
+            badgeEl.textContent = badgeText.toUpperCase();
+            pageHeading.parentNode.insertBefore(badgeEl, pageHeading);
+          }
+        } else {
+          html = '<div class="page-top-badge in-box-badge">' + badgeText.toUpperCase() + '</div>' + html;
+        }
+      }
+
+      var lowerHtml = html.toLowerCase();
+
+      // 1. Process inonebox tags first
+      if (lowerHtml.indexOf('inonebox') !== -1) {
+        var inOneBoxRegex = /(?:<p>)?(?:&lt;|<)\s*inonebox\s*(?:&gt;|>)(?:<\/p>)?([\s\S]*?)(?:(?:<p>)?(?:&lt;|<)\s*\/?\s*inonebox\s*(?:&gt;|>)(?:<\/p>)?|$)/gi;
+        html = html.replace(inOneBoxRegex, function(match, innerText) {
+          if (!innerText || !innerText.trim()) return '';
+          return formatInOneBox(innerText);
+        });
+      }
+
+      // 2. First process whitebox tags in html string
+      if (lowerHtml.indexOf('whitebox') !== -1) {
+        html = html
+          .replace(/<p>\s*(&lt;|<)\s*whitebox\s*(&gt;|>)\s*<\/p>/gi, '<div class="inner-white-card">')
+          .replace(/(&lt;|<)\s*whitebox\s*(&gt;|>)/gi, '<div class="inner-white-card">')
+          .replace(/<p>\s*(&lt;|<)\s*\/\s*whitebox\s*(&gt;|>)\s*<\/p>/gi, '</div>')
+          .replace(/(&lt;|<)\s*\/\s*whitebox\s*(&gt;|>)/gi, '</div>');
+      }
+
+      // 2. Handle Leftside / Right side layout
+      var hasLeft = lowerHtml.indexOf('leftside') !== -1 || lowerHtml.indexOf('left side') !== -1;
+      var hasRight = lowerHtml.indexOf('rightside') !== -1 || lowerHtml.indexOf('right side') !== -1;
+
+      if (hasLeft || hasRight) {
+        var leftContent = '';
+        var rightContent = '';
+
+        var rightMarkerRegex = /(?:<p>)?(?:&lt;|<)\s*right\s*side\s*(?:&gt;|>)(?:<\/p>)?/i;
+
+        if (rightMarkerRegex.test(html)) {
+          var parts = html.split(rightMarkerRegex);
+          leftContent = cleanTagMarkers(parts[0]);
+          rightContent = cleanTagMarkers(parts[1] || '');
+        } else {
+          leftContent = cleanTagMarkers(html);
+        }
+
+        if (leftContent || rightContent) {
+          pageContainer.classList.remove('page-border-box');
+          pageContainer.style.background = 'transparent';
+          pageContainer.style.border = 'none';
+          pageContainer.style.padding = '0';
+
+          var formattedRight = formatRightSideContact(rightContent);
+
+          pageContainer.innerHTML =
+            '<div class="page-two-columns">' +
+            '<div class="page-column-left page-border-box">' + leftContent + '</div>' +
+            '<div class="page-column-right contact-sidebar-box">' + formattedRight + '</div>' +
+            '</div>';
+
+          formatBoxIcons();
+          return;
+        }
+      }
+
+      // 3. Handle breakbox splitting
+      if (lowerHtml.indexOf('breakbox') !== -1) {
+        var cleanedHtml = html
+          .replace(/<p>\s*(&lt;|<)\s*breakbox\s*(&gt;|>)\s*<\/p>/gi, '<!--BREAKBOX-->')
+          .replace(/(&lt;|<)\s*breakbox\s*(&gt;|>)/gi, '<!--BREAKBOX-->')
+          .replace(/<breakbox[^>]*>.*?<\/breakbox>/gi, '<!--BREAKBOX-->')
+          .replace(/<breakbox[^>]*\/?>/gi, '<!--BREAKBOX-->');
+
+        var parts = cleanedHtml.split('<!--BREAKBOX-->');
+        var validParts = [];
+        for (var i = 0; i < parts.length; i++) {
+          var trimmed = parts[i].trim();
+          if (trimmed.length > 0) {
+            validParts.push(trimmed);
+          }
+        }
+
+        if (validParts.length > 1) {
+          pageContainer.classList.remove('page-border-box');
+          pageContainer.style.background = 'transparent';
+          pageContainer.style.border = 'none';
+          pageContainer.style.padding = '0';
+
+          var newContent = '';
+          for (var j = 0; j < validParts.length; j++) {
+            newContent += '<div class="page-border-box break-box-item">' + validParts[j] + '</div>';
+          }
+          pageContainer.innerHTML = newContent;
+          formatBoxIcons();
+          return;
+        }
+      }
+
+      // 4. Update innerHTML if whitebox was processed without breakbox
+      pageContainer.innerHTML = html;
+      formatBoxIcons();
+    }
+
+    function formatBoxIcons() {
+      // Format location and email icons inside page boxes
+      var allBoxes = document.querySelectorAll('.page-border-box, .inner-white-card');
+      allBoxes.forEach(function (box) {
+        var paragraphs = box.querySelectorAll('p, div');
+        paragraphs.forEach(function (p) {
+          if (p.closest('.in-one-row-container') || p.closest('.icon-added') || p.classList.contains('icon-added') || p.querySelector('.icon-added')) return;
+          var cleanText = p.textContent ? p.textContent.trim() : '';
+
+          // Format Location label line only
+          if (/^Location:?$/i.test(cleanText)) {
+            p.innerHTML = '<span class="icon-added" style="display:inline-flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#B8975A" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> ' + p.innerHTML + '</span>';
+          }
+          // Format Email label line only
+          if (/^Email:?$/i.test(cleanText)) {
+            p.innerHTML = '<span class="icon-added" style="display:inline-flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#B8975A" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> ' + p.innerHTML + '</span>';
+          }
+        });
+      });
+
+      // Format payment notice if present
+      var pageBoxes = document.querySelectorAll('.page-border-box');
+      pageBoxes.forEach(function (box) {
+        var elements = box.querySelectorAll('p, div');
+        elements.forEach(function (el) {
+          var text = el.textContent || el.innerText || '';
+          if (text.indexOf('We do not accept PayPal') !== -1 || text.indexOf('Amazon Pay, Google Pay') !== -1) {
+            el.classList.add('payment-notice-box');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', processPageBoxes);
+    } else {
+      processPageBoxes();
+    }
+  })();
+</script>
+
 {{/partial}} {{> layout/base}}

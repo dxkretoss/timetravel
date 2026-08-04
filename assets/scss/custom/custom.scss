@@ -77,6 +77,110 @@ address span {
     font-family: "DM Sans", sans-serif;
 }
 
+/* ==========================================
+   PAYMENT PAGE NOTICE & CARD ICONS
+========================================== */
+.payment-notice-box,
+.page-border-box .payment-notice-box,
+.page-border-box p.payment-notice-box {
+    position: relative !important;
+    background-color: #ECDDD2 !important;
+    color: #8E593D !important;
+    padding: 14px 20px !important;
+    border-radius: 6px !important;
+    margin: 18px 0 25px 0 !important;
+    border-bottom: none !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    display: block !important;
+    font-family: "DM Sans", sans-serif !important;
+
+    span {
+        color: #8E593D !important;
+        font-family: "DM Sans", sans-serif !important;
+    }
+
+    &::after {
+        content: '' !important;
+        display: block !important;
+        position: absolute !important;
+        bottom: -15px !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 1px !important;
+        background-color: #4A556833 !important;
+    }
+}
+
+.page-border-box p:has(img) {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+.page-border-box img {
+    background-color: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 6px !important;
+    margin-right: 10px !important;
+    margin-bottom: 8px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    height: auto !important;
+    max-height: 38px !important;
+    object-fit: contain !important;
+}
+
+/* ==========================================
+   BREAKBOX MULTI-CARD CONTAINERS
+========================================== */
+.break-box-item {
+    background-color: #B8975A14 !important;
+    border: 1px solid #B8975A80 !important;
+    padding: 40px !important;
+    margin-bottom: 24px !important;
+    font-family: "DM Sans", sans-serif !important;
+
+    p {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 15px !important;
+        color: #4A5568 !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 18px !important;
+        line-height: 30px !important;
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        strong,
+        b {
+            color: #B8975A !important;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "DM Sans", sans-serif !important;
+        font-weight: 700 !important;
+        color: #2D2D2D !important;
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+    }
+}
+
+
+
 
 .productGrid .product {
     width: 100%;
@@ -404,7 +508,7 @@ address span {
         -webkit-transform: none !important;
         -ms-transform: none !important;
         transform: none !important;
-        
+
         svg.quick-links-chevron {
             width: 14px !important; // Increased chevron size
             height: 14px !important;
@@ -427,12 +531,13 @@ address span {
 
 // Override Superfish hover for inner items completely
 .quick-links-dropdown {
-    li:hover > ul.quick-links-dropdown-sub,
-    li.sfHover > ul.quick-links-dropdown-sub {
+
+    li:hover>ul.quick-links-dropdown-sub,
+    li.sfHover>ul.quick-links-dropdown-sub {
         display: none !important;
     }
-    
-    li.is-open > ul.quick-links-dropdown-sub {
+
+    li.is-open>ul.quick-links-dropdown-sub {
         display: block !important;
     }
 }
@@ -1179,9 +1284,9 @@ address span {
     font-family: "DM Sans", sans-serif;
 }
 
-p:empty {
-    display: none;
-}
+// p:empty {
+//     display: none;
+// }
 
 .account.account--fixed {
     border: 1px solid #B8975A80;
@@ -1588,9 +1693,519 @@ p:empty {
     font-family: 'DM', sans-serif !important;
     color: #4A5568;
     max-width: 682px;
+    width: 100%;
 }
 
 .category-banner-section p span strong {
     font-weight: 400 !important;
     font-family: 'DM', sans-serif !important;
+}
+
+.welcome-box p {
+    border-bottom: 1px solid #4A556833;
+    padding: 10px 0;
+}
+
+.welcome-box p b {
+    color: #B8975A;
+}
+
+.welcome-box p:last-child {
+    border-bottom: none;
+}
+
+.welcome-box h2 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #4A5568;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: "DM Sans", sans-serif !important;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+}
+
+.page-border-box h2 {
+    font-weight: 700;
+    font-size: 24px;
+    font-family: "DM Sans", sans-serif !important;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.page-border-box ul {
+    margin-left: 20px;
+
+    @media (max-width: 768px) {
+        margin-left: 15px;
+    }
+}
+
+.page-border-box ul li {
+    font-weight: 500;
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 18px;
+    line-height: 30px;
+    color: #4A5568;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
+
+.page-border-box p {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.6px;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.3px;
+    }
+}
+
+.page-border-box {
+    @media (max-width: 768px) {
+        padding: 20px 15px !important;
+    }
+}
+
+.page-border-box p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.page-content--centered {
+    max-width: 1216px !important;
+    width: 100%;
+}
+
+.page-heading {
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
+}
+
+/* ==========================================
+   TOP PAGE BADGE / SUBTITLE (from {{BadgeText}})
+========================================== */
+.page-top-badge {
+    text-align: center;
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: #B8975A !important;
+    margin-bottom: 10px !important;
+    margin-top: 15px !important;
+    display: block !important;
+
+    @media (max-width: 768px) {
+        font-size: 11px !important;
+        letter-spacing: 2px !important;
+        margin-bottom: 8px !important;
+    }
+
+    &.in-box-badge {
+        text-align: left;
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+/* ==========================================
+   TWO COLUMN PAGE LAYOUT & CONTACT SIDEBAR
+========================================== */
+.page-two-columns {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 10px;
+
+    @media (max-width: 991px) {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.page-column-left.page-border-box {
+    flex: 1 1 64%;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+        padding: 20px 15px !important;
+    }
+
+    p {
+        border-bottom: 1px solid #4A556833 !important;
+        padding-bottom: 15px !important;
+        margin-bottom: 15px !important;
+        color: #4A5568 !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 18px !important;
+        line-height: 30px !important;
+
+        @media (max-width: 768px) {
+            font-size: 15px !important;
+            line-height: 24px !important;
+            padding-bottom: 12px !important;
+            margin-bottom: 12px !important;
+        }
+
+        &:last-child {
+            border-bottom: none !important;
+            margin-bottom: 0 !important;
+        }
+
+        a {
+            color: #B8975A !important;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+    }
+}
+
+.page-column-right.contact-sidebar-box {
+    flex: 0 0 340px;
+    width: 340px;
+    max-width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #EAEAEA;
+    padding: 30px 25px;
+    font-family: "DM Sans", sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 991px) {
+        width: 100%;
+        flex: 1 1 100%;
+        padding: 20px 15px;
+    }
+}
+
+.contact-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EAEAEA;
+    margin-bottom: 22px;
+
+    @media (max-width: 768px) {
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+    }
+}
+
+.contact-header-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #384351;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+        width: 30px;
+        height: 30px;
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+.contact-header-title {
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #2D2D2D !important;
+    margin: 0 !important;
+
+    @media (max-width: 768px) {
+        font-size: 19px !important;
+    }
+}
+
+.contact-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    @media (max-width: 768px) {
+        gap: 16px;
+    }
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+        gap: 10px;
+    }
+}
+
+.contact-info-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info-details {
+    flex-grow: 1;
+}
+
+.contact-info-label {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2D2D2D;
+    margin-bottom: 4px;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.contact-info-text {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+
+    @media (max-width: 768px) {
+        font-size: 13px;
+    }
+
+    a {
+        color: #555555;
+        text-decoration: underline;
+
+        &:hover {
+            color: #B8975A;
+        }
+    }
+}
+
+.hours-list {
+    div {
+        margin-bottom: 2px;
+    }
+
+    .hours-time {
+        color: #888888;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .closed-tag {
+        color: #A36545;
+        font-weight: 500;
+        margin-top: 2px;
+    }
+}
+
+/* ==========================================
+   NESTED WHITE CARD BOXES
+========================================== */
+.inner-white-card {
+    background-color: #F7F4EF !important;
+    border: 1px solid #B8975A80 !important;
+    padding: 24px 28px !important;
+    margin: 20px 0 !important;
+    color: #4A5568 !important;
+
+    @media (max-width: 768px) {
+        padding: 16px 15px !important;
+        margin: 15px 0 !important;
+    }
+
+    p {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 12px !important;
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        color: #4A5568 !important;
+
+        @media (max-width: 768px) {
+            font-size: 14px !important;
+            line-height: 1.5 !important;
+            margin-bottom: 10px !important;
+        }
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        strong,
+        b {
+            color: #2D2D2D !important;
+        }
+    }
+
+    h3,
+    h4,
+    h5 {
+        color: #2D2D2D !important;
+        font-weight: 700 !important;
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+
+        @media (max-width: 768px) {
+            font-size: 17px !important;
+            margin-bottom: 10px !important;
+        }
+    }
+}
+
+/* ==========================================
+   IN ONE ROW HORIZONTAL LAYOUT (<inonebox>)
+========================================== */
+.in-one-row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 25px 0;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 18px;
+        margin: 15px 0;
+    }
+}
+
+.in-one-row-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1 1 0;
+    padding-right: 25px;
+    border-right: 1px solid #C8C0B466;
+
+    &:last-child {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    @media (max-width: 768px) {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid #C8C0B466;
+        padding-bottom: 15px;
+        width: 100%;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.in-one-row-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.in-one-row-details {
+    flex-grow: 1;
+}
+
+.in-one-row-label {
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #2D2D2D !important;
+    margin-bottom: 4px !important;
+
+    @media (max-width: 768px) {
+        font-size: 18px !important;
+    }
+}
+
+.in-one-row-text {
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 15px !important;
+    color: #4A5568 !important;
+    line-height: 1.5 !important;
+
+    @media (max-width: 768px) {
+        font-size: 14px !important;
+    }
+
+    a {
+        color: #4A5568 !important;
+        text-decoration: underline;
+
+        &:hover {
+            color: #B8975A !important;
+        }
+    }
+}
+
+.account-head {
+
+    &:empty,
+    &:not(:has(*)) {
+        display: none !important;
+    }
+}
+
+.alertBox:last-child {
+    margin-bottom: 0;
+}
+
+.navBar--sub {
+    margin-bottom: 2.5rem !important;
+}
+
+.navBar--account,
+.account-navigation {
+    border-bottom: 1px solid #C8C0B466 !important;
+    padding-bottom: 20px !important;
+}
+
+.panel.panel--address {
+    border: 1px solid #C8C0B466 !important;
+    border-radius: 0 !important;
+}
+
+.card-mid-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }

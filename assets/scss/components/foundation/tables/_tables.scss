@@ -9,7 +9,7 @@
 .table {
     margin-top: $table-marginTop;
 
-    td + td {
+    td+td {
         border-left: $table-td-borderLeft;
     }
 
@@ -43,12 +43,13 @@
         }
 
         // scss-lint:disable NestingDepth
-        + .button {
+        +.button {
 
             @include breakpoint("small") {
                 margin-left: spacing("quarter");
             }
         }
+
         // scss-lint:enable NestingDepth
     }
 }
@@ -70,8 +71,8 @@
         tr {
 
             th {
-                padding-left: 0;
-                padding-right: 0;
+                // padding-left: 0;
+                // padding-right: 0;
 
                 @include breakpoint("small") {
                     text-align: center;
@@ -85,7 +86,7 @@
                     }
                 }
 
-                + th {
+                +th {
                     padding-left: spacing("single");
                 }
             }
@@ -113,13 +114,13 @@
                 }
             }
 
-            + td {
+            +td {
                 padding-left: spacing("single");
             }
         }
     }
 
-    td + td {
+    td+td {
         border-left: 0;
     }
 }
