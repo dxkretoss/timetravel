@@ -1,9 +1,14 @@
 body {
     background-color: #F7F4EF;
+    overflow-x: hidden;
 }
 
 .footer {
     background-color: #2D2D2D;
+}
+
+.footer-info-col ul li a:hover {
+    color: #c8c0b4;
 }
 
 .footer-bar {
