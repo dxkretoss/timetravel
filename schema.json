@@ -933,30 +933,6 @@
     ]
   },
   {
-    "name": "Welcome Page",
-    "settings": [
-      {
-        "type": "heading",
-        "content": "Welcome Page Settings"
-      },
-      {
-        "type": "input",
-        "label": "Welcome Subtitle",
-        "id": "tt_welcome_subtitle"
-      },
-      {
-        "type": "input",
-        "label": "Welcome Title",
-        "id": "tt_welcome_title"
-      },
-      {
-        "type": "input",
-        "label": "Welcome Description",
-        "id": "tt_welcome_desc"
-      }
-    ]
-  },
-  {
     "name": "Corporate Page",
     "settings": [
       {
@@ -1277,6 +1253,11 @@
         "id": "tt_corp_opt5"
       },
       {
+        "type": "input",
+        "label": "Option Bullet 6",
+        "id": "tt_corp_opt6"
+      },
+      {
         "type": "heading",
         "content": "CTA Banner Section"
       },
@@ -1309,6 +1290,605 @@
         "type": "input",
         "label": "CTA Direct Email",
         "id": "tt_corp_cta_email"
+      }
+    ]
+  },
+  {
+    "name": "Corporate Program Page",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Corporate Hero Section"
+      },
+      {
+        "type": "input",
+        "label": "Hero Subtitle",
+        "id": "tt_prog_hero_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Hero Title",
+        "id": "tt_prog_hero_title"
+      },
+      {
+        "type": "input",
+        "label": "Hero Description",
+        "id": "tt_prog_hero_desc"
+      },
+      {
+        "type": "input",
+        "label": "Hero Button Text",
+        "id": "tt_prog_hero_btn"
+      },
+      {
+        "type": "input",
+        "label": "Hero Button Link URL",
+        "id": "tt_prog_hero_btn_link"
+      },
+      {
+        "type": "heading",
+        "content": "Feature Highlights Bar"
+      },
+      {
+        "type": "input",
+        "label": "Feature 1 Text",
+        "id": "tt_prog_feat1_text"
+      },
+      {
+        "type": "input",
+        "label": "Feature 2 Text",
+        "id": "tt_prog_feat2_text"
+      },
+      {
+        "type": "input",
+        "label": "Feature 3 Text",
+        "id": "tt_prog_feat3_text"
+      },
+      {
+        "type": "input",
+        "label": "Feature 4 Text",
+        "id": "tt_prog_feat4_text"
+      },
+      {
+        "type": "heading",
+        "content": "More Than a Journal Section"
+      },
+      {
+        "type": "input",
+        "label": "More Than a Journal Subtitle",
+        "id": "tt_prog_more_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "More Than a Journal Title",
+        "id": "tt_prog_more_title"
+      },
+      {
+        "type": "input",
+        "label": "More Than a Journal Lead Paragraph",
+        "id": "tt_prog_more_lead"
+      },
+      {
+        "type": "input",
+        "label": "More Than a Journal Description",
+        "id": "tt_prog_more_desc"
+      },
+      {
+        "type": "input",
+        "label": "More Card 1 Title",
+        "id": "tt_prog_more_card1_title"
+      },
+      {
+        "type": "input",
+        "label": "More Card 1 Description",
+        "id": "tt_prog_more_card1_desc"
+      },
+      {
+        "type": "input",
+        "label": "More Card 2 Title",
+        "id": "tt_prog_more_card2_title"
+      },
+      {
+        "type": "input",
+        "label": "More Card 2 Description",
+        "id": "tt_prog_more_card2_desc"
+      },
+      {
+        "type": "input",
+        "label": "More Card 3 Title",
+        "id": "tt_prog_more_card3_title"
+      },
+      {
+        "type": "input",
+        "label": "More Card 3 Description",
+        "id": "tt_prog_more_card3_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Foil Swatches Section"
+      },
+      {
+        "type": "input",
+        "label": "Foil Swatches Subtitle",
+        "id": "tt_prog_imp_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Foil Swatches Title",
+        "id": "tt_prog_imp_title"
+      },
+      {
+        "type": "input",
+        "label": "Foil Swatches Description",
+        "id": "tt_prog_imp_desc"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 1 Title",
+        "id": "tt_prog_imp_card1_title"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 1 Description",
+        "id": "tt_prog_imp_card1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 2 Title",
+        "id": "tt_prog_imp_card2_title"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 2 Description",
+        "id": "tt_prog_imp_card2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 3 Title",
+        "id": "tt_prog_imp_card3_title"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 3 Description",
+        "id": "tt_prog_imp_card3_desc"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 4 Title",
+        "id": "tt_prog_imp_card4_title"
+      },
+      {
+        "type": "input",
+        "label": "Foil Card 4 Description",
+        "id": "tt_prog_imp_card4_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Showcase Grid Section"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Subtitle",
+        "id": "tt_prog_show_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Title",
+        "id": "tt_prog_show_title"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Description",
+        "id": "tt_prog_show_desc"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 1 Title",
+        "id": "tt_prog_show_card1_title"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 1 Description",
+        "id": "tt_prog_show_card1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 2 Title",
+        "id": "tt_prog_show_card2_title"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 2 Description",
+        "id": "tt_prog_show_card2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 3 Title",
+        "id": "tt_prog_show_card3_title"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 3 Description",
+        "id": "tt_prog_show_card3_desc"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 4 Title",
+        "id": "tt_prog_show_card4_title"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Card 4 Description",
+        "id": "tt_prog_show_card4_desc"
+      },
+      {
+        "type": "input",
+        "label": "Showcase Bottom Text",
+        "id": "tt_prog_show_footer_text"
+      },
+      {
+        "type": "heading",
+        "content": "Preview Your Logo (Steps)"
+      },
+      {
+        "type": "input",
+        "label": "Preview Steps Subtitle",
+        "id": "tt_prog_prev_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Preview Steps Title",
+        "id": "tt_prog_prev_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 1 Title",
+        "id": "tt_prog_step1_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 1 Description",
+        "id": "tt_prog_step1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Step 2 Title",
+        "id": "tt_prog_step2_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 2 Description",
+        "id": "tt_prog_step2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Step 3 Title",
+        "id": "tt_prog_step3_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 3 Description",
+        "id": "tt_prog_step3_desc"
+      },
+      {
+        "type": "input",
+        "label": "Step 4 Title",
+        "id": "tt_prog_step4_title"
+      },
+      {
+        "type": "input",
+        "label": "Step 4 Description",
+        "id": "tt_prog_step4_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Tip In Page Section"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Ideal Title",
+        "id": "tt_prog_tip_title"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 1",
+        "id": "tt_prog_tip_item1"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 2",
+        "id": "tt_prog_tip_item2"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 3",
+        "id": "tt_prog_tip_item3"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 4",
+        "id": "tt_prog_tip_item4"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 5",
+        "id": "tt_prog_tip_item5"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 6",
+        "id": "tt_prog_tip_item6"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 7",
+        "id": "tt_prog_tip_item7"
+      },
+      {
+        "type": "input",
+        "label": "Tip-In Item 8",
+        "id": "tt_prog_tip_item8"
+      },
+      {
+        "type": "heading",
+        "content": "Wrap Your Message (Belly Band) Section"
+      },
+      {
+        "type": "input",
+        "label": "Belly Band Subtitle",
+        "id": "tt_prog_wrap_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Belly Band Title",
+        "id": "tt_prog_wrap_title"
+      },
+      {
+        "type": "input",
+        "label": "Belly Band Description",
+        "id": "tt_prog_wrap_desc"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 1",
+        "id": "tt_prog_wrap_bullet1"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 2",
+        "id": "tt_prog_wrap_bullet2"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 3",
+        "id": "tt_prog_wrap_bullet3"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 4",
+        "id": "tt_prog_wrap_bullet4"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 5",
+        "id": "tt_prog_wrap_bullet5"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 6",
+        "id": "tt_prog_wrap_bullet6"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 7",
+        "id": "tt_prog_wrap_bullet7"
+      },
+      {
+        "type": "input",
+        "label": "Bullet 8",
+        "id": "tt_prog_wrap_bullet8"
+      },
+      {
+        "type": "heading",
+        "content": "Presentation (Gift Box) Section"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Subtitle",
+        "id": "tt_prog_elev_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Title",
+        "id": "tt_prog_elev_title"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Lead Paragraph",
+        "id": "tt_prog_elev_lead"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Description",
+        "id": "tt_prog_elev_desc"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Card 1 Title",
+        "id": "tt_prog_elev_card1_title"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Card 1 Description",
+        "id": "tt_prog_elev_card1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Card 2 Title",
+        "id": "tt_prog_elev_card2_title"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Card 2 Description",
+        "id": "tt_prog_elev_card2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Card 3 Title",
+        "id": "tt_prog_elev_card3_title"
+      },
+      {
+        "type": "input",
+        "label": "Gift Box Card 3 Description",
+        "id": "tt_prog_elev_card3_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Details List Section"
+      },
+      {
+        "type": "input",
+        "label": "Details Subtitle",
+        "id": "tt_prog_det_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "Details Title",
+        "id": "tt_prog_det_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 1 Title",
+        "id": "tt_prog_det_card1_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 1 Description",
+        "id": "tt_prog_det_card1_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 2 Title",
+        "id": "tt_prog_det_card2_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 2 Description",
+        "id": "tt_prog_det_card2_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 3 Title",
+        "id": "tt_prog_det_card3_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 3 Description",
+        "id": "tt_prog_det_card3_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 4 Title",
+        "id": "tt_prog_det_card4_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 4 Description",
+        "id": "tt_prog_det_card4_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 5 Title",
+        "id": "tt_prog_det_card5_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 5 Description",
+        "id": "tt_prog_det_card5_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 6 Title",
+        "id": "tt_prog_det_card6_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 6 Description",
+        "id": "tt_prog_det_card6_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 7 Title",
+        "id": "tt_prog_det_card7_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 7 Description",
+        "id": "tt_prog_det_card7_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 8 Title",
+        "id": "tt_prog_det_card8_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 8 Description",
+        "id": "tt_prog_det_card8_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 9 Title",
+        "id": "tt_prog_det_card9_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 9 Description",
+        "id": "tt_prog_det_card9_desc"
+      },
+      {
+        "type": "input",
+        "label": "Detail 10 Title",
+        "id": "tt_prog_det_card10_title"
+      },
+      {
+        "type": "input",
+        "label": "Detail 10 Description",
+        "id": "tt_prog_det_card10_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Call-To-Action (CTA) Section"
+      },
+      {
+        "type": "input",
+        "label": "CTA Subtitle",
+        "id": "tt_prog_cta_subtitle"
+      },
+      {
+        "type": "input",
+        "label": "CTA Title",
+        "id": "tt_prog_cta_title"
+      },
+      {
+        "type": "input",
+        "label": "CTA Description",
+        "id": "tt_prog_cta_desc"
+      },
+      {
+        "type": "input",
+        "label": "CTA Button Text",
+        "id": "tt_prog_cta_btn"
+      },
+      {
+        "type": "input",
+        "label": "CTA Button Link URL",
+        "id": "tt_prog_cta_btn_link"
+      },
+      {
+        "type": "input",
+        "label": "CTA Direct Email",
+        "id": "tt_prog_cta_email"
       }
     ]
   },

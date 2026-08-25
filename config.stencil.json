@@ -4,7 +4,8 @@
     "category": {},
     "page": {
       "welcome.html": "/welcome-to-time-traveler/",
-      "corporate-products.html": "/corporate-custom-gifts/"
+      "corporate-products.html": "/corporate-custom-gifts/",
+      "corporate-program.html": "/corporate-program/"
     },
     "product": {}
   },

@@ -1,0 +1,737 @@
+---
+page:
+    title: true
+cart: true
+---
+
+{{#partial "page"}}
+
+<main class="corporate-program-page">
+    {{{region name="corporate_program_top"}}}
+
+    <!-- SECTION 1: HERO & HIGHLIGHTS -->
+    <section class="sec-hero">
+      <div class="corporate-container">
+        <div class="sec-hero-content">
+          <span class="eyebrow">
+            {{#if theme_settings.tt_prog_hero_subtitle}}{{theme_settings.tt_prog_hero_subtitle}}{{else}}Corporate Customization Program{{/if}}
+          </span>
+          <h1>{{#if theme_settings.tt_prog_hero_title}}{{{theme_settings.tt_prog_hero_title}}}{{else}}Create a Branded Executive Journal That Reflects Your Company{{/if}}</h1>
+          <div class="divider-line"></div>
+          <p>
+            {{#if theme_settings.tt_prog_hero_desc}}{{theme_settings.tt_prog_hero_desc}}{{else}}Create premium executive journals, planners, and diaries customized to represent your company with distinction. From executive gifts and employee recognition to conferences, client appreciation, and corporate events, Time Traveler creates beautifully branded journals designed to make a lasting impression.{{/if}}
+          </p>
+          <a href="{{#if theme_settings.tt_prog_hero_btn_link}}{{theme_settings.tt_prog_hero_btn_link}}{{else}}#custom-program{{/if}}" class="btn-gold">
+            {{#if theme_settings.tt_prog_hero_btn}}{{theme_settings.tt_prog_hero_btn}}{{else}}Start Your Custom Program{{/if}} <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4-Feature Highlights Bar -->
+      <div class="highlight-bar-wrapper">
+        <div class="corporate-container">
+          <div class="highlight-bar">
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M12 2C12 7 13.5 8.5 18.5 8.5C13.5 8.5 12 10 12 15C12 10 10.5 8.5 5.5 8.5C10.5 8.5 12 7 12 2Z" />
+                  <path
+                    d="M18.5 13.5C18.5 15.5 19.2 16.2 21.2 16.2C19.2 16.2 18.5 16.9 18.5 18.9C18.5 16.9 17.8 16.2 15.8 16.2C17.8 16.2 18.5 15.5 18.5 13.5Z" />
+                  <circle cx="6.5" cy="5.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </div>
+              <span class="highlight-text">{{#if theme_settings.tt_prog_feat1_text}}{{theme_settings.tt_prog_feat1_text}}{{else}}Premium Journals{{/if}}</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4.5" y="4.5" width="15" height="15" rx="1" />
+                  <rect x="3" y="3" width="3" height="3" fill="#efe8dc" stroke="currentColor" />
+                  <rect x="18" y="3" width="3" height="3" fill="#efe8dc" stroke="currentColor" />
+                  <rect x="3" y="18" width="3" height="3" fill="#efe8dc" stroke="currentColor" />
+                  <rect x="18" y="18" width="3" height="3" fill="#efe8dc" stroke="currentColor" />
+                  <path d="M9 9.5H15" />
+                  <path d="M12 9.5V15.5" />
+                </svg>
+              </div>
+              <span class="highlight-text">{{#if theme_settings.tt_prog_feat2_text}}{{theme_settings.tt_prog_feat2_text}}{{else}}Custom Branding{{/if}}</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="11" rx="1" />
+                  <path d="M7 15L5 21" />
+                  <path d="M17 15L19 21" />
+                  <path d="M12 15V20" />
+                  <path d="M10 4V2.5H14V4" />
+                  <rect x="7" y="7" width="5" height="4" rx="0.5" />
+                  <path d="M14 8H17" />
+                  <path d="M14 10H17" />
+                </svg>
+              </div>
+              <span class="highlight-text">{{#if theme_settings.tt_prog_feat3_text}}{{theme_settings.tt_prog_feat3_text}}{{else}}Corporate Fulfillment{{/if}}</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="10" width="16" height="10" rx="1" />
+                  <rect x="3" y="6" width="18" height="4" rx="1" />
+                  <path d="M12 6V20" />
+                  <path d="M12 6C10.5 3.5 7.5 4 8.5 6C9.5 7 12 6 12 6Z" />
+                  <path d="M12 6C13.5 3.5 16.5 4 15.5 6C14.5 7 12 6 12 6Z" />
+                </svg>
+              </div>
+              <span class="highlight-text">{{#if theme_settings.tt_prog_feat4_text}}{{theme_settings.tt_prog_feat4_text}}{{else}}Personalized Gifts{{/if}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{{region name="corporate_program_middle"}}}
+
+    <!-- SECTION 2: MORE THAN A JOURNAL -->
+    <section class="sec-more-than yourbrand">
+      <div class="corporate-container">
+        <div class="more-than-grid ">
+          <!-- Left Text Content -->
+          <div class="more-than-left">
+            <span class="eyebrow">
+              {{#if theme_settings.tt_prog_more_subtitle}}{{theme_settings.tt_prog_more_subtitle}}{{else}}Built Around Your Brand{{/if}}
+            </span>
+            <h2>{{#if theme_settings.tt_prog_more_title}}{{theme_settings.tt_prog_more_title}}{{else}}More Than a Journal. A Reflection of Your Brand.{{/if}}</h2>
+            <div class="divider-left"></div>
+            <p class="lead">
+              {{#if theme_settings.tt_prog_more_lead}}{{theme_settings.tt_prog_more_lead}}{{else}}A thoughtfully customized journal can become more than a corporate gift—it can become a lasting representation of your organization.{{/if}}
+            </p>
+            <p class="desc">
+              {{#if theme_settings.tt_prog_more_desc}}{{theme_settings.tt_prog_more_desc}}{{else}}Time Traveler combines premium materials, sophisticated craftsmanship, and flexible customization options to create executive journals designed around your brand. From the cover and logo imprint to personalized inserts, belly bands, and gift packaging, every detail can be tailored to your program.{{/if}}
+            </p>
+          </div>
+
+          <!-- Right 3 Stacked Feature Cards -->
+          <div class="more-than-right">
+            <!-- Card 1 -->
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="feature-card-content">
+                <h3>{{#if theme_settings.tt_prog_more_card1_title}}{{theme_settings.tt_prog_more_card1_title}}{{else}}Premium Quality{{/if}}</h3>
+                <p>
+                  {{#if theme_settings.tt_prog_more_card1_desc}}{{theme_settings.tt_prog_more_card1_desc}}{{else}}Executive journals, planners, and diaries, selected for a sophisticated corporate experience.{{/if}}
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <i class="fa-solid fa-ribbon"></i>
+              </div>
+              <div class="feature-card-content">
+                <h3>{{#if theme_settings.tt_prog_more_card2_title}}{{theme_settings.tt_prog_more_card2_title}}{{else}}Brand-Focused Design{{/if}}</h3>
+                <p>
+                  {{#if theme_settings.tt_prog_more_card2_desc}}{{theme_settings.tt_prog_more_card2_desc}}{{else}}Your logo, colors, messaging, and personalization come together in one cohesive presentation.{{/if}}
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <div class="feature-card-content">
+                <h3>{{#if theme_settings.tt_prog_more_card3_title}}{{theme_settings.tt_prog_more_card3_title}}{{else}}Flexible Programs{{/if}}</h3>
+                <p>
+                  {{#if theme_settings.tt_prog_more_card3_desc}}{{theme_settings.tt_prog_more_card3_desc}}{{else}}Create a solution for executive gifting, employee recognition, conferences, onboarding, client appreciation or special events.{{/if}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: YOUR BRAND, BEAUTIFULLY IMPRINTED -->
+    <section class="sec-imprinted">
+      <div class="corporate-container">
+        <div class="imprinted-header">
+          <span class="eyebrow">
+            {{#if theme_settings.tt_prog_imp_subtitle}}{{theme_settings.tt_prog_imp_subtitle}}{{else}}Make It Yours{{/if}}
+          </span>
+          <h2>{{#if theme_settings.tt_prog_imp_title}}{{theme_settings.tt_prog_imp_title}}{{else}}Your Brand, Beautifully Imprinted{{/if}}</h2>
+          <div class="divider-line"></div>
+          <p>
+            {{#if theme_settings.tt_prog_imp_desc}}{{theme_settings.tt_prog_imp_desc}}{{else}}Put your company identity front and center with a professionally finished logo imprint on your journal cover.{{/if}}
+          </p>
+        </div>
+
+        <!-- 4 Foil Finish Swatch Cards -->
+        <div class="foil-grid">
+          <!-- Card 1: Gold Foil -->
+          <div class="foil-card">
+            <div class="foil-card-header">
+              <div class="foil-swatch-container">
+                <img src="{{cdn 'img/miy_1.svg'}}" alt="Gold Foil" class="foil-swatch-img" />
+              </div>
+              <h3>{{#if theme_settings.tt_prog_imp_card1_title}}{{theme_settings.tt_prog_imp_card1_title}}{{else}}Gold Foil{{/if}}</h3>
+            </div>
+            <p>
+              {{#if theme_settings.tt_prog_imp_card1_desc}}{{theme_settings.tt_prog_imp_card1_desc}}{{else}}A classic metallic finish for an elevated executive presentation.{{/if}}
+            </p>
+          </div>
+
+          <!-- Card 2: Silver Foil -->
+          <div class="foil-card">
+            <div class="foil-card-header">
+              <div class="foil-swatch-container">
+                <img src="{{cdn 'img/miy_2.svg'}}" alt="Silver Foil" class="foil-swatch-img" />
+              </div>
+              <h3>{{#if theme_settings.tt_prog_imp_card2_title}}{{theme_settings.tt_prog_imp_card2_title}}{{else}}Silver Foil{{/if}}</h3>
+            </div>
+            <p>
+              {{#if theme_settings.tt_prog_imp_card2_desc}}{{theme_settings.tt_prog_imp_card2_desc}}{{else}}A sleek, contemporary finish that complements modern corporate branding.{{/if}}
+            </p>
+          </div>
+
+          <!-- Card 3: Black Foil -->
+          <div class="foil-card">
+            <div class="foil-card-header">
+              <div class="foil-swatch-container">
+                <img src="{{cdn 'img/miy_3.svg'}}" alt="Black Foil" class="foil-swatch-img" />
+              </div>
+              <h3>{{#if theme_settings.tt_prog_imp_card3_title}}{{theme_settings.tt_prog_imp_card3_title}}{{else}}Black Foil{{/if}}</h3>
+            </div>
+            <p>
+              {{#if theme_settings.tt_prog_imp_card3_desc}}{{theme_settings.tt_prog_imp_card3_desc}}{{else}}Subtle, sophisticated branding for a refined monochromatic look.{{/if}}
+            </p>
+          </div>
+
+          <!-- Card 4: Blind Embossing -->
+          <div class="foil-card">
+            <div class="foil-card-header">
+              <div class="foil-swatch-container">
+                <img src="{{cdn 'img/miy_4.svg'}}" alt="Blind Embossing" class="foil-swatch-img" />
+              </div>
+              <h3>{{#if theme_settings.tt_prog_imp_card4_title}}{{theme_settings.tt_prog_imp_card4_title}}{{else}}Blind Embossing{{/if}}</h3>
+            </div>
+            <p>
+              {{#if theme_settings.tt_prog_imp_card4_desc}}{{theme_settings.tt_prog_imp_card4_desc}}{{else}}A timeless, tactile impression that creates understated brand recognition.{{/if}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MADE FOR ORGANIZATIONS THAT VALUE THE DETAILS -->
+    <section class="sec-dark-showcase">
+      <div class="corporate-container">
+        <div class="dark-header">
+          <span class="eyebrow">
+            {{#if theme_settings.tt_prog_show_subtitle}}{{theme_settings.tt_prog_show_subtitle}}{{else}}Branded For Business{{/if}}
+          </span>
+          <h2>{{#if theme_settings.tt_prog_show_title}}{{theme_settings.tt_prog_show_title}}{{else}}Made for Organizations That Value the Details{{/if}}</h2>
+          <p>
+            {{#if theme_settings.tt_prog_show_desc}}{{theme_settings.tt_prog_show_desc}}{{else}}See how professionally branded journals can transform a premium executive gift into a memorable extension of your company.{{/if}}
+          </p>
+          <div class="divider-line-new"></div>
+        </div>
+
+        <!-- 4 Corporate Product Showcase Cards -->
+        <div class="showcase-grid">
+          <!-- Product 1: Morgan Stanley -->
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="{{cdn 'img/brand_1.svg'}}" alt="Morgan Stanley Corporate Executive Gifting" />
+            </div>
+            <h3>{{#if theme_settings.tt_prog_show_card1_title}}{{theme_settings.tt_prog_show_card1_title}}{{else}}Morgan Stanley{{/if}}</h3>
+            <p>{{#if theme_settings.tt_prog_show_card1_desc}}{{theme_settings.tt_prog_show_card1_desc}}{{else}}Corporate Executive Gifting{{/if}}</p>
+          </div>
+
+          <!-- Product 2: Citibank -->
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="{{cdn 'img/brand_2.svg'}}" alt="Citibank Branded Executive Journals" />
+            </div>
+            <h3>{{#if theme_settings.tt_prog_show_card2_title}}{{theme_settings.tt_prog_show_card2_title}}{{else}}Citibank{{/if}}</h3>
+            <p>{{#if theme_settings.tt_prog_show_card2_desc}}{{theme_settings.tt_prog_show_card2_desc}}{{else}}Branded Executive Journals{{/if}}</p>
+          </div>
+
+          <!-- Product 3: Coca-Cola -->
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="{{cdn 'img/brand_3.svg'}}" alt="Coca-Cola Corporate Employee Programs" />
+            </div>
+            <h3>{{#if theme_settings.tt_prog_show_card3_title}}{{theme_settings.tt_prog_show_card3_title}}{{else}}Coca-Cola{{/if}}</h3>
+            <p>{{#if theme_settings.tt_prog_show_card3_desc}}{{theme_settings.tt_prog_show_card3_desc}}{{else}}Corporate Employee Programs{{/if}}</p>
+          </div>
+
+          <!-- Product 4: Carnival Cruise Line -->
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="{{cdn 'img/brand_4.svg'}}" alt="Carnival Cruise Line Customised Corporate Gifts" />
+            </div>
+            <h3>{{#if theme_settings.tt_prog_show_card4_title}}{{theme_settings.tt_prog_show_card4_title}}{{else}}Carnival Cruise Line{{/if}}</h3>
+            <p>{{#if theme_settings.tt_prog_show_card4_desc}}{{theme_settings.tt_prog_show_card4_desc}}{{else}}Customised Corporate Gifts{{/if}}</p>
+          </div>
+        </div>
+
+        <!-- Bottom Footer Description -->
+        <p class="dark-footer-text">
+          {{#if theme_settings.tt_prog_show_footer_text}}{{theme_settings.tt_prog_show_footer_text}}{{else}}From financial institutions and global brands to growing organizations, customized journals can be created to align with the identity and purpose of your corporate program.{{/if}}
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PREVIEW YOUR LOGO -->
+    <section class="sec-preview-steps" id="custom-program">
+      <div class="corporate-container">
+        <div class="preview-steps-header">
+          <span class="eyebrow">
+            {{#if theme_settings.tt_prog_prev_subtitle}}{{theme_settings.tt_prog_prev_subtitle}}{{else}}See It Before You Order{{/if}}
+          </span>
+          <h2>{{#if theme_settings.tt_prog_prev_title}}{{theme_settings.tt_prog_prev_title}}{{else}}Preview Your Logo. Perfect Your Journal.{{/if}}</h2>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- 4 Process Step Cards -->
+        <div class="step-cards-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <span class="step-number">1</span>
+            <h3>{{#if theme_settings.tt_prog_step1_title}}{{theme_settings.tt_prog_step1_title}}{{else}}Choose Your Journal{{/if}}</h3>
+            <p>
+              {{#if theme_settings.tt_prog_step1_desc}}{{theme_settings.tt_prog_step1_desc}}{{else}}Select the journal style and cover color that best fits your program.{{/if}}
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <span class="step-number">2</span>
+            <h3>{{#if theme_settings.tt_prog_step2_title}}{{theme_settings.tt_prog_step2_title}}{{else}}Upload Your Logo{{/if}}</h3>
+            <p>
+              {{#if theme_settings.tt_prog_step2_desc}}{{theme_settings.tt_prog_step2_desc}}{{else}}Add your company logo and see how it translates onto the cover.{{/if}}
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <span class="step-number">3</span>
+            <h3>{{#if theme_settings.tt_prog_step3_title}}{{theme_settings.tt_prog_step3_title}}{{else}}Select Your Imprint{{/if}}</h3>
+            <p>
+              {{#if theme_settings.tt_prog_step3_desc}}{{theme_settings.tt_prog_step3_desc}}{{else}}Compare gold, silver, black, or blind embossing options.{{/if}}
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <span class="step-number">4</span>
+            <h3>{{#if theme_settings.tt_prog_step4_title}}{{theme_settings.tt_prog_step4_title}}{{else}}Review Your Design{{/if}}</h3>
+            <p>
+              {{#if theme_settings.tt_prog_step4_desc}}{{theme_settings.tt_prog_step4_desc}}{{else}}Visualize your finished journal before moving forward.{{/if}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: TIP IN PAGE IDEAL FOR -->
+    <section class="sec-tipin-ideal">
+      <div class="corporate-container">
+        <div class="ideal-box-wrapper">
+          <h2 class="ideal-box-title">{{#if theme_settings.tt_prog_tip_title}}{{theme_settings.tt_prog_tip_title}}{{else}}Tip in Page Ideal For{{/if}}</h2>
+
+          <div class="ideal-list-grid">
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item1}}{{theme_settings.tt_prog_tip_item1}}{{else}}Welcome Letters{{/if}}</span>
+            </div>
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item2}}{{theme_settings.tt_prog_tip_item2}}{{else}}CEO Messages{{/if}}</span>
+            </div>
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item3}}{{theme_settings.tt_prog_tip_item3}}{{else}}Company History{{/if}}</span>
+            </div>
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item4}}{{theme_settings.tt_prog_tip_item4}}{{else}}Anniversary Celebrations{{/if}}</span>
+            </div>
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item5}}{{theme_settings.tt_prog_tip_item5}}{{else}}Mission Statements{{/if}}</span>
+            </div>
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item6}}{{theme_settings.tt_prog_tip_item6}}{{else}}Employee Recognition{{/if}}</span>
+            </div>
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item7}}{{theme_settings.tt_prog_tip_item7}}{{else}}Event Information{{/if}}</span>
+            </div>
+            <div class="ideal-item">
+              <span class="ideal-dot"></span>
+              <span>{{#if theme_settings.tt_prog_tip_item8}}{{theme_settings.tt_prog_tip_item8}}{{else}}Product Introductions{{/if}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: WRAP YOUR MESSAGE AROUND THE EXPERIENCE -->
+    <section class="sec-wrap-message">
+      <!-- Full Height Right Image with Left Edge Mask Gradient -->
+      <div class="wrap-bg-img">
+        <img src="{{cdn 'img/corporate-impression.png'}}" alt="Wrap Your Message Around the Experience - Time Traveler Journal"
+          onerror="this.onerror=null; this.parentElement.innerHTML='<svg width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'600\' height=\'400\' fill=\'#e8dfd1\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Cormorant Garamond, serif\' font-size=\'24\' fill=\'#2e3d42\'>Corporate Lifestyle Journal</text></svg>';" />
+      </div>
+
+      <div class="corporate-container">
+        <div class="wrap-message-grid">
+          <!-- Left Text & Bullets -->
+          <div class="wrap-left">
+            <span class="eyebrow">
+              {{#if theme_settings.tt_prog_wrap_subtitle}}{{theme_settings.tt_prog_wrap_subtitle}}{{else}}THE FINISHING TOUCH{{/if}}
+            </span>
+            <h2>{{#if theme_settings.tt_prog_wrap_title}}{{theme_settings.tt_prog_wrap_title}}{{else}}Wrap Your Message Around the Experience{{/if}}</h2>
+            <p class="desc">
+              {{#if theme_settings.tt_prog_wrap_desc}}{{theme_settings.tt_prog_wrap_desc}}{{else}}Create a polished, retail-quality presentation with a custom full-color printed belly band wrapped around each journal.{{/if}}
+            </p>
+            <div class="divider-left"></div>
+
+            <!-- 2 Columns Bullets List -->
+            <div class="bullets-two-col">
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet1}}{{theme_settings.tt_prog_wrap_bullet1}}{{else}}Corporate Branding{{/if}}</span>
+              </div>
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet2}}{{theme_settings.tt_prog_wrap_bullet2}}{{else}}Promotional Campaigns{{/if}}</span>
+              </div>
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet3}}{{theme_settings.tt_prog_wrap_bullet3}}{{else}}Meeting Themes{{/if}}</span>
+              </div>
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet4}}{{theme_settings.tt_prog_wrap_bullet4}}{{else}}Product Launches{{/if}}</span>
+              </div>
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet5}}{{theme_settings.tt_prog_wrap_bullet5}}{{else}}Holiday Gifts{{/if}}</span>
+              </div>
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet6}}{{theme_settings.tt_prog_wrap_bullet6}}{{else}}Anniversary Celebrations{{/if}}</span>
+              </div>
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet7}}{{theme_settings.tt_prog_wrap_bullet7}}{{else}}Conference Events{{/if}}</span>
+              </div>
+              <div class="bullet-tag-item">
+                <span class="bullet-dot"></span>
+                <span class="bullet-tag-text">{{#if theme_settings.tt_prog_wrap_bullet8}}{{theme_settings.tt_prog_wrap_bullet8}}{{else}}Special Corporate Programs{{/if}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: ELEVATE THE PRESENTATION -->
+    <section class="sec-more-than">
+      <div class="corporate-container">
+        <div class="more-than-grid">
+          <!-- Left 3 Stacked Feature Cards -->
+          <div class="more-than-right">
+            <!-- Card 1 -->
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <div class="feature-card-content">
+                <h3>{{#if theme_settings.tt_prog_elev_card1_title}}{{theme_settings.tt_prog_elev_card1_title}}{{else}}Premium Black Gift Box{{/if}}</h3>
+                <p>
+                  {{#if theme_settings.tt_prog_elev_card1_desc}}{{theme_settings.tt_prog_elev_card1_desc}}{{else}}Refined presentation for executive gifting. Heavyweight rigid build with satin texture and custom foam nest.{{/if}}
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="feature-card-content">
+                <h3>{{#if theme_settings.tt_prog_elev_card2_title}}{{theme_settings.tt_prog_elev_card2_title}}{{else}}Optional Logo Imprint{{/if}}</h3>
+                <p>
+                  {{#if theme_settings.tt_prog_elev_card2_desc}}{{theme_settings.tt_prog_elev_card2_desc}}{{else}}Extend your branding to packaging with metallic gold, silver, or gloss black foil stamping on the lid.{{/if}}
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </div>
+              <div class="feature-card-content">
+                <h3>{{#if theme_settings.tt_prog_elev_card3_title}}{{theme_settings.tt_prog_elev_card3_title}}{{else}}Ready for Presentation{{/if}}</h3>
+                <p>
+                  {{#if theme_settings.tt_prog_elev_card3_desc}}{{theme_settings.tt_prog_elev_card3_desc}}{{else}}Create a polished gift experience. Each box arrives pristine, wrapped, and ready for delivery.{{/if}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Text Content -->
+          <div class="more-than-left">
+            <span class="eyebrow">
+              {{#if theme_settings.tt_prog_elev_subtitle}}{{theme_settings.tt_prog_elev_subtitle}}{{else}}ELEVATE THE PRESENTATION{{/if}}
+            </span>
+            <h2>{{#if theme_settings.tt_prog_elev_title}}{{theme_settings.tt_prog_elev_title}}{{else}}A Gift Worth Unwrapping{{/if}}</h2>
+            <div class="divider-left"></div>
+            <p class="lead">
+              {{#if theme_settings.tt_prog_elev_lead}}{{theme_settings.tt_prog_elev_lead}}{{else}}Complete your corporate journal with a premium black two-piece executive gift box.{{/if}}
+            </p>
+            <p class="desc">
+              {{#if theme_settings.tt_prog_elev_desc}}{{theme_settings.tt_prog_elev_desc}}{{else}}For an even more branded experience, the gift box can also feature your company logo with an elegant foil-stamped finish. From clients and employees to board members and executives, premium packaging adds another layer of sophistication to your gift.{{/if}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: EVERYTHING YOU NEED TO CREATE A REMARKABLE CORPORATE GIFT -->
+    <section class="sec-all-details">
+      <div class="corporate-container">
+        <div class="all-details-header">
+          <span class="eyebrow">
+            {{#if theme_settings.tt_prog_det_subtitle}}{{theme_settings.tt_prog_det_subtitle}}{{else}}ONE PROGRAM. EVERY DETAIL.{{/if}}
+          </span>
+          <h2>{{#if theme_settings.tt_prog_det_title}}{{theme_settings.tt_prog_det_title}}{{else}}Everything You Need to Create a Remarkable Corporate Gift{{/if}}</h2>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="all-details-grid">
+          <!-- Card 1 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card1_title}}{{theme_settings.tt_prog_det_card1_title}}{{else}}Premium executive journals, planners, and diaries{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card1_desc}}{{theme_settings.tt_prog_det_card1_desc}}{{else}}Handcrafted binding with archival, fountain-pen friendly acid-free paper{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card2_title}}{{theme_settings.tt_prog_det_card2_title}}{{else}}Custom foil-stamped or debossed logos{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card2_desc}}{{theme_settings.tt_prog_det_card2_desc}}{{else}}Metallic gold, silver, gloss black foil or tactile blind deboss impressions{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card3_title}}{{theme_settings.tt_prog_det_card3_title}}{{else}}Online logo preview & digital proofs{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card3_desc}}{{theme_settings.tt_prog_det_card3_desc}}{{else}}Instant virtual rendering with precision die-line vector proofs in 24 hours{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card4_title}}{{theme_settings.tt_prog_det_card4_title}}{{else}}Personalized tip-in pages{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card4_desc}}{{theme_settings.tt_prog_det_card4_desc}}{{else}}Full-color or monochromatic front message inserts printed on matching stock{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card5_title}}{{theme_settings.tt_prog_det_card5_title}}{{else}}Custom printed belly bands{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card5_desc}}{{theme_settings.tt_prog_det_card5_desc}}{{else}}Full-bleed coated or uncoated paper bands wrapping each individual book{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card6_title}}{{theme_settings.tt_prog_det_card6_title}}{{else}}Premium black executive gift boxes{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card6_desc}}{{theme_settings.tt_prog_det_card6_desc}}{{else}}Two-piece rigid gift boxes with soft-touch protective interior tissue{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card7_title}}{{theme_settings.tt_prog_det_card7_title}}{{else}}Optional gift-box logo imprinting{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card7_desc}}{{theme_settings.tt_prog_det_card7_desc}}{{else}}Coordinated gold or silver foil stamping directly on the gift box lid{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card8_title}}{{theme_settings.tt_prog_det_card8_title}}{{else}}Individual recipient personalization{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card8_desc}}{{theme_settings.tt_prog_det_card8_desc}}{{else}}Names, initials, or executive titles individually debossed per journal{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card9_title}}{{theme_settings.tt_prog_det_card9_title}}{{else}}Corporate fulfillment & kitting{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card9_desc}}{{theme_settings.tt_prog_det_card9_desc}}{{else}}Complete white-glove packaging, custom ribbon ties, and enclosure cards{{/if}}</p>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="detail-card">
+            <div class="detail-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8C4A2F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 12L11 14L15 10" stroke="#8C4A2F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <h3>{{#if theme_settings.tt_prog_det_card10_title}}{{theme_settings.tt_prog_det_card10_title}}{{else}}Drop shipping availability{{/if}}</h3>
+              <p>{{#if theme_settings.tt_prog_det_card10_desc}}{{theme_settings.tt_prog_det_card10_desc}}{{else}}Worldwide individual address delivery or consolidated freight distribution{{/if}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="tt-cta-wrapper">
+      <section class="tt-cta">
+        <span class="tt-cta-subtitle">
+          {{#if theme_settings.tt_prog_cta_subtitle}}{{theme_settings.tt_prog_cta_subtitle}}{{else}}CREATE SOMETHING WORTH REMEMBERING{{/if}}
+        </span>
+        <h2 class="tt-cta-title">{{#if theme_settings.tt_prog_cta_title}}{{theme_settings.tt_prog_cta_title}}{{else}}Let's Create Your Corporate Journal Program{{/if}}</h2>
+        <p class="tt-cta-desc">
+          {{#if theme_settings.tt_prog_cta_desc}}{{theme_settings.tt_prog_cta_desc}}{{else}}Tell us what you're envisioning, and our team will help you select the right journal, customization options, packaging, and fulfillment solution for your organization.{{/if}}
+        </p>
+        <a href="{{#if theme_settings.tt_prog_cta_btn_link}}{{theme_settings.tt_prog_cta_btn_link}}{{else}}mailto:cs@timetravelercorp.com{{/if}}" class="tt-cta-btn">
+          {{#if theme_settings.tt_prog_cta_btn}}{{theme_settings.tt_prog_cta_btn}}{{else}}request a corporate quote{{/if}}
+          <i class="fa-solid fa-arrow-right-long" style="margin-left: 10px"></i>
+        </a>
+        <div style="margin-top: 20px">
+          <a href="mailto:{{#if theme_settings.tt_prog_cta_email}}{{theme_settings.tt_prog_cta_email}}{{else}}cs@timetravelercorp.com{{/if}}" style="
+              color: #F7F4EF;
+              text-decoration: none;
+              font-family: &quot;DM Sans&quot;, sans-serif;
+              font-size: 16px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+            ">
+            <i class="fa-regular fa-envelope"></i>
+            <span style="text-decoration: underline; font-size: 16px;">
+              {{#if theme_settings.tt_prog_cta_email}}{{theme_settings.tt_prog_cta_email}}{{else}}cs@timetravelercorp.com{{/if}}
+            </span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    {{{region name="corporate_program_bottom"}}}
+</main>
+
+{{/partial}}
+{{> layout/base}}
