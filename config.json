@@ -564,7 +564,8 @@
     "tt_prog_cta_desc": "Tell us what you're envisioning, and our team will help you select the right journal, customization options, packaging, and fulfillment solution for your organization.",
     "tt_prog_cta_btn": "request a corporate quote",
     "tt_prog_cta_btn_link": "mailto:cs@timetravelercorp.com",
-    "tt_prog_cta_email": "cs@timetravelercorp.com"
+    "tt_prog_cta_email": "cs@timetravelercorp.com",
+    "corporate_product_id": 348
   },
   "read_only_files": [
     "/assets/scss/components/citadel",

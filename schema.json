@@ -1582,6 +1582,15 @@
       },
       {
         "type": "heading",
+        "content": "Custom Builder Product Settings"
+      },
+      {
+        "type": "input",
+        "label": "Corporate Product ID for Add-to-Cart",
+        "id": "corporate_product_id"
+      },
+      {
+        "type": "heading",
         "content": "Tip In Page Section"
       },
       {
