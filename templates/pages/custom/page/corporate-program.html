@@ -339,6 +339,916 @@ cart: true
             </p>
           </div>
         </div>
+
+        <!-- Enterprise Custom Order Builder -->
+        <div class="simple-builder-container" id="custom-builder">
+          <div class="builder-header-bar">
+            <span class="builder-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Custom Order Builder</span>
+            <h3 class="builder-title">Configure Your Executive Journal</h3>
+            <p class="builder-subtitle">Choose your cover color, upload your logo, select imprint finish, and place your order or request a custom quote.</p>
+          </div>
+
+          <div class="builder-main-grid">
+            <!-- LEFT COLUMN: RETINA HD CANVAS REAL-TIME PREVIEW -->
+            <div class="builder-preview-col">
+              <div class="journal-stage">
+                <canvas id="journalMockupCanvas" style="max-width: 100%; height: auto;" title="Drag logo to position anywhere on cover"></canvas>
+                <div class="canvas-drag-hint">
+                  <i class="fa-solid fa-up-down-left-right"></i> Drag logo to position anywhere on cover
+                </div>
+                <div class="canvas-action-bar">
+                  <button type="button" class="btn-canvas-upload" onclick="document.getElementById('simpleLogoInput').click()">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> Upload / Change Logo
+                  </button>
+                  <div class="logo-scale-controls" title="Adjust logo size">
+                    <button type="button" class="btn-scale" onclick="adjustLogoScale(-0.1)" title="Smaller"><i class="fa-solid fa-minus"></i></button>
+                    <span id="logoScaleText" style="font-size: 11px; font-weight: 600; color: #39312b;">100%</span>
+                    <button type="button" class="btn-scale" onclick="adjustLogoScale(0.1)" title="Larger"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                  <button type="button" class="btn-canvas-center" onclick="resetLogoPosition()" title="Center logo on cover">
+                    <i class="fa-solid fa-arrows-to-dot"></i> Center Logo
+                  </button>
+                  <button type="button" class="btn-builder-remove" id="btnSimpleRemoveLogo" style="display:none;" onclick="resetSimpleLogo()">
+                    <i class="fa-solid fa-xmark"></i> Remove Logo
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: BUILDER CONTROLS FORM -->
+            <div class="builder-controls-col">
+              <!-- 1. Cover Color -->
+              <div class="builder-group">
+                <label class="group-label">1. Select Cover Color:</label>
+                <div class="swatches-row">
+                  <button type="button" class="swatch-btn active" data-color="navy" title="Royal Navy (#2E3344)" onclick="setSimpleColor('navy', this)">
+                    <span class="swatch-circle navy"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color="saddle" title="Cognac Saddle (#7A6248)" onclick="setSimpleColor('saddle', this)">
+                    <span class="swatch-circle saddle"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color="onyx" title="Onyx Black (#1A1A1A)" onclick="setSimpleColor('onyx', this)">
+                    <span class="swatch-circle onyx"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color="forest" title="Forest Green (#1E3A2B)" onclick="setSimpleColor('forest', this)">
+                    <span class="swatch-circle forest"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color="burgundy" title="Heritage Burgundy (#5C1D24)" onclick="setSimpleColor('burgundy', this)">
+                    <span class="swatch-circle burgundy"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color="cream" title="Warm Cream (#F7F4EF)" onclick="setSimpleColor('cream', this)">
+                    <span class="swatch-circle cream"></span>
+                  </button>
+                </div>
+                <span class="swatch-selected-name" id="selectedColorName">Royal Navy</span>
+              </div>
+
+              <!-- 2. Logo Upload -->
+              <div class="builder-group">
+                <label class="group-label">2. Company Logo:</label>
+                <input type="file" id="simpleLogoInput" accept="image/*" style="display:none;" />
+                <span class="upload-hint">Upload high-res PNG, SVG, or JPG to position on cover.</span>
+              </div>
+
+              <!-- 3. Imprint Finish -->
+              <div class="builder-group">
+                <label class="group-label">3. Imprint Finish:</label>
+                <div class="finish-pill-grid">
+                  <button type="button" class="pill-btn active" data-finish="gold" onclick="setSimpleFinish('gold', this)">
+                    <span class="dot gold"></span> Gold Foil
+                  </button>
+                  <button type="button" class="pill-btn" data-finish="silver" onclick="setSimpleFinish('silver', this)">
+                    <span class="dot silver"></span> Silver Foil
+                  </button>
+                  <button type="button" class="pill-btn" data-finish="black" onclick="setSimpleFinish('black', this)">
+                    <span class="dot black"></span> Gloss Black
+                  </button>
+                  <button type="button" class="pill-btn" data-finish="deboss" onclick="setSimpleFinish('deboss', this)">
+                    <span class="dot deboss"></span> Blind Deboss
+                  </button>
+                </div>
+              </div>
+
+              <!-- 4. Personalization -->
+              <div class="builder-group">
+                <label class="group-label" for="simpleNameInput">4. Personalization (Optional):</label>
+                <input type="text" id="simpleNameInput" class="builder-input" placeholder="e.g. J. STEVENS or EXECUTIVE" oninput="updateSimpleName(this.value)" />
+              </div>
+
+              <!-- 5. Inner Paper Layout -->
+              <div class="builder-group">
+                <label class="group-label" for="simplePaperSelect">5. Inner Paper Layout:</label>
+                <select id="simplePaperSelect" class="builder-select" onchange="updateSimplePaper(this.value)">
+                  <option value="Ruled / Lined Pages" selected>Ruled / Lined Pages (Standard)</option>
+                  <option value="Dot Grid Pages">Dot Grid Pages (Design / Technical)</option>
+                  <option value="Blank / Plain Pages">Blank / Plain Pages (Sketching)</option>
+                  <option value="Undated Daily Planner">Undated Executive Daily Planner</option>
+                </select>
+              </div>
+
+              <!-- 6. Custom Tip-in Insert Page -->
+              <div class="builder-group">
+                <label class="group-label" for="simpleTipInSelect">6. Custom Tip-in Page (Optional Insert):</label>
+                <select id="simpleTipInSelect" class="builder-select" onchange="updateSimpleTipIn(this.value)">
+                  <option value="None (Standard)" selected>None (Standard Journal)</option>
+                  <option value="Welcome / CEO Letter Insert">Welcome Letter / CEO Message (+ Printed Insert)</option>
+                  <option value="Company Values & History Insert">Company History & Core Values Insert</option>
+                  <option value="Event / Program Schedule Insert">Event Schedule & Program Notes Insert</option>
+                </select>
+              </div>
+
+              <!-- 7. Packaging & Presentation -->
+              <div class="builder-group">
+                <label class="group-label" for="simplePackagingSelect">7. Packaging & Presentation:</label>
+                <select id="simplePackagingSelect" class="builder-select" onchange="updateSimplePackaging(this.value)">
+                  <option value="Standard Protective Sleeve" selected>Standard Protective Sleeve</option>
+                  <option value="Branded Paper Belly Band">Custom Branded Paper Belly Band</option>
+                  <option value="Deluxe Executive Gift Box">Deluxe Executive Gift Box Packaging</option>
+                </select>
+              </div>
+
+              <!-- 8. Bookmark Ribbon Accent -->
+              <div class="builder-group">
+                <label class="group-label">8. Bookmark Ribbon Color:</label>
+                <div class="finish-pill-grid">
+                  <button type="button" class="pill-btn active" data-ribbon="gold" onclick="setSimpleRibbon('gold', this)">
+                    <span class="dot gold"></span> Gold Silk
+                  </button>
+                  <button type="button" class="pill-btn" data-ribbon="silver" onclick="setSimpleRibbon('silver', this)">
+                    <span class="dot silver"></span> Silver Silk
+                  </button>
+                  <button type="button" class="pill-btn" data-ribbon="black" onclick="setSimpleRibbon('black', this)">
+                    <span class="dot black"></span> Black Silk
+                  </button>
+                  <button type="button" class="pill-btn" data-ribbon="navy" onclick="setSimpleRibbon('navy', this)">
+                    <span class="dot navy" style="background:#1A2536;"></span> Navy Silk
+                  </button>
+                </div>
+              </div>
+
+              <!-- 9. Quantity & Action -->
+              <div class="builder-group">
+                <label class="group-label" for="simpleQtySelect">9. Quantity & Order Action:</label>
+                <select id="simpleQtySelect" class="builder-select" onchange="updateSimpleQty(this.value)">
+                  <option value="50">50 units (Minimum Tier)</option>
+                  <option value="100" selected>100 units (Popular)</option>
+                  <option value="250">250 units</option>
+                  <option value="500">500 units</option>
+                  <option value="1000">1,000+ units (Bulk Tier)</option>
+                </select>
+
+                <form method="post" action="/cart.php" enctype="multipart/form-data" data-cart-item-add id="customOrderCartForm" style="margin-top: 15px;">
+                  <input type="hidden" name="action" value="add">
+                  <input type="hidden" name="product_id" value="{{#if theme_settings.corporate_product_id}}{{theme_settings.corporate_product_id}}{{else}}348{{/if}}">
+                  <input type="hidden" id="simpleCartQty" name="qty[]" value="100">
+                  
+                  <!-- Dynamic BigCommerce Line Item Attribute Modifiers -->
+                  <input type="hidden" id="bcAttrColor" name="attribute[1843]" value="836">
+                  <input type="hidden" id="bcAttrFinish" name="attribute[1844]" value="842">
+                  <input type="hidden" id="bcAttrPersonalization" name="attribute[1849]" value="">
+                  <input type="hidden" id="bcAttrPaper" name="attribute[1845]" value="846">
+                  <input type="hidden" id="bcAttrTipIn" name="attribute[1846]" value="850">
+                  <input type="hidden" id="bcAttrPackaging" name="attribute[1847]" value="854">
+                  <input type="hidden" id="bcAttrRibbon" name="attribute[1848]" value="857">
+                  <input type="file" id="bcAttrLogoFile" name="attribute[1850]" style="display:none;">
+
+                  <div class="builder-action-btns">
+                    <button type="submit" class="btn-builder-primary">
+                      <i class="fa-solid fa-cart-shopping"></i> Add Custom Order to Cart
+                    </button>
+                    <button type="button" class="btn-builder-secondary" onclick="openSimpleQuoteModal()">
+                      <i class="fa-solid fa-paper-plane"></i> Request Custom Quote
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote Modal Overlay with Final Generated Image Export -->
+        <div class="simple-quote-modal" id="simpleQuoteModal" style="display:none;">
+          <div class="quote-modal-content">
+            <button type="button" class="modal-close-btn" onclick="closeSimpleQuoteModal()">&times;</button>
+            <h4 class="modal-title">Request Corporate Quote</h4>
+            <p class="modal-desc">Review your customized journal mockup below. Submit your company info to receive official digital proofs and volume pricing.</p>
+
+            <!-- Final Generated Image Preview Box -->
+            <div class="modal-image-preview-card" style="text-align: center; margin-bottom: 15px;">
+              <label style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; color: #39312b; display: block; margin-bottom: 6px;">Your Custom Journal Mockup Image:</label>
+              <img id="sqModalImgPreview" src="" alt="Custom Journal Final Mockup" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: 6px; border: 1px solid #dcd5c5; background: #eae4d8; padding: 6px;" />
+              <a id="sqDownloadBtn" download="TimeTraveler_Custom_Journal_Mockup.png" href="" class="btn-builder-secondary" style="width: 100%; text-align: center; margin-top: 10px; padding: 8px; font-size: 12px; text-decoration: none;">
+                <i class="fa-solid fa-download"></i> Download High-Res Mockup PNG
+              </a>
+            </div>
+
+            <form id="simpleQuoteForm" onsubmit="handleSimpleQuoteSubmit(event)">
+              <div class="modal-form-row">
+                <input type="text" id="sqName" placeholder="Full Name *" required class="builder-input" />
+                <input type="text" id="sqCompany" placeholder="Company Name *" required class="builder-input" />
+              </div>
+              <div class="modal-form-row">
+                <input type="email" id="sqEmail" placeholder="Work Email *" required class="builder-input" />
+                <input type="tel" id="sqPhone" placeholder="Phone Number" class="builder-input" />
+              </div>
+              <div class="modal-form-row">
+                <textarea id="sqNotes" rows="2" placeholder="Timeline, packaging or special instructions..." class="builder-input"></textarea>
+              </div>
+              <div class="modal-summary-box">
+                <strong>Selected Specifications:</strong>
+                <p id="sqSummaryText">Royal Navy | Gold Foil | Quantity: 100 units</p>
+              </div>
+              <button type="submit" id="btnSubmitQuoteForm" class="btn-builder-primary" style="width: 100%; justify-content: center;">
+                Submit Quote Request <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- HTML5 High-DPI Retina Canvas Interactive Renderer Engine -->
+        <script>
+          var defaultSiteLogoUrl = "{{cdn 'img/logo.svg'}}";
+
+          var currentSelection = {
+            colorKey: 'navy',
+            colorName: 'Royal Navy',
+            colorHex: '#2E3344',
+            finishKey: 'gold',
+            finishName: 'Gold Foil',
+            logoName: 'Time Traveler Official Logo',
+            nameText: '',
+            paperStyle: 'Ruled / Lined Pages',
+            tipInPage: 'None (Standard)',
+            packaging: 'Standard Protective Sleeve',
+            ribbonKey: 'gold',
+            ribbonName: 'Antique Gold',
+            qty: '100'
+          };
+
+          var uploadedLogoImage = null;
+          var defaultLogoImage = null;
+
+          var logoOffset = { x: 0, y: 0 };
+          var logoScale = 1.0;
+          var isDraggingLogo = false;
+          var dragStartMouse = { x: 0, y: 0 };
+          var dragStartOffset = { x: 0, y: 0 };
+
+          document.addEventListener('DOMContentLoaded', function() {
+            // Pre-load default authentic site logo image
+            var dImg = new Image();
+            dImg.crossOrigin = "anonymous";
+            dImg.onload = function() {
+              defaultLogoImage = dImg;
+              renderJournalCanvas();
+            };
+            dImg.src = defaultSiteLogoUrl;
+
+            var input = document.getElementById('simpleLogoInput');
+            if (input) {
+              input.addEventListener('change', function(e) {
+                if (e.target.files && e.target.files[0]) {
+                  loadSimpleLogo(e.target.files[0]);
+                }
+              });
+            }
+            initCanvasDragAndDrop();
+            renderJournalCanvas();
+            fetchBCOptionIds();
+
+            var corpForm = document.getElementById('customOrderCartForm');
+            if (corpForm) {
+              corpForm.addEventListener('submit', function(e) {
+                var canvas = document.getElementById('journalMockupCanvas');
+                var fileInput = document.getElementById('bcAttrLogoFile');
+                if (canvas) {
+                  try {
+                    var dataUrl = canvas.toDataURL('image/png');
+                    try { localStorage.setItem('corporate_journal_mockup', dataUrl); } catch (err) {}
+
+                    if (fileInput && typeof DataTransfer !== 'undefined') {
+                      var arr = dataUrl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                      bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+                      while (n--) {
+                        u8arr[n] = bstr.charCodeAt(n);
+                      }
+                      var blob = new Blob([u8arr], { type: mime });
+                      var file = new File([blob], 'Custom_Journal_Mockup_Proof.png', { type: 'image/png' });
+                      var dt = new DataTransfer();
+                      dt.items.add(file);
+                      fileInput.files = dt.files;
+                    }
+                  } catch (err) {
+                    console.warn('Mockup Proof Auto-Attach Note:', err);
+                  }
+                }
+              });
+            }
+          });
+
+          function fetchBCOptionIds() {
+            var corpForm = document.getElementById('customOrderCartForm');
+            if (!corpForm) return;
+            var prodIdInput = corpForm.querySelector('input[name="product_id"]');
+            if (!prodIdInput) return;
+            var pId = prodIdInput.value;
+
+            fetch('/api/storefront/products/' + pId + '?include=options')
+              .then(function(res) { return res.json(); })
+              .then(function(data) {
+                if (data && data.options && Array.isArray(data.options)) {
+                  data.options.forEach(function(opt) {
+                    var name = opt.display_name;
+                    var optId = opt.id;
+                    if (name === 'Cover Color' && document.getElementById('bcAttrColor')) {
+                      document.getElementById('bcAttrColor').name = 'attribute[' + optId + ']';
+                    } else if (name === 'Imprint Finish' && document.getElementById('bcAttrFinish')) {
+                      document.getElementById('bcAttrFinish').name = 'attribute[' + optId + ']';
+                    } else if (name === 'Personalization' && document.getElementById('bcAttrPersonalization')) {
+                      document.getElementById('bcAttrPersonalization').name = 'attribute[' + optId + ']';
+                    } else if (name === 'Paper Style' && document.getElementById('bcAttrPaper')) {
+                      document.getElementById('bcAttrPaper').name = 'attribute[' + optId + ']';
+                    } else if (name === 'Tip-in Page' && document.getElementById('bcAttrTipIn')) {
+                      document.getElementById('bcAttrTipIn').name = 'attribute[' + optId + ']';
+                    } else if (name === 'Packaging' && document.getElementById('bcAttrPackaging')) {
+                      document.getElementById('bcAttrPackaging').name = 'attribute[' + optId + ']';
+                    } else if (name === 'Ribbon Color' && document.getElementById('bcAttrRibbon')) {
+                      document.getElementById('bcAttrRibbon').name = 'attribute[' + optId + ']';
+                    } else if ((name === 'Custom Logo Proof' || name === 'Custom Logo Proof (Uploaded File)') && document.getElementById('bcAttrLogoFile')) {
+                      document.getElementById('bcAttrLogoFile').name = 'attribute[' + optId + ']';
+                    }
+                  });
+                }
+              })
+              .catch(function(err) {
+                console.warn('BigCommerce Option ID Mapping Notice:', err);
+              });
+          }
+
+          function initCanvasDragAndDrop() {
+            var canvas = document.getElementById('journalMockupCanvas');
+            if (!canvas) return;
+
+            function getCanvasCoords(e) {
+              var rect = canvas.getBoundingClientRect();
+              var clientX = e.clientX;
+              var clientY = e.clientY;
+              if (e.touches && e.touches[0]) {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+              }
+              var scaleX = 340 / (rect.width || 340);
+              var scaleY = 440 / (rect.height || 440);
+              return {
+                x: (clientX - rect.left) * scaleX,
+                y: (clientY - rect.top) * scaleY
+              };
+            }
+
+            function onPointerDown(e) {
+              var coords = getCanvasCoords(e);
+              isDraggingLogo = true;
+              dragStartMouse = coords;
+              dragStartOffset = {
+                x: logoOffset.x || 0,
+                y: logoOffset.y || 0
+              };
+              canvas.style.cursor = 'grabbing';
+              renderJournalCanvas();
+              if (e.cancelable) e.preventDefault();
+            }
+
+            function onPointerMove(e) {
+              var coords = getCanvasCoords(e);
+              if (isDraggingLogo) {
+                var dx = coords.x - dragStartMouse.x;
+                var dy = coords.y - dragStartMouse.y;
+
+                var newOffsetX = dragStartOffset.x + dx;
+                var newOffsetY = dragStartOffset.y + dy;
+
+                newOffsetX = Math.max(-100, Math.min(110, newOffsetX));
+                newOffsetY = Math.max(-130, Math.min(180, newOffsetY));
+
+                logoOffset.x = newOffsetX;
+                logoOffset.y = newOffsetY;
+
+                renderJournalCanvas();
+                if (e.cancelable) e.preventDefault();
+              } else {
+                canvas.style.cursor = 'grab';
+              }
+            }
+
+            function onPointerUp(e) {
+              if (isDraggingLogo) {
+                isDraggingLogo = false;
+                canvas.style.cursor = 'grab';
+                renderJournalCanvas();
+              }
+            }
+
+            canvas.addEventListener('mousedown', onPointerDown);
+            canvas.addEventListener('mousemove', onPointerMove);
+            window.addEventListener('mouseup', onPointerUp);
+
+            canvas.addEventListener('touchstart', onPointerDown, { passive: false });
+            canvas.addEventListener('touchmove', onPointerMove, { passive: false });
+            window.addEventListener('touchend', onPointerUp);
+          }
+
+          function adjustLogoScale(delta) {
+            logoScale = Math.max(0.4, Math.min(2.2, logoScale + delta));
+            var textEl = document.getElementById('logoScaleText');
+            if (textEl) textEl.innerText = Math.round(logoScale * 100) + '%';
+            renderJournalCanvas();
+          }
+
+          function resetLogoPosition() {
+            logoOffset = { x: 0, y: 0 };
+            logoScale = 1.0;
+            var textEl = document.getElementById('logoScaleText');
+            if (textEl) textEl.innerText = '100%';
+            renderJournalCanvas();
+          }
+
+          function loadSimpleLogo(file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              var img = new Image();
+              img.onload = function() {
+                uploadedLogoImage = img;
+                currentSelection.logoName = file.name;
+                var btn = document.getElementById('btnSimpleRemoveLogo');
+                if (btn) btn.style.display = 'inline-flex';
+                renderJournalCanvas();
+                updateModalSummary();
+              };
+              img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+
+          function resetSimpleLogo() {
+            var input = document.getElementById('simpleLogoInput');
+            if (input) input.value = '';
+            uploadedLogoImage = null;
+            currentSelection.logoName = 'Time Traveler Official Logo';
+            var btn = document.getElementById('btnSimpleRemoveLogo');
+            if (btn) btn.style.display = 'none';
+            renderJournalCanvas();
+            updateModalSummary();
+          }
+
+          function setSimpleColor(colorKey, btn) {
+            var btns = document.querySelectorAll('.swatch-btn');
+            btns.forEach(function(b) { b.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+
+            var colorMap = {
+              navy: { name: 'Royal Navy', hex: '#2E3344', valId: '836' },
+              saddle: { name: 'Cognac Saddle', hex: '#7A6248', valId: '837' },
+              onyx: { name: 'Onyx Black', hex: '#1A1A1A', valId: '838' },
+              forest: { name: 'Forest Green', hex: '#1E3A2B', valId: '839' },
+              burgundy: { name: 'Heritage Burgundy', hex: '#5C1D24', valId: '840' },
+              cream: { name: 'Warm Cream', hex: '#F7F4EF', valId: '841' }
+            };
+
+            var selected = colorMap[colorKey] || colorMap['navy'];
+            currentSelection.colorKey = colorKey;
+            currentSelection.colorName = selected.name;
+            currentSelection.colorHex = selected.hex;
+
+            var nameEl = document.getElementById('selectedColorName');
+            if (nameEl) nameEl.innerText = selected.name;
+
+            var bcAttrColor = document.getElementById('bcAttrColor');
+            if (bcAttrColor) bcAttrColor.value = selected.valId;
+
+            renderJournalCanvas();
+            updateModalSummary();
+          }
+
+          function setSimpleFinish(finishKey, btn) {
+            var btns = document.querySelectorAll('.pill-btn');
+            btns.forEach(function(b) { b.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+
+            var finishMap = {
+              gold: { name: 'Gold Foil', valId: '842' },
+              silver: { name: 'Silver Foil', valId: '843' },
+              black: { name: 'Gloss Black', valId: '844' },
+              deboss: { name: 'Blind Deboss', valId: '845' }
+            };
+
+            var selected = finishMap[finishKey] || finishMap['gold'];
+            currentSelection.finishKey = finishKey;
+            currentSelection.finishName = selected.name;
+
+            var bcAttrFinish = document.getElementById('bcAttrFinish');
+            if (bcAttrFinish) bcAttrFinish.value = selected.valId;
+
+            renderJournalCanvas();
+            updateModalSummary();
+          }
+
+          function updateSimpleName(val) {
+            currentSelection.nameText = val.trim().toUpperCase();
+            var bcAttrPers = document.getElementById('bcAttrPersonalization');
+            if (bcAttrPers) bcAttrPers.value = currentSelection.nameText;
+
+            renderJournalCanvas();
+            updateModalSummary();
+          }
+
+          function updateSimplePaper(val) {
+            currentSelection.paperStyle = val;
+            var paperMap = {
+              'Ruled / Lined Pages': '846',
+              'Dot Grid Pages': '847',
+              'Blank / Plain Pages': '848',
+              'Undated Daily Planner': '849'
+            };
+            var bcAttrPaper = document.getElementById('bcAttrPaper');
+            if (bcAttrPaper) bcAttrPaper.value = paperMap[val] || '846';
+            updateModalSummary();
+          }
+
+          function updateSimpleTipIn(val) {
+            currentSelection.tipInPage = val;
+            var tipInMap = {
+              'None (Standard)': '850',
+              'Welcome / CEO Letter Insert': '851',
+              'Company Values & History Insert': '852',
+              'Event / Program Schedule Insert': '853'
+            };
+            var bcAttrTipIn = document.getElementById('bcAttrTipIn');
+            if (bcAttrTipIn) bcAttrTipIn.value = tipInMap[val] || '850';
+            updateModalSummary();
+          }
+
+          function updateSimplePackaging(val) {
+            currentSelection.packaging = val;
+            var pkgMap = {
+              'Standard Protective Sleeve': '854',
+              'Branded Paper Belly Band': '855',
+              'Deluxe Executive Gift Box': '856'
+            };
+            var bcAttrPkg = document.getElementById('bcAttrPackaging');
+            if (bcAttrPkg) bcAttrPkg.value = pkgMap[val] || '854';
+            renderJournalCanvas();
+            updateModalSummary();
+          }
+
+          function setSimpleRibbon(ribbonKey, btn) {
+            var btns = btn.parentNode.querySelectorAll('.pill-btn');
+            btns.forEach(function(b) { b.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+
+            var ribbonMap = {
+              gold: { name: 'Antique Gold', hex: '#C5A059', darkHex: '#A8843F', valId: '857' },
+              silver: { name: 'Metallic Silver', hex: '#C0C0C0', darkHex: '#999999', valId: '858' },
+              black: { name: 'Onyx Black', hex: '#222222', darkHex: '#111111', valId: '859' },
+              navy: { name: 'Midnight Navy', hex: '#1A2536', darkHex: '#0F1621', valId: '860' }
+            };
+
+            var selected = ribbonMap[ribbonKey] || ribbonMap['gold'];
+            currentSelection.ribbonKey = ribbonKey;
+            currentSelection.ribbonName = selected.name;
+
+            var bcAttrRibbon = document.getElementById('bcAttrRibbon');
+            if (bcAttrRibbon) bcAttrRibbon.value = selected.valId;
+
+            renderJournalCanvas();
+            updateModalSummary();
+          }
+
+          function updateSimpleQty(val) {
+            var cartInput = document.getElementById('simpleCartQty');
+            if (cartInput) cartInput.value = val;
+            currentSelection.qty = val;
+            updateModalSummary();
+          }
+
+          function renderJournalCanvas() {
+            var canvas = document.getElementById('journalMockupCanvas');
+            if (!canvas) return;
+            var ctx = canvas.getContext('2d');
+
+            // High-DPI Retina Scaling Logic
+            var dpr = window.devicePixelRatio || 1;
+            var displayW = 340;
+            var displayH = 440;
+
+            canvas.width = displayW * dpr;
+            canvas.height = displayH * dpr;
+            canvas.style.width = displayW + 'px';
+            canvas.style.height = displayH + 'px';
+
+            ctx.save();
+            ctx.scale(dpr, dpr);
+
+            var w = displayW;
+            var h = displayH;
+
+            // Clear Canvas Context
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw Journal Drop Shadow
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.25)';
+            ctx.shadowBlur = 18;
+            ctx.shadowOffsetX = 8;
+            ctx.shadowOffsetY = 12;
+
+            // Draw Leather Cover Outer Path
+            var coverX = 24;
+            var coverY = 18;
+            var coverW = w - 48;
+            var coverH = h - 42;
+            var cornerRadius = 12;
+
+            ctx.beginPath();
+            ctx.moveTo(coverX + cornerRadius, coverY);
+            ctx.lineTo(coverX + coverW - cornerRadius, coverY);
+            ctx.quadraticCurveTo(coverX + coverW, coverY, coverX + coverW, coverY + cornerRadius);
+            ctx.lineTo(coverX + coverW, coverY + coverH - cornerRadius);
+            ctx.quadraticCurveTo(coverX + coverW, coverY + coverH, coverX + coverW - cornerRadius, coverY + coverH);
+            ctx.lineTo(coverX + cornerRadius, coverY + coverH);
+            ctx.quadraticCurveTo(coverX, coverY + coverH, coverX, coverY + coverH - cornerRadius);
+            ctx.lineTo(coverX, coverY + cornerRadius);
+            ctx.quadraticCurveTo(coverX, coverY, coverX + cornerRadius, coverY);
+            ctx.closePath();
+
+            // Fill Leather Cover Gradient
+            var coverGrad = ctx.createLinearGradient(coverX, coverY, coverX + coverW, coverY + coverH);
+            coverGrad.addColorStop(0, currentSelection.colorHex);
+            coverGrad.addColorStop(1, adjustColor(currentSelection.colorHex, -22));
+            ctx.fillStyle = coverGrad;
+            ctx.fill();
+
+            // Reset Drop Shadow
+            ctx.shadowColor = 'transparent';
+
+            // Draw Spine
+            ctx.fillStyle = 'rgba(0,0,0,0.22)';
+            ctx.fillRect(coverX, coverY, 24, coverH);
+
+            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(coverX + 24, coverY);
+            ctx.lineTo(coverX + 24, coverY + coverH);
+            ctx.stroke();
+
+            // Draw Perimeter Stitch Line
+            ctx.setLineDash([4, 4]);
+            ctx.strokeStyle = currentSelection.colorKey === 'cream' ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.22)';
+            ctx.beginPath();
+            ctx.moveTo(coverX + 32, coverY + 8);
+            ctx.lineTo(coverX + 32, coverY + coverH - 8);
+            ctx.stroke();
+            ctx.setLineDash([]); // Reset line dash
+
+            // Draw Silk Bookmark Ribbon
+            var ribbonColorMap = {
+              gold: { main: '#C5A059', dark: '#A8843F' },
+              silver: { main: '#C0C0C0', dark: '#999999' },
+              black: { main: '#222222', dark: '#111111' },
+              navy: { main: '#1A2536', dark: '#0F1621' }
+            };
+            var rib = ribbonColorMap[currentSelection.ribbonKey] || ribbonColorMap['gold'];
+
+            ctx.fillStyle = rib.main;
+            ctx.fillRect(coverX + coverW - 44, coverY + coverH - 4, 16, 26);
+            ctx.beginPath();
+            ctx.moveTo(coverX + coverW - 44, coverY + coverH + 22);
+            ctx.lineTo(coverX + coverW - 36, coverY + coverH + 16);
+            ctx.lineTo(coverX + coverW - 28, coverY + coverH + 22);
+            ctx.fillStyle = rib.dark;
+            ctx.fill();
+
+            // Draw Branded Paper Belly Band (if selected)
+            if (currentSelection.packaging === 'Branded Paper Belly Band') {
+              var bandY = coverY + (coverH * 0.64);
+              var bandH = 50;
+
+              // Band background paper texture gradient
+              var bandGrad = ctx.createLinearGradient(coverX, bandY, coverX + coverW, bandY + bandH);
+              bandGrad.addColorStop(0, '#FAF7F2');
+              bandGrad.addColorStop(0.5, '#FFFFFF');
+              bandGrad.addColorStop(1, '#F3EFE6');
+              ctx.fillStyle = bandGrad;
+              ctx.fillRect(coverX, bandY, coverW, bandH);
+
+              // Band Gold Foil Accent Rules
+              ctx.strokeStyle = '#D4AF37';
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(coverX, bandY + 4);
+              ctx.lineTo(coverX + coverW, bandY + 4);
+              ctx.moveTo(coverX, bandY + bandH - 4);
+              ctx.lineTo(coverX + coverW, bandY + bandH - 4);
+              ctx.stroke();
+
+              // Band Print Label
+              ctx.fillStyle = '#39312B';
+              ctx.font = 'bold 9px "DM Sans", sans-serif';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText('• EXECUTIVE EDITION • BRANDED PAPER SLEEVE •', coverX + (coverW / 2) + 10, bandY + (bandH / 2));
+            }
+
+            // Draw Logo / Imprint Layer
+            var logoCenterX = coverX + (coverW / 2) + 10 + (logoOffset.x || 0);
+            var logoCenterY = coverY + (coverH * 0.38) + (logoOffset.y || 0);
+
+            var activeLogo = uploadedLogoImage || defaultLogoImage;
+
+            ctx.save();
+            ctx.translate(logoCenterX, logoCenterY);
+
+            if (activeLogo) {
+              var maxL = 130 * (logoScale || 1.0);
+              var scale = Math.min(maxL / activeLogo.width, maxL / activeLogo.height);
+              var lw = activeLogo.width * scale;
+              var lh = activeLogo.height * scale;
+
+              // Render finish tint on temporary canvas
+              var tCanvas = document.createElement('canvas');
+              tCanvas.width = Math.max(1, Math.floor(lw * dpr));
+              tCanvas.height = Math.max(1, Math.floor(lh * dpr));
+              var tCtx = tCanvas.getContext('2d');
+              tCtx.scale(dpr, dpr);
+              tCtx.drawImage(activeLogo, 0, 0, lw, lh);
+
+              tCtx.globalCompositeOperation = 'source-in';
+
+              if (currentSelection.finishKey === 'gold') {
+                var g = tCtx.createLinearGradient(0, 0, lw, lh);
+                g.addColorStop(0, '#F7E6BE');
+                g.addColorStop(0.5, '#D4AF37');
+                g.addColorStop(1, '#AA820A');
+                tCtx.fillStyle = g;
+                tCtx.fillRect(0, 0, lw, lh);
+              } else if (currentSelection.finishKey === 'silver') {
+                var s = tCtx.createLinearGradient(0, 0, lw, lh);
+                s.addColorStop(0, '#FFFFFF');
+                s.addColorStop(0.5, '#D1D5DB');
+                s.addColorStop(1, '#9CA3AF');
+                tCtx.fillStyle = s;
+                tCtx.fillRect(0, 0, lw, lh);
+              } else if (currentSelection.finishKey === 'black') {
+                tCtx.fillStyle = '#111111';
+                tCtx.fillRect(0, 0, lw, lh);
+              } else { // Blind Deboss
+                tCtx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+                tCtx.fillRect(0, 0, lw, lh);
+              }
+
+              ctx.drawImage(tCanvas, -lw / 2, -lh / 2, lw, lh);
+
+              // Draw active drag bounding box indicator
+              if (isDraggingLogo) {
+                ctx.setLineDash([3, 3]);
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 1.5;
+                ctx.strokeRect(-lw / 2 - 4, -lh / 2 - 4, lw + 8, lh + 8);
+                ctx.setLineDash([]);
+              }
+
+            } else {
+              // Default Logo Proof Vector Backup
+              applyFinishStyle(ctx, currentSelection.finishKey);
+
+              ctx.font = 'bold 13px "DM Sans", sans-serif';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+
+              ctx.beginPath();
+              ctx.arc(0, -18, 16, 0, Math.PI * 2);
+              ctx.lineWidth = 2;
+              ctx.stroke();
+
+              ctx.fillText('TIME TRAVELER', 0, 10);
+              ctx.font = '10px "DM Sans", sans-serif';
+              ctx.fillText('EXECUTIVE EDITION', 0, 26);
+            }
+            ctx.restore();
+
+            // Draw Personalization Name Overlay (Bottom Right)
+            if (currentSelection.nameText.length > 0) {
+              ctx.save();
+              applyFinishStyle(ctx, currentSelection.finishKey);
+              ctx.font = 'bold 11px "DM Sans", sans-serif';
+              ctx.textAlign = 'right';
+              ctx.fillText(currentSelection.nameText, coverX + coverW - 20, coverY + coverH - 24);
+              ctx.restore();
+            }
+
+            ctx.restore(); // Restore main DPI scale
+          }
+
+          function applyFinishStyle(ctx, finishKey) {
+            if (finishKey === 'gold') {
+              ctx.fillStyle = '#D4AF37';
+              ctx.strokeStyle = '#D4AF37';
+              ctx.shadowColor = 'rgba(212, 175, 55, 0.4)';
+              ctx.shadowBlur = 4;
+            } else if (finishKey === 'silver') {
+              ctx.fillStyle = '#E0E0E0';
+              ctx.strokeStyle = '#E0E0E0';
+              ctx.shadowColor = 'rgba(255, 255, 255, 0.4)';
+              ctx.shadowBlur = 4;
+            } else if (finishKey === 'black') {
+              ctx.fillStyle = '#111111';
+              ctx.strokeStyle = '#111111';
+              ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+              ctx.shadowBlur = 2;
+            } else { // Blind Deboss
+              ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+              ctx.strokeStyle = 'rgba(0, 0, 0, 0.45)';
+              ctx.shadowColor = 'rgba(255, 255, 255, 0.2)';
+              ctx.shadowOffsetY = -1;
+              ctx.shadowBlur = 1;
+            }
+          }
+
+          function adjustColor(hex, percent) {
+            var num = parseInt(hex.replace('#', ''), 16),
+                amt = Math.round(2.55 * percent),
+                R = (num >> 16) + amt,
+                G = (num >> 8 & 0x00FF) + amt,
+                B = (num & 0x0000FF) + amt;
+            return '#' + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+          }
+
+          function updateModalSummary() {
+            var el = document.getElementById('sqSummaryText');
+            if (el) {
+              var pers = currentSelection.nameText ? currentSelection.nameText : 'None';
+              el.innerHTML = '<strong>Cover Color:</strong> ' + currentSelection.colorName + '<br/>' +
+                             '<strong>Imprint Finish:</strong> ' + currentSelection.finishName + ' (Logo: ' + currentSelection.logoName + ')<br/>' +
+                             '<strong>Paper Style:</strong> ' + currentSelection.paperStyle + '<br/>' +
+                             '<strong>Tip-in Insert:</strong> ' + currentSelection.tipInPage + '<br/>' +
+                             '<strong>Packaging:</strong> ' + currentSelection.packaging + '<br/>' +
+                             '<strong>Ribbon Accent:</strong> ' + currentSelection.ribbonName + '<br/>' +
+                             '<strong>Personalization:</strong> ' + pers + ' | <strong>Quantity:</strong> ' + currentSelection.qty + ' units';
+            }
+          }
+
+          function openSimpleQuoteModal() {
+            renderJournalCanvas();
+            var canvas = document.getElementById('journalMockupCanvas');
+            if (canvas) {
+              var dataUrl = canvas.toDataURL('image/png');
+              var imgPreview = document.getElementById('sqModalImgPreview');
+              var downloadBtn = document.getElementById('sqDownloadBtn');
+              if (imgPreview) imgPreview.src = dataUrl;
+              if (downloadBtn) downloadBtn.href = dataUrl;
+            }
+            updateModalSummary();
+            var modal = document.getElementById('simpleQuoteModal');
+            if (modal) modal.style.display = 'flex';
+          }
+
+          function closeSimpleQuoteModal() {
+            var modal = document.getElementById('simpleQuoteModal');
+            if (modal) modal.style.display = 'none';
+          }
+
+          function handleSimpleQuoteSubmit(e) {
+            e.preventDefault();
+            var name = document.getElementById('sqName').value;
+            var company = document.getElementById('sqCompany').value;
+            var email = document.getElementById('sqEmail').value;
+            var phone = document.getElementById('sqPhone').value;
+            var notes = document.getElementById('sqNotes').value;
+            var summary = document.getElementById('sqSummaryText').innerText;
+
+            var submitBtn = document.getElementById('btnSubmitQuoteForm');
+            if (submitBtn) submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating Quote...';
+
+            // Auto Download High-Res Mockup Image for Email Attachment
+            var downloadBtn = document.getElementById('sqDownloadBtn');
+            if (downloadBtn && downloadBtn.href) {
+              var a = document.createElement('a');
+              a.href = downloadBtn.href;
+              a.download = 'TimeTraveler_Custom_Journal_' + company.replace(/[^a-z0-9]/gi, '_') + '.png';
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+            }
+
+            var subject = encodeURIComponent('Corporate Custom Journal Quote Request - ' + company);
+            var body = encodeURIComponent('Full Name: ' + name + '\nCompany Name: ' + company + '\nWork Email: ' + email + '\nPhone: ' + phone + '\n\nJournal Specs:\n' + summary + '\n\nNotes / Timeline:\n' + notes + '\n\n[Note: Custom Journal Mockup image PNG has been saved to your downloads folder to attach to this email.]');
+
+            setTimeout(function() {
+              window.location.href = 'mailto:cs@timetravelercorp.com?subject=' + subject + '&body=' + body;
+              if (submitBtn) submitBtn.innerHTML = 'Submit Quote Request <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>';
+              closeSimpleQuoteModal();
+            }, 600);
+          }
+        </script>
       </div>
     </section>
 

@@ -10,6 +10,10 @@ product:
     limit: { { theme_settings.productpage_similar_by_views_count } }
 ---
 
+{{#or (if product.id '==' 348) (if product.id '==' theme_settings.corporate_product_id)}}
+    <script>window.location.replace('/corporate-program/#custom-builder');</script>
+{{/or}}
+
 {{#partial "page"}} {{!-- {{> components/common/breadcrumbs
 breadcrumbs=breadcrumbs}} --}} {{#each product.shipping_messages}} {{>
 components/common/alert-info message}} {{/each}}
