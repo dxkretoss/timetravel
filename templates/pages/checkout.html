@@ -32,6 +32,76 @@
 
 {{{ footer.scripts }}}
 
+<script>
+    (function() {
+        function checkAndAttachToggles() {
+            var optionsLists = document.querySelectorAll('.product-options, .cart-item-options');
+            optionsLists.forEach(function(list) {
+                var items = list.querySelectorAll('.product-option, li');
+                var parent = list.parentElement;
+                if (!parent) return;
+
+                var existingBtn = parent.querySelector('.checkout-options-toggle');
+
+                if (items.length > 2) {
+                    if (!existingBtn) {
+                        var toggleBtn = document.createElement('button');
+                        toggleBtn.type = 'button';
+                        toggleBtn.className = 'checkout-options-toggle';
+                        toggleBtn.setAttribute('aria-expanded', 'false');
+                        toggleBtn.innerHTML = '<span class="toggle-text">See More</span> <i class="fa-solid fa-chevron-down toggle-icon" style="font-size: 9px; margin-left: 3px;"></i>';
+                        
+                        if (list.nextSibling) {
+                            parent.insertBefore(toggleBtn, list.nextSibling);
+                        } else {
+                            parent.appendChild(toggleBtn);
+                        }
+                    }
+                } else if (existingBtn) {
+                    existingBtn.remove();
+                }
+            });
+        }
+
+        document.addEventListener('click', function(e) {
+            var toggleBtn = e.target.closest('.checkout-options-toggle');
+            if (toggleBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                var parent = toggleBtn.parentElement;
+                if (parent) {
+                    var optionsList = parent.querySelector('.product-options, .cart-item-options');
+                    if (optionsList) {
+                        var isExpanded = optionsList.classList.toggle('is-expanded');
+                        toggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+                        var textSpan = toggleBtn.querySelector('.toggle-text');
+                        var icon = toggleBtn.querySelector('.toggle-icon');
+                        if (textSpan) {
+                            textSpan.textContent = isExpanded ? 'See Less' : 'See More';
+                        }
+                        if (icon) {
+                            if (isExpanded) {
+                                icon.classList.remove('fa-chevron-down');
+                                icon.classList.add('fa-chevron-up');
+                            } else {
+                                icon.classList.remove('fa-chevron-up');
+                                icon.classList.add('fa-chevron-down');
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Run initially and observe React SPA DOM updates
+        checkAndAttachToggles();
+        var observer = new MutationObserver(function() {
+            checkAndAttachToggles();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+    })();
+</script>
+
 {{/partial}}
 
 {{> layout/empty}}

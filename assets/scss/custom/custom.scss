@@ -1194,6 +1194,7 @@ address span {
 
 .panel-body {
     margin: 0;
+    background-color: transparent !important;
 }
 
 .new-customer {
@@ -1296,7 +1297,7 @@ address span {
 .account.account--fixed {
     border: 1px solid #B8975A80;
     padding: 20px;
-    background-color: #B8975A14;
+    // background-color: #B8975A14;
 }
 
 // .form-fieldset {
@@ -2213,4 +2214,121 @@ address span {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+}
+
+.checkout-empty-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* =============================================================================
+   Cart Item Collapsible Options (See More / See Less)
+   ============================================================================= */
+.cart-item-options-wrapper {
+    position: relative;
+    margin: 8px 0 4px 0;
+
+    .definitionList {
+        margin-bottom: 2px;
+    }
+
+    .definitionList-key {
+        font-weight: 500;
+        color: #718096;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 2px;
+    }
+
+    .definitionList-value {
+        color: #2D2D2D;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 4px;
+    }
+
+    // Hide options beyond the first 2 when collapsed
+    &:not(.is-expanded) {
+
+        .definitionList dt:nth-of-type(n+3),
+        .definitionList dd:nth-of-type(n+3) {
+            display: none !important;
+        }
+    }
+
+    // Toggle button (See More / See Less)
+    .cart-item-options-toggle {
+        display: none; // shown via JS / :has when > 2 options
+        background: transparent;
+        border: none;
+        padding: 4px 0;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: #B8975A;
+        cursor: pointer;
+        align-items: center;
+        gap: 5px;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.2s ease;
+        outline: none;
+        margin-top: 2px;
+
+        &:hover,
+        &:focus {
+            color: #2D2D2D;
+        }
+
+        .toggle-icon {
+            font-size: 10px;
+            transition: transform 0.2s ease;
+        }
+    }
+
+    // Modern browsers fallback to show button if 3rd dt exists
+    &:has(.definitionList dt:nth-of-type(3)) .cart-item-options-toggle {
+        display: inline-flex;
+    }
+}
+
+.cart-item-change-link {
+    display: inline-block;
+    color: #B8975A;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+        color: #2D2D2D;
+    }
+}
+
+.account_details_form {
+    // background-color: #B8975A14;
+    border: 1px solid #B8975A80;
+    padding: 20px;
+}
+
+table.table--line.wishlists-table {
+    tbody {
+        td {
+            padding: 0.78571rem 1.5rem;
+        }
+    }
+}
+
+.desktop_mobile_menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop_mobile_menu {
+        display: block;
+    }
 }

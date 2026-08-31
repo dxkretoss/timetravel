@@ -18,8 +18,9 @@
 *:focus {
     outline-color: stencilColor("optimizedCheckout-colorFocus");
 }
-.checkoutHeader-heading{
-    .header-logo-text{
+
+.checkoutHeader-heading {
+    .header-logo-text {
         color: #fff;
     }
 }
@@ -212,10 +213,11 @@ a {
 
 .optimizedCheckout-orderSummary-cartSection {
     border-color: stencilColor("optimizedCheckout-orderSummary-borderColor");
-    .cart-priceItem--total{
-      .cart-priceItem-value{
-        font-weight: 500;
-      }
+
+    .cart-priceItem--total {
+        .cart-priceItem-value {
+            font-weight: 500;
+        }
     }
 }
 
@@ -252,11 +254,13 @@ a {
 }
 
 .form-field--error {
+
     .optimizedCheckout-form-label,
     .form-inlineMessage {
         color: stencilColor("optimizedCheckout-formField-errorColor");
     }
 }
+
 //
 // Form Input
 // Background, Border, Shadow and Text Color
@@ -294,29 +298,30 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
 }
 
 .optimizedCheckout-form-label::before {
-    .optimizedCheckout-form-radio + &,
-    .optimizedCheckout-form-checkbox + & {
+
+    .optimizedCheckout-form-radio+&,
+    .optimizedCheckout-form-checkbox+& {
         background-color: stencilColor("optimizedCheckout-formField-backgroundColor");
         border-color: stencilColor("optimizedCheckout-formField-borderColor");
         box-shadow: $optimizedCheckout-input-boxShadow;
         opacity: 1;
     }
 
-    .optimizedCheckout-form-radio:checked + &,
-    .optimizedCheckout-form-checkbox:checked + & {
+    .optimizedCheckout-form-radio:checked+&,
+    .optimizedCheckout-form-checkbox:checked+& {
         background-color: stencilColor("optimizedCheckout-formField-inputControlColor");
         border-color: stencilColor("optimizedCheckout-formField-inputControlColor");
         box-shadow: none;
     }
 
-    .optimizedCheckout-form-radio:focus + &,
-    .optimizedCheckout-form-checkbox:focus + & {
+    .optimizedCheckout-form-radio:focus+&,
+    .optimizedCheckout-form-checkbox:focus+& {
         border-color: stencilColor("optimizedCheckout-colorFocus");
         box-shadow: $optimizedCheckout-input--focus-boxShadow, $optimizedCheckout-input-boxShadow;
     }
 
-    .optimizedCheckout-form-radio:focus:checked + &,
-    .optimizedCheckout-form-checkbox:focus:checked + & {
+    .optimizedCheckout-form-radio:focus:checked+&,
+    .optimizedCheckout-form-checkbox:focus:checked+& {
         box-shadow: $optimizedCheckout-input--focus-boxShadow;
     }
 }
@@ -362,21 +367,22 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
 }
 
 .optimizedCheckout-form-checklist-checkbox {
-    ~ .form-label::after,
-    ~ .form-label::before {
+
+    ~.form-label::after,
+    ~.form-label::before {
         background-color: stencilColor("optimizedCheckout-formField-backgroundColor");
         border-color: stencilColor("optimizedCheckout-formField-borderColor");
     }
 
-    &:focus ~ .form-label {
+    &:focus~.form-label {
         box-shadow: inset 0 0 0 1px stencilColor("optimizedCheckout-colorFocus");
     }
 
-    &:checked ~ .form-label::before {
+    &:checked~.form-label::before {
         border-color: stencilColor("optimizedCheckout-formField-inputControlColor");
     }
 
-    &:checked ~ .form-label::after {
+    &:checked~.form-label::after {
         background: stencilColor("optimizedCheckout-formField-inputControlColor");
     }
 }
@@ -392,30 +398,103 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
     color: stencilColor("optimizedCheckout-loadingToaster-textColor");
 }
 
-p{
-  font-size: 15px;
+p {
+    font-size: 15px;
 }
-.orderConfirmation-section{
-  font-size: 15px;
+
+.orderConfirmation-section {
+    font-size: 15px;
 }
-.orderConfirmation{
-  @media only screen and (min-width: 767px) {
-    padding-bottom: 30px;
-  }
-}
-.cartDrawer-body{
-  .cartDrawer-items{
-    @media only screen and (max-width: 767px) {
-        font-size: 20px;
-        margin-bottom: 10px !important;
+
+.orderConfirmation {
+    @media only screen and (min-width: 767px) {
+        padding-bottom: 30px;
     }
-  }
 }
-.cartDrawer-actions{
-  .cartDrawer-total{
-    @media only screen and (max-width: 767px) {
-      font-size: 20px;
-      margin-bottom: 0px !important;
+
+.cartDrawer-body {
+    .cartDrawer-items {
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+            margin-bottom: 10px !important;
+        }
     }
-  }
+}
+
+.cartDrawer-actions {
+    .cartDrawer-total {
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+
+/* Checkout page css */
+.checkoutHeader-link img,
+.checkoutHeader-logo {
+    max-width: 100px !important;
+}
+
+/* =============================================================================
+   Checkout Order Summary Collapsible Options (See More / See Less)
+   ============================================================================= */
+.product-options {
+    list-style: none !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+
+    &:not(.is-expanded) {
+
+        .product-option:nth-child(n+3),
+        li:nth-child(n+3) {
+            display: none !important;
+        }
+    }
+}
+
+.checkout-options-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 2px 0 4px 0 !important;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #B8975A !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+    margin-top: 3px !important;
+    outline: none !important;
+    line-height: 1.4 !important;
+    transition: color 0.2s ease !important;
+
+    &:hover,
+    &:focus {
+        color: #2D2D2D !important;
+    }
+
+    .toggle-icon {
+        font-size: 9px !important;
+    }
+}
+
+
+.layout.optimizedCheckout-contentPrimary {
+    background-color: #B8975A14;
+    border: 1px solid #B8975A80;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.optimizedCheckout-contentPrimary.body-regular a,
+.redeemable-label.body-cta,
+.cart-header-link.body-cta,
+.customer-login-link a {
+    color: #B8975A;
+    font-weight: 500;
 }

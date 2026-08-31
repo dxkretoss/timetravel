@@ -39,23 +39,29 @@
                     {{/if}}
 
                     {{#if options}}
-                        <dl class="definitionList">
-                            {{#each options}}
-                                <dt class="definitionList-key">{{name}}:</dt>
-                                <dd class="definitionList-value">
-                                    {{#if is_file}}
-                                        <a href="#" class="corporate-proof-download-btn" data-filename="Custom_Journal_Mockup_Proof.png"><i class="fa-solid fa-file-image"></i> Custom_Journal_Mockup_Proof.png</a>
-                                    {{else}}
-                                        {{value}}
-                                    {{/if}}
-                                </dd>
-                            {{/each}}
-                        </dl>
+                        <div class="cart-item-options-wrapper" data-options-wrapper>
+                            <dl class="definitionList">
+                                {{#each options}}
+                                    <dt class="definitionList-key">{{name}}:</dt>
+                                    <dd class="definitionList-value">
+                                        {{#if is_file}}
+                                            <a href="#" class="corporate-proof-download-btn" data-filename="Custom_Journal_Mockup_Proof.png"><i class="fa-solid fa-file-image"></i> Custom_Journal_Mockup_Proof.png</a>
+                                        {{else}}
+                                            {{value}}
+                                        {{/if}}
+                                    </dd>
+                                {{/each}}
+                            </dl>
+                            <button type="button" class="cart-item-options-toggle" data-options-toggle aria-expanded="false">
+                                <span class="toggle-text">See More</span>
+                                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                            </button>
+                        </div>
 
                         {{#if ../name '==' 'Custom Executive Corporate Journal'}}
-                            <a href="/corporate-program/#custom-builder">{{lang 'cart.checkout.change'}}</a>
+                            <a href="/corporate-program/#custom-builder" class="cart-item-change-link">{{lang 'cart.checkout.change'}}</a>
                         {{else}}
-                            <a href="#" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
+                            <a href="#" data-item-edit="{{id}}" class="cart-item-change-link">{{lang 'cart.checkout.change'}}</a>
                         {{/if}}
                     {{/if}}
 
@@ -232,6 +238,50 @@
           }
         }
       }, true);
+      // Initialize and handle options toggle (See More / See Less)
+      function updateOptionToggles() {
+        var wrappers = document.querySelectorAll('[data-options-wrapper]');
+        wrappers.forEach(function(wrapper) {
+          var dts = wrapper.querySelectorAll('.definitionList dt');
+          var toggleBtn = wrapper.querySelector('[data-options-toggle]');
+          if (toggleBtn) {
+            if (dts.length > 2) {
+              toggleBtn.style.display = 'inline-flex';
+            } else {
+              toggleBtn.style.display = 'none';
+            }
+          }
+        });
+      }
+      updateOptionToggles();
+
+      // Delegated click event for See More / See Less toggle
+      document.addEventListener('click', function(e) {
+        var toggleBtn = e.target.closest('[data-options-toggle]');
+        if (toggleBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          var wrapper = toggleBtn.closest('[data-options-wrapper]');
+          if (wrapper) {
+            var isExpanded = wrapper.classList.toggle('is-expanded');
+            toggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            var textSpan = toggleBtn.querySelector('.toggle-text');
+            var icon = toggleBtn.querySelector('.toggle-icon');
+            if (textSpan) {
+              textSpan.textContent = isExpanded ? 'See Less' : 'See More';
+            }
+            if (icon) {
+              if (isExpanded) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+              } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+              }
+            }
+          }
+        }
+      });
     } catch (e) {
       console.warn('Cart proof & URL protection note:', e);
     }
